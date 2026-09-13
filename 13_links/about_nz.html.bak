@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-44942781-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-44942781-1');
+</script>
+<!-- Google Analytics Tag until this line -->
+
+
+
+<title>ニュージーランドに関するホームページ　　リンク集</title>
+
+<meta name="dcterms.dateCopyrighted" content="2020">
+<meta name="dcterms.rightsHolder" content="Takeshi Ito">
+<meta name="author" content="伊藤　剛, http://fishtips.sakura.ne.jp">
+<meta name="description" content="釣り、ニュージーランドに関連したホ―ムペ―ジへのリンク集です。">
+
+<link rel="stylesheet" type="text/css" media="screen" href="../css/style.css">
+<link rel="stylesheet" type="text/css" media="print" href="../css/print.css">
+
+<script src="../js/openclose.js"></script>
+
+</head>
+
+<body>
+
+
+
+<main>
+<div id="container">
+
+<div id="contents">
+
+<div id="main">
+
+<section>
+<h2 class="mb15" id="header">リンク集</h2>
+<h3>ニュージーランドに関するホームページ</h3>
+<h4 class="left">ニュージーランド全般</h4>
+</section>
+
+<p><a href="https://yellow.co.nz/" target= "_blank">イエローページ　ニュージーランド</a><br>
+　ニュージーランドの職業別電話帳　イエローページです。</p>
+
+<!--<p><a href="http://home4.highway.ne.jp/FCLL/NZ.htm" target= blank>ニュージーランド・リンク</a><br>
+　淵辺さんのホームページ。ＮＺ在住の方、日本にお住まいの方、双方のみなさんによるＮＺ関係のホームページへのリンクが強力！　メーリングリストへの参加も可能！！</p>-->
+
+<p><a href="http://www.gekkannz.net/" target= "_blank">月刊ニュージーランド</a><br>
+　人気のある雑誌、月刊ニュージーランドのホームページ。</p>
+
+<!-- 
+<p><A HREF="http://plaza.globe.or.jp/gio/index.html" TARGET= "_blank">「地球の歩き方」ホームページ </a><br>
+こちらも便利な、おなじみ「地球の歩き方」。</p>
+ -->
+
+<p><a href="https://www.facebook.com/NZJapan" target= "_blank">The New Zealand Japan Society of Auckland (Inc) </a><br>
+　ニュージーランド日本協会・オークランド支部のフェイスブック</p>
+
+
+<section>
+<h4 class="left">ニュージーランド留学について</h4>
+</section>
+
+<p><a href="https://www.britishcouncil.jp/" target= blank>ブリティッシュカウンシル</a><br>
+　英語検定試験IELTSについて、語学学校などの情報</p>
+
+<p><a href="http://www.waikato.ac.nz/" target= "_blank">ワイカト大学</a><br>
+　ワイカト大学のトップページ</p>
+
+<p><a href="http://www.waikato.ac.nz/library/" target= "_blank">ワイカト大学図書館</a><br>
+　ワイカト大学図書館。インターネットで蔵書の検索もできます。</p>
+
+<p><a href="http://www.waikato.ac.nz/international" target= "_blank">ワイカト大学　インターナショナルセンター</a><br>
+　留学生向けの窓口です。
+</p>
+
+<p><a href="http://www.wintec.ac.nz/" target= "_blank">Waikato Institute of Technology, Hamilton, New Zealand</a><br>
+　Wintec。ハミルトンにある技術系専門学校のホームページです。</p>
+
+<p><a href="https://www.auckland.ac.nz/en.html" target= "_blank">オークランド大学</a><br>
+　オークランド大学</p>
+
+<p><a href="http://www.lincoln.ac.nz/" target= "_blank">リンカーン大学</a><br>
+　リンカーン大学</p>
+
+<p><a href="http://shakodance.com/study/" target= "_blank">英語勉強法・英語学習法相談室 </a><br>
+　独特の教授法で注目されている稲垣氏のウェブサイトです。ぜひ一度ご覧下さい。</p>
+
+<p><a href="https://www.immigration.govt.nz/new-zealand-visas/options/study" target= "_blank">ニュージーランド政府移民局</a><br>
+　ニュージーランド政府移民局の、留学に関するページ。ビザ、移住などの情報も載っています。</p>
+
+
+<section>
+<h4 class="left">ハミルトンについて</h4>
+</section>
+
+<p><a href="http://www.hamilton.govt.nz/Pages/default.aspx" target= "_blank">Hamilton City Council</a><br>
+　ハミルトンシティカウンシル（市役所）のホームページ</p>
+
+<p><a href="https://www.eventfinda.co.nz/whatson/events/hamilton" target= "_blank">Eventfinda</a><br>
+　ハミルトンで催されるイベント情報が満載です。</p>
+
+<p><a href="https://weather.yahoo.com/new-zealand/waikato/hamilton-2348696/" target= "_blank">Hamilton NZ Weather Forecast</a><br>
+　ハミルトンの天気予報</p>
+
+<section>
+<h4 class="left">ニュージーランドでのショッピング</h4>
+</section>
+<p id="psnz"><a href="https://postcardsnz.com/" target= "_blank">Postcards New Zealand</a><br>
+　ニュージーランドの美しい風景の数々を切り取った絵はがき、グリーティングカード、マグネットなどが揃っている、ポストカーズ・NZさんのウェブサイト。各地の空港、土産物店で売っていますし、通販もできます。ブラウザで見るだけでも癒やされますよ！<span class="new-article">NEW !</span></p>
+　
+<p><a href="http://www.swanndri.co.nz/" target= "_blank">Swan Dry (Wool producs, shirts, sweaters etc)</a><br>
+　スワンドライ　（ニュージーランドを代表するウールシャツ・ジャケット etc）、メールアドレスを登録すると、バーゲンのお知らせが年２回ほど届きます。NZ国内であれば送料無料、各アイテムがお値打ち価格で買えます。</p>
+
+<!--<p><a href="http://marketplace.xtra.co.nz/cgi-bin/ubsbooks.storefront" target= "_blank">UBS Books</a><br>
+　オークランドにある教科書専門の書店　UBSブックス、新刊・中古の教科書が揃っています</p>-->
+
+<p class="bottom"><a href="https://bennetts.co.nz/" target= "_blank">Bennetts</a><br>
+　ニュージーランド各地にある大手書店チェーン　ベネッツ。ここも教科書が揃っています</p>
+<p>　</p>
+
+<section>
+<hr>
+<h4><a href="links_contents.html">リンク集　　　目次へ</a></h4>
+<h4><a href="../sitemap.html">サイトマップ</a></h4>
+<h4><a href="../index.html">ホームへ</a></h4>
+<h4><a href="../postmail/postmail.html">お問い合わせ</a></h4>
+</section>
+
+</div>
+<!--/main-->
+
+<div id="sub">
+
+<div id="head">
+
+<p id="logo"><a href="../index.html"><img src="../images/logo.png" width="140" height="90" alt="Fish and Tips"></a></p>
+
+<nav id="menubar">
+<ul>
+<li><a href="../index.html">HOME</a></li>
+<li><a href="../intro.html">About Fish&amp;Tips</a></li>
+<li><a href="../02_diary_toei/diary_toei_contents.html">釣行日誌　故郷編</a></li>
+<li><a href="../03_diary_nz/diary_nz_contents.html">釣行日誌　ＮＺ編</a></li>
+<li><a href="../17_southerncountry/sc_contents.html">君よ知るや南の国</a></li>
+<li><a href="../01_tips/tips_contents.html">ティップス</a></li>
+<li><a href="../04_column/column_contents.html">コラム</a></li>
+<li><a href="../05_essay/essay_contents.html">エッセイ</a></li>
+<li><a href="../11_album/album_contents.html">写真集</a></li>
+<li><a href="../06_favorite/favorite_contents.html">私のお気に入り</a></li>
+<li><a href="../07_hajime/hajime_contents.html">父の釣り口伝</a></li>
+<li><a href="../09_books/books_contents.html">本棚から</a></li>
+<li><a href="../15_diary_nzstudy/diary_nzstudy_contents.html">留学日誌</a></li>
+<li><a href="../18_wingtips/wingtips_contents.html">飛行日誌</a></li>
+<li id="current"><a href="../13_links/links_contents.html">リンク集</a></li>
+
+<li><a href="http://8156.teacup.com/fishtips/bbs">掲示板</a></li>
+<li><a href="../postmail/postmail.html">お問い合わせ</a></li>
+<li><a href="../english/index_e.html">English Version</a></li>
+</ul>
+</nav>
+
+</div>
+<!--/head-->
+
+</div>
+<!--/sub-->
+
+
+</div>
+<!--/contents-->
+
+</div>
+<!--/container-->
+
+</main>
+
+<footer>
+<p class="small-center">Copyright &copy; 1998-2024 Takeshi Ito　All rights reserved.<br>
+<a href="http://template-party.com/">Web Design:Template-Party</a></p>
+</footer>
+
+<!--スマホ用メニューバー-->
+<img src="../images/icon_bar.png" width="20" height="16" alt="" id="menubar_hdr" class="close">
+<script>
+if (OCwindowWidth() < 480) {
+	open_close("menubar_hdr", "menubar");
+}
+</script>
+<div class="backtotop"><a href="#header">↑ TOP</a></div><!--伊藤が加筆-->
+</body>
+</html>
