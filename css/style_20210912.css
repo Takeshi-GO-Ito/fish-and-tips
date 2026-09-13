@@ -1,0 +1,920 @@
+@charset "utf-8"; /*2020/02/15 修正版*/
+
+/*全体の設定　-------------------------------------------------------------------*/
+body {
+	background: #ffffcc;	/*背景色*/
+	color: #000000;	/*全体の文字色*/
+	margin: 0px;
+	padding: 0px;
+	font: 16px/2 "メイリオ", Meiryo, "ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro";	
+	/*文字サイズ : Orignal = 14px/2 /行間、フォント*/
+}
+
+h1,h2,h3,h4,h5,p,ul,ol,li,dl,dt,dd,form,figure{
+	margin: 0px;
+	padding: 0px;
+}
+
+ul{
+	list-style-type: none;
+}
+
+ul.level-0 { /* (A)1階層目-------- 伊藤がサイトマップ中のリスト用に追加した記述 */
+	margin:0px 0px 0px 20px; /* 上、右、下、左　の余白 */
+}
+ul.level-1 {/* (B)2階層目-------- 伊藤がサイトマップ中のリスト用に追加した記述 */
+	margin:0px 0px 0px 40px; /* 上、右、下、左　の余白 */
+}
+
+ul.contents { /* -------- 伊藤が各コーナー目次中のリスト用に追加した記述 */
+	list-style-type: none;
+	margin:20px 0 60px 25px;	/*margin:20px 0 20px 25px;*/
+	padding:0;
+	font-size:1.0em;
+	line-height:4.0em;
+	text-align:left
+	}
+
+ul.none{ /* --------- 伊藤が追加した記述 2021-08-13 */
+	list-style-type: none;
+	margin:20px 0 50px 25px;	/*margin:20px 0 60px 25px;*/
+	padding:0;
+	font-size:1.0em;
+	line-height:4.0em;
+	text-align:left
+	}
+
+ul.none li{ /* --------- 伊藤が追加した記述 */
+	list-style-type: none;
+	margin:20px 0 20px 25px;	/*margin:20px 0 60px 25px;*/
+	padding:0;
+	font-size:1.0em;
+	line-height:4.0em;
+	text-align:left
+	}
+
+ul.circle li { /* --------- 伊藤が追加した記述 2021/07/21 */
+	list-style-type: circle;
+	margin:20px 0 60px 25px;
+	padding:0;
+	font-size:1.0em;
+	line-height:4.0em;
+	text-align:left
+	}
+
+ul.std li{ /* --------- 伊藤が追加した記述 上、右、下、左　の余白  */
+	list-style-type: none;
+	margin:0px 0 25px 35px;
+	padding-top:0px;
+	padding-bottom:1px;
+	font-size:1.0em;
+	line-height:2.0em;
+	text-align:left
+	}
+
+ul.disc li{ /* 項目頭にドットが付いたリスト、伊藤が追加した記述 */
+	list-style-type: disc;
+	margin:0px 0 25px 35px;/* 上、右、下、左　の余白 */
+	padding-top:0px;
+	padding-bottom:1px;
+	/* padding:0; */
+	font-size:1.0em;
+	line-height:2.0em;
+	text-align:left
+	}
+
+ul.quote{ /* 引用文用のリスト、伊藤が追加した記述 2021/08/17 */
+	font-size:1.0em;
+	color:#00008b;
+	}
+
+ol.std li { /* --------------------------------------- 伊藤が追加した記述 */
+	margin:5px 0 30px 60px; /* 上、右、下、左　の余白     5px 0 30px 40px;  */
+	padding:0;
+	font-size:1.0em;
+	text-align:left
+	}
+
+ol.cts { /* --------------------------------------- 伊藤が追加した記述 */
+	margin:0px 0px 20px 80px; /* 上、右、下、左　の余白 */
+	padding:0;
+	font-size:1.0em;
+	text-align:left
+	}
+
+li.std { /* --------------------------------------- 伊藤が追加した記述 */
+	margin:20px 0 20px 0px; /* 上、右、下、左　の余白 */
+}
+
+dl.std { /* --------------------------------------- 伊藤が追加した記述 */
+	margin:0px 0 0px 20px; /* 上、右、下、左　の余白 */
+}
+
+dl.std dd{ /* --------------------------------------- 伊藤が追加した記述 */
+	margin:0px 0 20px 40px; /* 上、右、下、左　の余白 */
+}
+
+/*
+a[target="_blank"]::after {/* --------------------------------------- 伊藤が追加した記述 
+	https://qiita.com/7note/items/0f085b89a7d04c4faabb	*/
+/*	content: '\f08e';
+	font-family: FontAwesome; /* font-awesomeを使うための呪文 */
+/*	margin-left: 0.5em;
+	margin-right: 0.5em;
+}
+*/
+
+/*
+a[target="_blank"]::after { -------------- 伊藤が追加した記述 2021-07-18 
+	content: '[Open New Tab]';
+	font-size:0.7em;
+	margin-left: 0.5em;
+	margin-right: 0.5em;
+}
+*/
+
+
+
+
+
+h4 {
+	font-size:1.0em;
+	color:#000000;
+	text-align:center;
+	margin-bottom:20px;
+	margin-top:20px;
+	}
+
+h4.left { /* --------左寄せ------------------- 伊藤が追加した記述 */
+	font-size:1.0em;
+	color:#000000;
+	text-align:left;
+	margin-bottom:0;
+	margin-top:20px;
+	margin-left:10px;
+	}
+
+p.center { /* --------------------------------------- 伊藤が追加した記述 */
+	text-align:center;
+	}
+
+
+p.right { /* --------------------------------------- 伊藤が追加した記述 */
+	text-align: right;
+	}
+
+p.photo { /* --------------------------------------- 伊藤が追加した記述 */
+	text-align:center;
+}
+
+p.bottom { /* --------------------------------------- 伊藤が追加した記述 */
+	font-size:1.0em;
+	margin-bottom:3em;
+	color:#000000;
+	text-align:left;
+}
+
+p.top { /* --------------------------------------- 伊藤が追加した記述 */
+	font-size:1.0em;
+	margin-top:3em;
+	/* color:#000000; */
+	text-align:left;
+	}
+
+p.centertop { /* --------------------------------------- 伊藤が追加した記述 */
+	margin-top:1.5em;
+	text-align:center;
+	}
+
+p.both { /* --------------------------------------- 伊藤が追加した記述 */
+	font-size:1.0em;
+	margin-top:3em;
+	margin-bottom:3em;
+	text-align:left
+	}
+
+p.in-list { /* --------------------------------------- 伊藤が追加した記述 2021/07/21 */
+	font-size:1.0em;
+	text-align:left;
+	text-indent: -1em
+	}
+
+p.in-list-tab { /* --------------------------------------- 伊藤が追加した記述 2021/07/21 */
+	margin-left:2.5em;
+	font-size:1.0em;
+	text-align:left;
+	text-indent: -1em
+	}
+
+p.in-list-tab-A { /* --------------------------------------- 伊藤が追加した記述 2021/07/22 */
+	margin-left:2.5em;
+	font-size:1.0em;
+	text-align:left;
+	text-indent: -2em
+	}
+
+p.quote{ /* 引用文用のパラグラフ、伊藤が追加した記述 2021/08/17 */
+	font-size:1.0em;
+	color:#00008b;
+	}
+
+img.withcap { /* --------------------------------------- 伊藤が追加した記述 */
+	margin:20px 20px 0px; /*… ［上］ と ［左右］ と ［下］ を指定*/
+	}
+
+img.nocap { /* --------------------------------------- 伊藤が追加した記述 */
+	margin:20px 20px 20px; /*… ［上］ と ［左右］ と ［下］ を指定*/
+	}
+
+img.inlist { /* --------------------------------------- 伊藤が追加した記述 */
+	margin:20px 0px 20px; /*… ［上］ と ［左右］ と ［下］ を指定*/
+	}
+
+
+span.red { /* --------------------------------------- 伊藤が追加した記述 */
+	color:#ff0000;
+	text-align:left
+	}
+
+span.blue { /* --------------------------------------- 伊藤が追加した記述 */
+	color:#0000ff;
+	text-align:left
+	}
+
+span.darkblue { /* --------------------------------------- 伊藤が追加した記述 */
+	color:#00008b;
+	text-align:left
+	}
+
+span.quote { /* --------------------------------------- 伊藤が追加した記述 */
+	color:#07138c;
+	text-align:left
+	}
+	
+span.comment { /* --------------------------------------- 伊藤が追加した記述 */
+	color:#18187e;
+	text-align:left
+	}
+
+span.small-letter-normal { /* --------------------------------------- 伊藤が追加した記述 */
+	color:#000000;
+	line-height:1.0em;
+	font-size:0.7em;
+	text-align:left
+	}
+
+span.small-letter { /* --------------------------------------- 伊藤が追加した記述 */
+	color:#ff0000;
+	line-height:1.0em;
+	font-size:0.7em;
+	text-align:left
+	}
+
+span.ita { /* --------------------------------------- 伊藤が追加した記述 */
+	font-style: italic;
+}
+
+div.date { /* --------------------------------------- 伊藤が追加した記述 */
+	text-align: right;
+	font-size:1.0em;
+	margin-bottom:3em;
+	/* color:#000000 */
+	}
+
+div.top { /* --------------------------------------- 伊藤が追加した記述  2021/08/28 */
+	margin-top:3em;
+	}
+
+div.caption { /* --------------------------------------- 伊藤が追加した記述 */
+	text-align: center;
+	font-size:1.0em;
+	margin-bottom:3em;
+	}
+
+div.centering { /* --------------------------------------- 伊藤が追加した記述 */
+	text-align: center;
+	font-size:1.0em;
+	}
+
+table.tbl1 {
+	border-collapse:separate;
+	border-spacing:2px;
+}
+
+table.tbl1 tr td {
+	padding:1px;
+	text-align: right;
+	vertical-align: middle;
+}
+
+table.tbl2 {
+	border-collapse:separate;
+	border-spacing:2px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+table.tbl2 tr td {
+	padding:1px;
+	text-align: left;
+	vertical-align: middle;
+}
+
+table.tbl2 tr.color {
+	background-color: #cccccc;
+}
+
+table.tbl2 th.w60 {
+width: 60px;
+}
+
+table.tbl2 th.w245 {
+width: 245px;
+}
+
+table.tbl3 {
+	border-collapse:separate;
+	border-spacing:2px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+table.tbl3 th.w1 {
+width: 60px;
+}
+
+table.tbl3 th.w2 {
+width: 95px;
+}
+
+table.tbl3 tr td {
+	padding:1px;
+	text-align: center;
+	vertical-align: middle;
+}
+/* -------------------------------------------------ここまで伊藤の追加分 */
+
+/* -------------------------------------------------ここから伊藤の追加分 2021/07/23 */
+.rods table {
+width: 600;
+height: 1500;
+border: 1px #000000 solid;
+background-color: ffffcc;
+}
+
+.rods caption {
+text-align: center;
+}
+
+.rods td {
+border: 1px #000000 solid;
+background-color: ffffcc;
+text-align: center;
+font-size:0.6em;
+vertical-align: middle;
+}
+
+.rods th {
+border: 1px #000000 solid;
+font-size:0.6em;
+background-color: ffffcc;
+}
+/* -------------------------------------------------ここまで伊藤の追加分 */
+
+img {
+	border: none;
+}
+input,textarea,select {
+	font-size: 1em;
+}
+form {
+	margin: 0px;
+}
+table {
+	border-collapse:collapse;
+	font-size: 100%;
+	border-spacing: 0;
+}
+
+/* for table 　postmail のオリジナルCSS より移植*/
+#form-tbl {
+	margin-left: 1.5em;
+}
+#form {
+	border-collapse: collapse;
+	margin: 1em 0;
+}
+#form th, #form td {
+	border: 1px solid #666;
+	padding: 8px;
+}
+#form th {
+	white-space: nowrap;
+	background: #ffffcc;/* 初期値は　#e8e8e8　*/
+}
+#form td {
+	background: #ffffcc;
+}
+p.btn input {
+	width: 110px;
+	height: 32px;
+}
+
+/* for message */
+p.msg {
+	color: #dd0000;
+	margin: 2em;
+}
+span.msg {
+	color: #dd0000;
+}
+
+/* for back-button */
+form.back {
+	margin-top: 2em;
+}
+
+/* postmail のオリジナルCSS より移植　ここまで*/
+
+/*リンク（全般）設定 -----------伊藤の設定------------------------------------*/
+a {
+	color: #0000FF;	/*リンクテキストの色*/
+}
+
+a:hover {
+	color: #0000FF;			/*マウスオン時の文字色（全体）*/
+	font-weight: bold;
+	text-decoration: none		/* マウスオン時に下線を消す設定。残したいならこの１行削除。*/
+}
+
+a[target="_blank"]::after { /* -------------- 伊藤が追加した記述 2021-09-11 */
+	content: url('http://fishtips.sakura.ne.jp/icon/open in new window_20.png');
+	text-decoration: none;
+	margin-top: 0.0px;
+	margin-left: 0.5em;
+	margin-right: 0.0em;
+}
+
+a[target="_blank"]:hover { /* -------------- 伊藤が追加した記述 2021-09-12 */
+	text-decoration: none;
+}
+
+a:visited {/*訪問後のリンク*/
+	color:#ff0000;
+	text-decoration:underline;
+}
+
+/*コンテナー（HPを囲むブロック）--------------------------------------------------------------*/
+#container {
+	width: 830px;	/*ボックス幅*/
+	margin: 0 auto 0;
+}
+
+/*ヘッダー（h1タグが入ったブロック）-------------------------------------------------------------*/
+header {
+	width: 100%;	/*ヘッダーブロックの幅*/
+	margin-bottom: 40px;
+}
+/*h1タグ*/
+header h1 {
+	font-size: 10px;		/*文字サイズ*/
+	font-weight: normal;	/*太字を標準にする設定*/
+	text-align: right;		/*テキストを右側に*/
+}
+
+/*メインコンテンツ ---------------------------------------------------------------------*/
+#main {
+	width: 550px;	/*メインコンテンツ幅*/
+	float: right;	/*右側に回り込み*/
+	padding: 30px 0px 15px;	/*上250px、左右、下への余白*/
+}
+/*mainコンテンツのh2タグの設定*/
+#main h2 {
+	background-color: #6e8367;	/*背景色（古いブラウザだとここの色のみが出ます）*/
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#000000), to(#6e8367));	/*グラデーション*/
+	background-image: -webkit-linear-gradient(#000000, #6e8367);	/*同上*/
+	background-image: linear-gradient(#000000, #6e8367);			/*同上*/
+	font-size: 100%;
+	padding: 6px 15px;	/*上下、左右への余白*/
+	clear: both;
+	border-radius: 6px;	/*角丸のサイズ*/
+	color: #FFF;		/*文字色*/
+}
+/*mainコンテンツのh3タグの設定*/
+#main h3 {
+	background-color: #FFF;	/*背景色（古いブラウザだとここの色のみが出ます）*/
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#FFF), to(#e5e5e5));	/*グラデーション*/
+	background-image: -webkit-linear-gradient(#FFF, #e5e5e5);	/*同上*/
+	background-image: linear-gradient(#FFF, #e5e5e5);			/*同上*/
+	font-size: 100%;
+	padding: 5px 14px;	/*上下、左右への余白*/
+	clear: both;
+	border-radius: 6px;	/*角丸のサイズ*/
+	-webkit-box-shadow: 0px 2px 5px #e0e0e0;	/*影の設定。それぞれ右へ、下へ、ぼかし幅、色の設定。*/
+	box-shadow: 0px 2px 5px #e0e0e0;			/*同上*/
+	border: 1px solid #ccc;	/*枠線の幅、線種、色*/
+}
+/*mainコンテンツの段落タグ設定*/
+#main p {
+	padding: 0.5em 15px 1em;	/*左から、上、左右、下への余白*/
+}
+
+/*　ここにオリジナルでは　gallery.html内のブロック　という記述があったが　cssバックアップフォルダに待避　*/
+
+/*サブコンテンツ --------------------------------------------------------------*/
+#sub {
+	width: 220px;	/*サブコンテンツ幅*/
+	float: left;	/*左側に回り込み*/
+	/* background-color: rgba(255,255,255,0.7);	背景色。左３つの数字でRGB値での色を指定し、最後の小数点の数字で透明度を指定。オリジナルではこの行を使用　*/
+	border-radius: 6px;	/*角丸のサイズ*/
+	padding: 10px;		/*余白*/
+	text-align: center;	/*ボックス内をセンタリング*/
+	/* -webkit-box-shadow: 1px 1px 5px #d9dfd7;	影の設定。それぞれ右へ、下へ、ぼかし幅、色の設定。*/
+	/* box-shadow: 1px 1px 5px #d9dfd7;			同上*/
+	/* border: 1px solid #d3d8d1;	枠線の幅、線種、色　オリジナルでは以上三行を使用　*/
+}
+/*ロゴ*/
+#sub #logo {
+	padding: 0px 0px;	/*上下、左右へとる余白*　オリジナルは70px　*/
+}
+/*subコンテンツのh2タグの設定*/
+#sub h2 {
+	background-color: #6e8367;	/*背景色（古いブラウザだとここの色のみが出ます）*/
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#000000), to(#6e8367));	/*グラデーション*/
+	background-image: -webkit-linear-gradient(#000000, #6e8367);	/*同上*/
+	background-image: linear-gradient(#000000, #6e8367);			/*同上*/
+	font-size: 100%;
+	padding: 5px 0;	/*上下、左右への余白*/
+	clear: both;
+	font-weight: normal;
+	color: #FFF;	/*文字色*/
+}
+
+/*メインメニュー
+---------------------------------------------------------------------------*/
+/*メニューブロックの設定*/
+nav#menubar ul {
+	border-top: 1px solid #d1dacd;	/*上側の線の幅、線種、色*/
+	margin-bottom: 15px;
+}
+/*メニュー１個ごとの設定*/
+nav#menubar ul li a {
+	letter-spacing: 0.1em;		/*文字間隔を少し広めにとる設定。*/
+	-webkit-transition: 0.5s;	/*マウスオン時の移り変わるまでの時間設定。0.5秒。*/
+	transition: 0.5s;			/*同上*/
+	border-bottom: 1px solid #d1dacd;	/*下側の線の幅、線種、色*/
+	display: block;
+	text-decoration: none;
+	padding: 15px 0px;	/*上下、左右への余白*/
+}
+
+/*現在表示中メニューと、マウスオン時の設定 ----------- 2017/10/18　伊藤が修正*/
+nav#menubar ul li#current a{
+	background: #CCCC99;	/*背景色 --------------- #ffffcc */
+}
+
+nav#menubar ul li a:hover {
+	background: #CCCC99;	/*背景色 --------------- #ffffff */
+	text-decoration: underline;	/*アンダーラインを表示*/
+}
+
+/*フッター設定 ---------------------------------------------------------------*/
+footer {
+	clear: both;
+	text-align: center;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	letter-spacing: 0.2em;
+}
+footer .pr {
+	display: block;
+	font-size: 80%;
+}
+footer a {
+	text-decoration: none;
+}
+
+/*トップページ内「更新情報・お知らせ」ブロック ----------------------------------------------------------*/
+/*ブロック全体の設定*/
+#new dl{
+	overflow: auto;	/*高さ指定を超えるとiframe風にスクロールが出る設定。全部表示させたいならこの行と下のheightの行を削除。*/
+	height: 150px;	/*ブロックの高さ*/
+	margin: 5px 15px 0px;
+}
+/*日付設定*/
+#new dt {
+	font-weight: bold;	/*太字にする設定。標準がいいならこの行削除。*/
+	float: left;
+	width: 8em;
+}
+/*記事設定*/
+#new dd {
+	border-bottom: 1px solid #ccc;	/*下線の幅、線種、色*/
+	padding-left: 8em;
+}
+#new dd img {
+	vertical-align: middle;
+}
+
+/*　ここに、オリジナルcssでは、テーブル１.css という記述があったが、css_バックアップ　フォルダに待避させた。*/
+
+
+/*PAGE TOP設定 ---------------------------------------------------------------------------*/
+#pagetop {
+	clear: both;
+	padding-top: 15px;
+}
+#pagetop a {
+	font-size: 10px;	/*文字サイズ*/
+	background-color: #FFF;	/*背景色*/
+	text-decoration: none;
+	text-align: center;
+	border-radius: 20px;	/*角丸のサイズ*/
+	border: 1px solid #d1dacd;	/*線の幅、線種、色*/
+	width: 12em;	/*ボックス幅*/
+	display: block;
+	float: right;
+	letter-spacing: 0.1em;
+}
+/*マウスオン時*/
+#pagetop a:hover {
+	background-color: #6b8064;	/*背景色*/
+	color: #FFF;			/*文字色*/
+}
+
+/*backtotop設定------------------　http://isket.jp/　を参考にして伊藤が加筆-----------------*/
+.backtotop {
+ position: fixed;
+ bottom: 10px;
+ right: 10px;
+
+ border:1px solid #888888;
+ padding:4pt; /*初期値：2pt*/
+ background-color: #ffffff;
+ filter:alpha(opacity=85);
+ -moz-opacity:0.85;
+ -khtml-opacity: 0.85;
+ opacity:0.85;
+
+ text-shadow: 0 -1px 1px #FFF, -1px 0 1px #FFF, 1px 0 1px #aaa;
+ -webkit-box-shadow: 1px 1px 2px #E7E7E7;
+ -moz-box-shadow: 1px 1px 2px #E7E7E7;
+ -webkit-border-radius: 10px; /*初期値：3px*/
+ -moz-border-radius: 10px; /*初期値：3px*/
+}
+/*----------------------------------------ここまで加筆*/
+
+/*その他 --------------------------------------------------*/
+.look {
+	background: #dcdcdc;
+}
+.mb15,
+.mb1em {
+	margin-bottom: 15px;
+}
+.clear {
+	clear: both;
+}
+ul.disc {
+	padding: 0em 25px 1em;
+	list-style: disc;
+}
+.color1 {
+	color: #9a7979;
+}
+.color2 {
+	color: #FF0033;
+}
+.pr {
+	font-size: 10px;
+}
+.btn {
+	font-size: 13px;
+}
+.wl {
+	width: 96%;
+}
+.ws {
+	width: 50%;
+}
+.c {
+	text-align: center;
+}
+figcaption {
+	font-size: 11px;
+}
+img {
+	max-width: 100%;
+	height: auto;
+}
+#menubar_hdr {
+	display: none;
+}
+
+/*ここからタブレット用（481px～800px）環境の設定 ------------------------------------------------------------*/
+/*表示を切り替えるウィンドウサイズの指定*/
+@media (min-width:481px) and (max-width:800px){
+
+/*h1タグ*/
+header h1 {
+	display: none;
+}
+
+/*コンテナー（HPを囲むブロック）------------------------------------------------------------*/
+#container {
+	width: auto;
+	margin: 10px;
+}
+
+/*サブコンテンツ内のheadブロック ---------------------------------------------------------------*/
+#sub #head {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	background-color: #ffffcc;	/*背景色*/
+	padding: 0px;
+	border-bottom: 1px solid #d3d8d1;
+}
+#sub #logo {
+	padding: 20px 0px;	/*上下、左右へとる余白*/
+}
+
+/*メインメニュー ------------------------------------------------------------*/
+/*メニュー１個ごとの設定*/
+nav#menubar ul li {
+	float: left;
+	width: 50%;
+}
+nav#menubar ul li:nth-child(odd) {
+	border-right: 1px solid #d1dacd;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+/*コンテンツ（main,subを囲むブロック）------------------------------------------------------------*/
+#contents {
+	width: auto;
+}
+
+/*main,subコンテンツ ----------------------------------------------------------*/
+#main, #sub {
+	float: none;
+	width: auto;
+}
+#main {
+	overflow: hidden;
+	padding-top: 700px /*伊藤が追加した記述　長いメニューの余白をとる*/
+}
+
+
+/*その他 ---------------------------------------------------------------*/
+#menubar {
+	display: block;
+}
+
+}
+
+/*ここからスマートフォン用（480px以下）環境の設定 --------------------------------------------------*/
+/*表示を切り替えるウィンドウサイズの指定*/
+@media (max-width : 480px){
+
+/*postmail のオリジナルCSS より移植*/
+	#body { margin-left: 0; }
+	
+	/* 投稿フォーム */
+	#form-tbl { margin: 0 auto; text-align: center; }
+
+	#form {
+		width: 96%; margin: 10px auto;
+	}
+
+	#form th, #form td {
+		text-align: left;
+		width: 100%;
+		display: block;
+		padding: 6px 3px;
+		border-top: none;
+	}
+
+	#form tr:first-child th {
+		border-top: 1px solid #666;
+		}
+
+	p.btn input { width: 10em; }
+
+	/* サンクス */
+	p.msg { margin: 1em auto; }
+	
+/*postmail のオリジナルCSS より移植　ここまで*/
+
+/*ヘッダー（h1タグが入ったブロック）------------------------------------------------------------------*/
+/*h1タグ*/
+header h1 {
+	display: none;
+}
+
+/*コンテナー（HPを囲むブロック）----------------------------------------------------------*/
+#container {
+	width: auto;
+	margin: 8px;		/*　オリジナルでは　5px　*/
+}
+
+/*サブコンテンツ内のheadブロック -----------------------------------------------------------*/
+#sub #head {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	background-color: #ffffcc;
+	padding: 0px;
+	border-bottom: 1px solid #d3d8d1;
+}
+#sub #logo {
+	padding: 20px 0px;	/*上下、左右へとる余白*/
+}
+
+/*メインメニュー -----------------------------------------------------------*/
+/*メニュー１個ごとの設定*/
+nav#menubar ul li {
+	float: left;
+	width: 50%;
+}
+nav#menubar ul li:nth-child(odd) {
+	border-right: 1px solid #d1dacd;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+/*コンテンツ（main,subを囲むブロック）-----------------------------------------------------------*/
+#contents {
+	width: auto;
+}
+
+/*main,subコンテンツ -----------------------------------------------------------*/
+#main, #sub {
+	float: none;
+	width: auto;
+}
+#main {
+	overflow: hidden;
+	padding-top: 120px;
+}
+#top #main {
+	overflow: hidden;
+	padding-top: 240px;
+}
+
+
+/*トップページ内「更新情報・お知らせ」ブロック -------------------------------------------------------*/
+section#new h2.open {
+	background: url(../images/btn_minus.png) no-repeat right center, -webkit-gradient(linear, left top, left bottom, from(#000000), to(#6e8367));
+	background: url(../images/btn_minus.png) no-repeat right center, -webkit-linear-gradient(#000000, #6e8367);
+	background: url(../images/btn_minus.png) no-repeat right center, linear-gradient(#000000, #6e8367);
+}
+section#new h2.close {
+	background: url(../images/btn_plus.png) no-repeat right center, -webkit-gradient(linear, left top, left bottom, from(#000000), to(#6e8367));
+	background: url(../images/btn_plus.png) no-repeat right center, -webkit-linear-gradient(#000000, #6e8367);
+	background: url(../images/btn_plus.png) no-repeat right center, linear-gradient(#000000, #6e8367);
+}
+/*ブロック全体の設定*/
+#new dl {
+	height: auto;
+	padding-left: 0;
+}
+/*日付設定*/
+#new dt {
+	float: none;
+	width: auto;
+}
+/*記事設定*/
+#new dd {
+	padding-left: 0;
+}
+
+
+/*その他 ---------------------------------------------------------------------------*/
+#menubar {
+	display: block;
+}
+/*メニュー折りたたみ設定*/
+#top #menubar_hdr {
+	display: none;
+}
+#menubar_hdr {
+	display: inline;
+	position: absolute;
+	top: 0px;
+	right: 10px;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#fbfbfb), to(#e5e5e5));
+	background-image: -webkit-linear-gradient(#fbfbfb, #e5e5e5);
+	background-image: linear-gradient(#fbfbfb, #e5e5e5);
+	padding: 10px;
+	border: 1px solid #cfcfcf;
+	border-radius: 0px 0px 6px 6px;
+	z-index: 10;
+}
+
+}

@@ -1,0 +1,176 @@
+/*============================================
+全般的なスタイル
+============================================*/
+body {
+	background-color:#ffffff;	/*ページ全体の背景色*/
+	color:#000000; 		/*文字色*/
+	margin-left: 70px;
+	margin-right: 70px;
+}
+
+div#pagebody {
+	width:100%;		/*幅の指定*/
+}
+
+p.photo { /* --------------------------------------- 伊藤が追加した記述 */
+	text-align:center;
+}
+
+h4 {
+	font-size:1.0em;
+	text-align:center;
+	margin-bottom:20px;
+	margin-top:20px;
+}
+
+h4.left { /* --------左寄せ------------------- 伊藤が追加した記述 */
+	font-size:1.0em;
+	text-align:left;
+	margin-bottom:0;
+	margin-top:20px;
+	margin-left:10px;
+}
+
+p { /* --------------------------------------- 伊藤が追加した記述 */
+	font-size:1.0em;
+	line-height:1.8em;
+	text-align:left;
+}
+
+p.center { /* --------------------------------------- 伊藤が追加した記述 */
+	text-align:center;
+	margin-top:25px;
+	margin-bottom:15px;
+}
+
+p.small-center { /* --------------------------------------- 伊藤が追加した記述 */
+	text-align:center;
+	font-size:0.7em;
+}
+
+p.photo { /* --------------------------------------- 伊藤が追加した記述 */
+	text-align:center;
+}
+
+p.top { /* --------------------------------------- 伊藤が追加した記述 */
+	font-size:1.0em;
+	margin-top:3.5em;
+	text-align:left;
+}
+
+p.bottom { /* --------------------------------------- 伊藤が追加した記述 */
+	font-size:1.0em;
+	margin-bottom:3em;
+	text-align:left;
+}
+
+p.top-cts { /* --------------------------------------- 伊藤が追加した記述 */
+	font-size:1.0em;
+	margin-top:2em;
+	text-align:left;
+}
+
+p.bottom-cts { /* --------------------------------------- 伊藤が追加した記述 */
+	font-size:1.0em;
+	margin-bottom:2em;
+	text-align:left;
+}
+
+p.both-cts { /* --------------------------------------- 伊藤が追加した記述 */
+	font-size:1.0em;
+	margin-top:2em;
+	margin-bottom:2em;
+	text-align:left;
+}
+
+p.right { /* --------------------------------------- 伊藤が追加した記述 */
+	text-align: right;
+}
+
+p.centertop { /* --------------------------------------- 伊藤が追加した記述 */
+	margin-top:1.5em;
+	text-align:center;
+}
+
+p.both { /* --------------------------------------- 伊藤が追加した記述 */
+	font-size:1.0em;
+	margin-top:3em;
+	margin-bottom:3em;
+	text-align:left
+}
+
+p.in-list { /* --------------------------------------- 伊藤が追加した記述 2021/07/21 */
+	font-size:1.0em;
+	text-align:left;
+	text-indent: -1em
+}
+
+p.in-list-tab { /* --------------------------------------- 伊藤が追加した記述 2021/07/21 */
+	margin-left:2.5em;
+	font-size:1.0em;
+	text-align:left;
+	text-indent: -1em
+}
+
+p.in-list-tab-A { /* --------------------------------------- 伊藤が追加した記述 2021/07/22 */
+	margin-left:2.5em;
+	font-size:1.0em;
+	text-align:left;
+	text-indent: -2em
+}
+
+p.quote{ /* 引用文用のパラグラフ、伊藤が追加した記述 2021/08/17 */
+	font-size:1.0em;
+	background-color: #ffffcc;
+	color: #000099;
+}
+
+p.in-list-comment { /* ----------- 伊藤が追加した記述 2021/09/28 */
+	margin-left:0em;
+	font-size:1.0em;
+	text-align:left;
+	line-height:1.5em;
+}
+
+p.list-cts { /* 各記事の目次用　インデントのパラグラフ--- 伊藤が追加 2021/10/12 */
+	font-size:1.0em;
+	text-align:left;
+	text-indent: 0.5em
+}
+
+p.small-letter-normal { /* ------------------ 伊藤が追加した記述 2021/10/16 */
+	color:#000000;
+	line-height:2.0;
+	font-size:0.7em;
+	text-align:left
+}
+
+hr.cts {
+	margin-top:2.5em;
+	margin-bottom:3em;
+}
+
+/*============================================
+メインメニュー
+============================================*/
+ul#menu {
+	display:none;		/*非表示にする*/
+}
+
+
+
+/*============================================
+サブメニュー（左カラム）
+============================================*/
+div#sub {
+	display:none;		/*非表示にする*/
+}
+
+
+
+/*============================================
+フッタ
+============================================*/
+div#footer {
+	display:none;		/*非表示にする*/
+}
