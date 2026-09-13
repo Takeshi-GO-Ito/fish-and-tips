@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-44942781-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-44942781-1');
+</script>
+<!-- Google Analytics Tag until this line -->
+
+
+
+<title>ラジコン飛行機の自作におけるCADの活用　　飛行日誌</title>
+<link rel="canonical" href="https://fishtips.sakura.ne.jp/18_wingtips/RC plane design with CAD.html" />
+
+<meta name="dcterms.dateCopyrighted" content="2023">
+<meta name="dcterms.rightsHolder" content="Takeshi Ito">
+<meta name="author" content="伊藤　剛, http://fishtips.sakura.ne.jp">
+<meta name="description" content="コロナ禍の2022年初春、持病のリハビリを兼ねて、ラジコン飛行機の製作・飛行を再開しました。幸い、以前のフライングクラブの会長さんと連絡が取れて、再び仲間に入れてもらい、楽しんでいます。釣りと同じく、ド素人の愚行を記し、これから始められる人への参考になればと願っています。なにぶん Flying/Build レシオ ＝ 飛行時間 ／ （製作＋捜索＋回収＋修理時間）が著しく小さな人物が書いていることですので、経験不足が至るところで露呈しますが、どうぞご笑覧ください。また、ラジコン関係のホームページは写真が多いのですが、私の場合、駄文が主となります。ご容赦ください。">
+
+<link rel="stylesheet" type="text/css" media="screen" href="../css/style.css">
+<link rel="stylesheet" type="text/css" media="print" href="../css/print.css">
+
+<script src="../js/openclose.js"></script>
+
+</head>
+
+<body>
+<main>
+<div id="container">
+
+<div id="contents">
+
+<div id="main">
+
+<section>
+<h2 class="mb15" id="header">飛行日誌</h2>
+<h3>ラジコン飛行機の自作におけるCADの活用</h3>
+</section>
+
+<p class="top">　ラジコン飛行機の自作を再開した2022年の冬頃は、手頃なフリーのCADソフトを探せなくて、仕方なしに <a href="https://inkscape.org/">Inkscape</a> という、ベクター系（線画）のグラフィックソフト（もちろんフリーソフト）で無理やり図面を起し、案の定大ポカをやらかしまった。</p>
+<p class="photo"><a href="../photo/CAD for Modelers_001.jpg"><img src="../photo/CAD for Modelers_001-S.jpg" width="450" height="394" alt="NAVION drawn with Inkscape" class="withcap"></a></p>
+<div class="caption">これが、Inkscape で描いた、NAIVON の図面<br>よく見ると、黄緑色の主翼の取り付け角が少し下を向いている。</div>
+<p>　大ポカの原因は、何も考えずに、昔作って保管してあった NORA-400 の主翼を使い回そうとして、模型飛行機の図面データベースサイト <a href="https://outerzone.co.uk/">OuterZone</a> からダウンロードした <a href="https://outerzone.co.uk/plan_details.asp?ID=13433">NAVION</a> の図面に、翼型の GIF データをそのまんまあてはめたために、主翼の取り付け角が若干下を向いてしまった次第。（泣）
+</p>
+
+<p class="top">　以来、オープンソースのCADソフト、「<a href="https://librecad.org/">LibreCAD　公式サイト</a>」を探し出し、しばらくはメニューを日本語化することも知らず、英語の製図用語に四苦八苦しながら図面を書いていた。</p>
+<p>　そんなおり、ネットのラジコン飛行機情報を、夜な夜な漁っていたら、アメリカのラジコン飛行機雑誌 <a href="https://www.modelairplanenews.com/">Model Airpane News</a> のウェブサイトに、　Gerry Yarrish という方が書いた、<a href="https://www.modelairplanenews.com/computer-aided-design-and-developing-rc-airplane-plans/">CAD Design for Modelers 「モデラーのためのCADデザイン」</a>という記事を見つけた。</p>
+<p>　これは良い記事だ！と感心し、さっそくウェブサイトの問い合わせ欄から翻訳・転載の許可を訊ねると、寄稿したYarrish 氏と、編集長の Cleghorn 氏から快諾を頂けた。で、Yarrish 氏の記事の内容翻訳文とオリジナル写真、加えて私が LibreCAD で苦労した点、特にラジコン飛行機の自作に関連するポイントを、僭越ながら解説させていただく次第である。</p>
+<p>　<a href="https://www.google.com/search?q=LibreCAD">LibreCAD の使い方</a>に関しては、日本語の記事も、<a href="https://www.youtube.com/results?search_query=librecad+%E4%BD%BF%E3%81%84%E6%96%B9">YouTube の解説ビデオ</a>もたくさんあるので、そちらを参照して下さい。</p>
+<p class="bottom">　以下、紺色の文章は Gerry氏の記事の翻訳、※印：黒色の文章は伊藤が追加した解説です。</p>
+
+<blockquote><span class="darkblue">
+<h3>モデラーのためのCADデザイン　&copy; Gerry Yarrish</h3>
+
+<p class="photo"><img src="../photo/Gerry Article top.jpg" alt="記事のトップ写真" width="450" height="417"></p>
+<p>　RCスケールモデリングに携わる中で、私が発見した最高のツールの1つは、コンピュータ支援設計（CAD）プログラムです。CADは、私に模型の全く新しい分野を開くと同時に、スクラッチビルドのスケール飛行機を設計・開発する際の精度を大きく向上させました。私は20年以上前からCADプログラムを使用しており、この投稿は、ラジコン飛行機を作るための3Dビューの描画やプランの作成に関する私のプレゼンテーションのオンライン版です。
+</p>
+<p>　今日、無料でダウンロードできるCADプログラムや試用できるCADプログラムがいくつかあります。あなたがそれを好むかどうかを確認するために多くのお金を費やす必要はありません。
+</p>
+<p class="bottom">さぁ、始めてみましょう！</p>
+
+<h4 class="left">CADを用いた模型製作</h4>
+<p>自宅のパソコンでRC模型飛行機を設計・開発する。</p>
+<p class="photo"><img src="../photo/Gerry_PP1_0_43.jpg" alt="CADを用いた模型製作" width="450" height="322"></p>
+
+<h4 class="left">CADって何？</h4>
+<p class="photo"><img src="../photo/Gerry_2_13_01.jpg" alt="CADって何？" width="450" height="295"></p>
+<p class="bottom">- CADとは、"Computer Aided Design "　~コンピューターの支援を受けた設計~　の略称です。<br>
+- 強力な製図・描画プログラムです。<br>
+- CADは「ラスター：ドット（点）の集合としての画像」ではなく「ベクター：線画」による図面を作成します。<br>
+- 各図面の作成作業はコンピューターにファイルとして保存され、画面上で見ることができます。</p>
+
+<h4 class="left">なぜCADを使いたいのか？</h4>
+<p class="photo"><img src="../photo/Gerry_3_11_02.jpg" alt="" width="450" height="328"></p>
+<p>- CADは製図台よりも少ないスペースで使用できます。<br>
+- より早く、より正確に仕上げることができます。<br>
+- 無駄な紙や、折れた鉛筆を使うこともありません。(環境に優しい！)<br>
+- デザインの保存が簡単です。<br>
+- 楽しい！ノートパソコンがあれば、どこでもデザインができる。</p>
+
+<p class="bottom"><span class="red"><b>ご注意下さい！　CADは、それ自体が、あなたのまったく新しい趣味になる可能性があります！</b></span></p>
+
+<h4 class="left">どんなメリットがあるの？</h4>
+<p class="photo"><img src="../photo/Gerry_4_10_03.jpg" alt="どんなメリットがあるの？" width="450" height="317"></p>
+
+<p class="bottom">- 一度覚えると、作業がとても速くなる。<br>
+- 変更も簡単です。<br>
+- 同じものを２度描きする必要がない。<br>
+- 非常に高い精度が得られる。<br>
+- 図面のサイズ変更が簡単にできる。<br>
+- 様々なディテールをインクジェットもしくはレーザープリンターで印刷することができる。<br>
+- CADは創造性を刺激する。<br>
+- CNCやレーザー加工に対応しています。</p>
+
+<h4 class="left">入門編</h4>
+<p class="photo"><img src="../photo/Gerry_5_13_04.jpg" alt="入門編" width="450" height="325"></p>
+<p>
+- 基本的な製図技術を身につける。<br>
+- CADの基礎講座を受講する。<br>
+- 予算に応じて様々なCADプログラムを調べる。<br>
+- ソフトウェアの無料体験版をダウンロードする。<br>
+- 新しいソフトで遊んでみる。<br>
+- 実際に操作して学ぶ。(チュートリアル)<br>
+- 物事を本当に見ることを学ぶ<br>
+- シンプルな形から始める。<br>
+- 簡単な飛行機のデザインを描く。</p>
+
+<p>　デザインや描画のプログラムを使い始めたいモデラーのために特別に作られた、手頃な価格のCADプログラムがいくつかあります。また、ウェブからダウンロードできる "Lite "プログラムもあり、手軽に始めることができます。</p>
+
+<p class="photo"><img src="../photo/graphite-logo.png" alt="グラファイト" width="78" height="85"></p>
+<p>　筆者は、アシュラ社のCADプログラム「グラファイト」を発売以来、ずっと使っています。このプログラムは、最も簡単で素早く学べるCADプログラムだと私は思っています。私はグラファイトを使って多くのRC飛行機を設計してきましたが、現在はバージョン9を使用しています。</p>
+<p class="photo"><img src="../photo/Gerry_Graphite_42.jpg" alt="アシュラ社のCADプログラム「グラファイト」" width="450" height="359"></p>
+<p>　Graphiteは現在、「クラウド」ダウンロードプログラムとして提供されており、<a href="http://ashlar.com/2d-3d-drafting/2d-3d-cad-graphite.html">GRAPHITE</a> から毎月のサブスクリプション支払で使用することができます。</p>
+
+
+<h4 class="left">自分だけのモデルをデザインする</h4>
+<p class="photo"><img src="../photo/Gerry_6_9_05.jpg" alt="自分だけのモデルをデザインする" width="450" height="321"></p><div class="caption">スポーツモデルのデザインはとても楽しく、実物大の飛行機をコピーする必要はありません。</div>
+<p class="bottom">　このCAD Kaos 号は、私がCADにトレースした最初のデザインです。その後、デザインを簡略化し、現代のハードウェアを追加しました。オリジナルのKaos 60と同じように、素晴らしい飛行ができる飛行機となっています。</p>
+
+<h4 class="left">スケールモデルのデザイン</h4>
+<p class="photo"><img src="../photo/Gerry_7_8_06.jpg" alt="スケールモデルのデザイン" width="450" height="322"></p><div class="caption">このシュタウダッハーの設計図は、3面図一式をトレースし、修正することで描かれました。</div>
+<p class="bottom">　スケール飛行機に関しては、CADを使えば、どんな飛行機でも、完全に近いコピーを製作することができます。簡単な設計から始めて、より複雑な設計に挑戦してください。</p>
+
+<h4 class="left">シュタウダッハーのための基礎知識</h4>
+<p class="photo"><img src="../photo/Gerry_8_8_07.jpg" alt="シュタウダッハーのための基礎知識" width="450" height="312"></p><div class="caption">正確なCAD図面を作成するための基本要素は、３面図と実機の写真です。</div>
+<p class="bottom">実機図面の探し方</p>
+<h4 class="left">図面のインポート</h4>
+<p class="photo"><img src="../photo/Gerry_9_8_08.jpg" alt="図面のインポート" width="450" height="294"></p><div class="caption"></div>
+<p>　スケールモデリングでは、実物大の航空機の図面や３面図など、トレースしてモデルの設計図に展開したい図面をCADプログラムに取り込むことができます。</p>
+
+<p>使用するプログラムによって、ビットマップ、Tiff、JPGなどの画像ファイルをインポートすることができます。</p>
+<p class="bottom">LibreCAD における図面の取り込み方</p>
+
+<h4 class="left">現物の寸法</h4>
+<p class="photo"><img src="../photo/Gerry_10_5_09.jpg" alt="" width="450" height="316"></p>
+<p>　ここでは、Spektrum DS821デジタルサーボの上面図、側面図、端面図が描かれています。これで、このサーボを図面にカット＆ペーストすることができます。</p>
+<p>　サーボのような細部は、定規やノギスで測定し、その測定値をアイテムのスケール図に追加することができます。
+
+<p>　図面を作成するもう1つの方法は、図面を作成したいものを直接測定することです。</p>
+
+<h4 class="left">RCハードウエア</h4>
+<p class="photo"><img src="../photo/Gerry_11_4_10.jpg" alt="模型飛行機のエンジンも同じことができます。" width="450" height="319"></p><div class="caption">模型飛行機のエンジンも同じことができます。</div>
+</span></blockquote>
+
+<p>※２　最近では、RCハードウェア会社のウェブサイトに、サーボ・受信機・バッテリーなどの寸法・３面図などが載っていることも多いので、これらをダウンロードして、自分の図面に取り込むことも出来ます。</p>
+
+<blockquote><span class="darkblue">
+<h4 class="left">電動ダクトファンユニット</h4>
+<p class="photo"><img src="../photo/Gerry_12_2_11.jpg" alt="電動ダクトファンユニット" width="450" height="315"></p><div class="caption">CADを使って、たくさんのものを測り、コンピューター上で作図すればするほど、上達します。</div>
+<p class="bottom"><span class="red"><b>練習あるのみです！</b></span></p>
+
+<h4 class="left">筆者の基本ルール</h4>
+<p class="photo"><img src="../photo/Gerry_13_2_12.jpg" alt="筆者の基本ルール" width="450" height="343"></p>
+<p>
+- 「レイヤー　※１」機能を使う。<br>
+- 基準線を使う。<br>
+- 左右対称に考える。<br>
+- 詳細を保存する。<br>
+- メニューツールを使う。<br>
+- 原寸大で描く。<br>
+- 内側に向かって作業する。<br>
+- 翼型（Airfoil：例　Clark - Y 等）を管理する。</p>
+</span></blockquote>
+<p>※１　レイヤー（Layer：層　例えば、基になる３面図、機体の輪郭、寸法線、モーター・電源関連部品、リンケージ関連部品.....etc などを、それぞれの階層に分けて描画し、必要に応じて線の種類、太さ、色などを変え、判りやすくする。また、ある階層を編集不可にしたり、印刷しないようにもできる。）</p>
+<p>作者：伊藤が使用している<a href="Template for RC airplanes.zip">ラジコン飛行機の自作用の DXFファイルのテンプレート</a>がこれです。（zip ファイル：4KB）</p>
+<blockquote><span class="darkblue">
+<p class="bottom">　既存の飛行機図面をトレースする製図作業には、筆者が作ったいくつかのルールがあり、これらに従うと、一連の作業がとても楽になります。</p>
+
+<h4 class="left">線と図形</h4>
+<p class="photo"><img src="../photo/Gerry_14_2_13.jpg" alt="線と図形" width="450" height="328"></p>
+<p>
+- 「ツールメニュー」にはラインツールがあります。ラインツールの中から、物体を示す実線、中心線、透視線、隠れ線、寸法線などを選択することができます。<br>
+- その他のツールでは、正方形/長方形、円、楕円、円弧などを描くことができます。<br>
+- あなたが作図するものはすべて、これらの線と図形の組み合わせなのです。</p>
+
+<p class="bottom">　CADソフトウェアが持っている機能を知ることは、そのソフトを効率よく使うための第一歩でもあります。</p>
+
+<h4 class="left">メニューバーのツール</h4>
+<p class="photo"><img src="../photo/Gerry_15_1_14.jpg" alt="メニューバーのツール" width="450" height="347"></p>
+<p>
+- 直線を引くための「ライン」ツール。<br>
+- 「トリム」不要な線分をカットするツールです。<br>
+- 「スプライン」ツールは、曲線を描くためのツールです。<br>
+- ペンの「種類」をプルダウンメニューで選択しているところ。</p>
+
+<p class="bottom">　これらのツールは、画面上のツールバーに並んだボタン（アイコン）とプルダウンメニューの中にあります。</p>
+
+<h4 class="left">基準線（相対関係を考えながら作図する）</h4>
+<p class="photo"><img src="../photo/Gerry_16_1_15.jpg" alt="リファレンス（相対関係を考える）" width="450" height="340"></p><div class="caption">機体、各翼内部の細部構造を追加する前に、側面図、上面図、正面図が、相対的なサイズに正しく描かれていることを、基準線を使って確認します。</div>
+
+<p class="bottom">　モデルの正面図、側面図、上面図を作成した後、それらの縮尺が互いにすべて合っていることを確認する必要があります。これは、設計図の詳細を作成し、スパー、フォーマー、リブなどを追加する前に重要なことです。</p>
+
+<h4 class="left">胴体基準線</h4>
+<p class="photo"><img src="../photo/Gerry_17_1_16.jpg" alt="胴体基準線" width="450" height="317"></p><div class="caption">側面図と上面図（半分）では、フォーマーやその他の垂直部材の位置は、上面と側面の中心線基準線に対して90度の角度で描かれています。</div>
+
+<h4 class="left">主翼の画像をスキャンする</h4>
+<p class="photo"><img src="../photo/Gerry_18_1_17.jpg" alt="主翼の画像をスキャンする" width="450" height="301"></p>
+<p>　これは、第二次大戦当時に William Wylam 氏によって作図されたP-40ウォーホークの図面の一部をスキャンし、CADソフトに取り込んだものです。モデルの翼を作図してゆく手順は、以下を参照してください。</p>
+</span></blockquote>
+
+<p>　William Wylam 氏が作図した航空関連の図面資料は、こちらのサイト<a href="https://www.scribd.com/search?query=Wylam+Aviation+Drawings&content_type=documents&page=1">SCRIBD:Results for “Wylam Aviation Drawings”</a>で見ることができます。</p>
+
+<blockquote><span class="darkblue">
+<h4 class="left">メニューツールの使用</h4>
+<p class="photo"><img src="../photo/Gerry_19_1_18.jpg" alt="メニューツールの使用" width="450" height="321"></p><div class="caption">線、円、楕円、半径線のメニューツールを使って、このP-40ウォーホークの翼のパネルを作成します。</div>
+<p class="bottom">　フリーハンドの「スプラインライン・ツール」を使う代わりに、ツールバーのツールを使って、翼のアウトラインのさまざまな形状と、基本的なディテールを作図するようにしてみてください。</p>
+
+<h4 class="left">不要な部分を切り取る：トリミング</h4>
+<p class="photo"><img src="../photo/Gerry_20_1_19.jpg" alt="不要な部分を切り取る：トリミング" width="450" height="312"></p><div class="caption">翼の基本的な形とディテールが形になってきました。だんだんと、それらしい形が見えてきましたね！</div>
+
+<h4 class="left">内側に向かって作業し、ディテールを描き込む</h4>
+<p class="photo"><img src="../photo/Gerry_21_1_20.jpg" alt="" width="450" height="322"></p><div class="caption">リブ、スパー、前縁材と後縁材、ディヘドラルジョイント（左右の主翼を接合する部品：いわゆるカンザシ）などのディテールが描き加えられました。</div>
+<p class="bottom">　こうして完成した右主翼の鏡像を作り、それを反転させ、元の図面に追加すれば、完成した主翼が作図できます。</p>
+
+<h4 class="left">翼型を図面に取り込む（インポート）</h4>
+<p class="photo"><img src="../photo/Gerry_22_1_21.jpg" alt="" width="450" height="317"></p><div class="caption">既存の何千もの翼型（Airfoil）中から、あなたの機体に使いたいものを選ぶことができます！</div>
+
+<p class="bottom">　リブをフリーハンドで描こうとしないでください。必要な翼型をダウンロードし、CADファイルに追加するだけです。</p>
+
+<h4 class="left">テーパー翼の作図</h4>
+<p class="photo"><img src="../photo/Gerry_23_1_22.jpg" alt="" width="450" height="308"></p><div class="caption">翼型ができたら、主翼内の各リブの位置に合わせて、それぞれのリブの寸法を決めなければなりません。</div>
+
+<h4 class="left">リブの作図</h4>
+<p class="photo"><img src="../photo/Gerry_24_1_23.jpg" alt="" width="450" height="313"></p>
+<p>- 翼型のアウトライン<br>
+- 内部ディテール<br>
+- リブの最終形状</p>
+<p class="bottom">　他の部分の作図方法と同様に、リブも基本翼型の外側から始めて、内側に向かって段階的に作図していきます。</p>
+
+<h4 class="left">ロフティング・リブの作図方法は？</h4>
+<p class="photo"><img src="../photo/Gerry_29_1_28.jpg" alt="" width="450" height="315"></p>
+<p class="bottom">　翼の根元から先端に向かって変化するプログレッシブな翼型を持つ翼を製作したい場合には、リブを段階的に高くしてゆく（Lofting）することができます。翼のプランフォームとリブの配置から始めまてみましょう。リブが均等に配置されていることを確認してください。翼型を積み重ね、いくつかのステーションに等分割します。</p>
+
+<h4 class="left">ロフティング・リブ　その２</h4>
+<p class="photo"><img src="../photo/Gerry_30_0_29.jpg" alt="" width="450" height="334"></p>
+<p class="bottom">　翼の先端から根元のリブまでのステーションラインをつなぎます。次に、これらの線を必要なリブの数で分割します。10枚のリブが必要な場合は、10等分してください。</p>
+
+<h4 class="left">リブの翼型形状を作成する</h4>
+<p class="photo"><img src="../photo/Gerry_31_0_30.jpg" alt="" width="450" height="318"></p>
+<p class="bottom">　スプラインツールを使って、点と点を結び、個々のリブを作成します。後端からスタートし、前縁までリブを進めていきます。ステーションラインとプロジェクションラインを削除すると、上のような、各リブのアウトラインが出来上がります。</p>
+
+<h4 class="left">最終的なリブのアウトライン</h4>
+<p class="photo"><img src="../photo/Gerry_32_0_31.jpg" alt="" width="450" height="311"></p>
+<p class="bottom">　これが翼の平面図とリブです。あとは、内側に向かって、スパー用の切り欠きや、翼のプランク材の厚み、上半角ブレース（カンザシ）、前縁材、後縁材などのディテールを追加していきます。</p>
+
+<h4 class="left">フォーマー（胴枠）の作成</h4>
+<p class="photo"><img src="../photo/Gerry_25_1_24.jpg" alt="" width="450" height="322"></p><div class="caption">1 基準線<br>
+2 幾何学的なセグメントの追加<br>
+3 セグメントのトリミング</div>
+<p>1. 2本の基準線から始めます。<br>
+2. メニューツールを使って幾何学的形状を追加します。<br>
+3. 不要な線分をトリミングして切り取ります。</p>
+<p class="bottom"><span class="red">　左右対称に考えて、各胴枠の右半分だけ描きます。</span>胴枠も基本的には、これまでと同じ手法で作図します。</p>
+
+<h4 class="left">内側に向かって作図を進める</h4>
+<p class="photo"><img src="../photo/Gerry_26_1_25.jpg" alt="内側に向かって作図を進める" width="450" height="310"></p><div class="caption">4 アウタースキン（外皮構造）の追加<br>
+5 グラスファイバー製エアースクープ<br>
+メインとなるボックス構造<br>
+構造のディテールが追加された。<br>
+6 胴枠　F-2　完成した胴枠の断面図</div>
+
+<p>4. 作業中のアウトラインから、スキンシートの厚さを追加します。<br>
+5. 内部の箱型シート構造とストリンガーを追加します。<br>
+<span class="red">6. 右側をコピーして貼り付け、鏡像にして元の断面を完成させます。</span></p>
+
+<p class="bottom">大変な作業ですが、最終的には完璧にフィットしたパーツが出来上がりました。</p>
+
+<h4 class="left">胴枠部品の完成</h4>
+<p class="photo"><img src="../photo/Gerry_27_2_26.jpg" alt="胴枠部品の完成" width="450" height="429"></p><div class="caption">F-2 木材の切断に使用するセグメント<br>
+F-2A：1枚作成<br>
+F-2B:1枚作る<br>
+F-2C：左右に2つ作る </div>
+<p>　図面やレーザー加工業者に送るための部品テンプレートを作成するために、外形や内形のディテールを取り除き、実際の胴枠形状を残します。ここでは、インナーボックス構造に接着される上部、下部、および２つの側部胴枠のうちの１つを示しています。</p>
+<p class="bottom">　パーツをプリントアウトし、木材に貼り付けてカットします！</p>
+
+<h4 class="left">胴体の新しい断面を作る</h4>
+<p class="photo"><img src="../photo/Gerry_28_1_27.jpg" alt="胴体の新しい断面を作る" width="450" height="323"></p>
+<p>ステップ1、基準線と、既知の断面を表す線。胴体の新しい断面がまだ作図されていない場合、基準線とスプラインツールを使ってプロットする必要があります。</p>
+<p>STEP 2 、基準線のプロット<br>
+新しい断面のためのプロットポイント</p>
+<p>STEP 3、プロットポイントを結ぶ、曲線スプライン・ライン・コネクティングプロットポイント。</p>
+<p>STEP 4 、新しい胴体断面図<br>
+　既知の断面の間に新しい断面を描くには、4つのステップが必要です。この技法は "ロフティング "と呼ばれます。</p>
+
+<p>胴枠のロフト加工は、リブのロフト加工と全く同じ手法で行います。</p>
+
+<h4 class="left">レーザーカットのためのデザイン</h4>
+<p class="photo"><img src="../photo/Gerry_33_32.jpg" alt="" width="450" height="332"></p><div class="caption">このモデルは、レーザーカッティングを用いて製作するために、特別に設計されています。</div>
+<p class="bottom">　自分でパーツを切り出したくないのなら、CADファイルを送って、あなたのためにパーツをレーザーカットしてくれる誰かを見つけましょう。</p>
+
+<h4 class="left">精密なインターロッキング構造</h4>
+<p class="photo"><img src="../photo/Gerry_34_33.jpg" alt="精密なインターロッキング構造" width="450" height="344"></p><div class="caption">CADの精度が高いからこそ、市販のレーザーカットキットのような、ロックタブ構造が可能になります。</div>
+<p class="bottom">　これらのパーツは、強度と軽量性を備えた簡素化されたモデル構造を形成するために、インターロックするレーザーカットパーツを製造するために特別に設計されました。多くの場合、それらのパーツの位置合わせ・はめ合わせは自動的に決まります。</p>
+
+<h4 class="left">ブリストル・スカウトの機体</h4>
+<p class="photo"><img src="../photo/Gerry_35_34.jpg" alt="ブリストル・スカウトの機体" width="450" height="283"></p><div class="caption">CAD設計とレーザーカットの精密さにより、軽量な構造物を数分で組み立てることができます。手に持って組み立て、少ない接着剤で素早く接着することができ、クランプも必要ありません。より複雑なデザインは、実はビルドをより簡単にします。</div>
+<p class="bottom">瞬間接着剤のはみ出しからおさらばしよう！</p>
+
+<h4 class="left">作る楽しさはそのまま</h4>
+<p class="photo"><img src="../photo/Gerry_36_35.jpg" alt="作る楽しさはそのまま" width="450" height="330"></p><div class="caption">CADソフトを使って模型を作ることは、充実した体験であることに変わりはありません。ただ、より早く、より正確に作ることができます。図面の一部をプリントアウトして、パーツごとに組み立てることも可能です。</div>
+
+<h4 class="left">他にどんなことができるのでしょうか？</h4>
+<p class="photo"><img src="../photo/Gerry_37_36.jpg" alt="他にどんなことができるのでしょうか？" width="450" height="368"></p><div class="caption">CADソフトを使って、モデルのMAC（空力平均翼弦）とCG（重心位置）の位置を見つけるのはいかがでしょうか？</div>
+<p class="bottom">　モデルを設計・製作した後でも、CADプログラムを使用して、望ましいCGの位置を把握するなど、他の作業を行うことができます。</p>
+
+<h4 class="left">後退翼、テーパー翼の場合でも可能です</h4>
+<p class="photo"><img src="../photo/Gerry_38_37.jpg" alt="" width="450" height="355"></p><div class="caption">翼端を後ろに移動させれば、すべての数値がそれに応じて調整されます。</div>
+
+<p class="bottom">　何をすべきかを知っていれば、すべて簡単なことです。CADはとても役に立ちます。</p>
+
+
+<h4 class="left">側面から見た場合の重心位置計算</h4>
+<p class="photo"><img src="../photo/Gerry_39_38.jpg" alt="側面から見た場合の重心位置計算" width="450" height="288"></p><div class="caption">この図を原寸大で描くと、複葉機の実測値が自動的に把握できます。</div>
+
+<p><b>揚力中心（Center of Lift）</b><br>
+　上翼が下翼よりも前に出たスタッガータイプの複葉機の場合</p>
+<p>　翼型の内側の水色の線が M.A.C（Mean Aerodynamic Chord）空力平均翼弦を示します。</p>
+<p>　揚力中心が決まれば、CG（Center of Gravity）の位置を設定することができます。</p>
+<p>　まず、上翼と下翼のMAC上に、前縁から25%の位置のそれぞれの点を結ぶ基準線を引きます。次に、上翼と下翼の間隔：GAP の57%の長さで、下翼のMACより垂直線をに引き、そこからさらにMACと平行に基準線を引きます。２本の基準線が交差する点が揚力中心CLとなります。</p>
+<p>　CGをCLより前方の、GAP 57%の基準線上に置くと、モデルはより安定します。CGをCLの後方に置くと、モデルは安定しなくなります。</p>
+
+<p class="bottom">　あなたの製作する複葉機の適切な重心位置を把握するために、このサイドビュー（側面から見る）の手法は簡単です。</p>
+
+<h4 class="left">私のシンプルな複葉機のバランスセットアップにもCADソフトが使えます</h4>
+<p class="photo"><img src="../photo/Gerry_40_0_39.jpg" alt="私のシンプルな複葉機のバランスセットアップにもCADソフトが使えます" width="450" height="354"></p><div class="caption">数学を使わない重心範囲の見つけ方。ただし、上下の主翼の翼弦長がおおよそ同じ場合。<br>
+○水平尾翼が水平になるようにカイモノを当てる。<br>A & B ：上翼前縁と下翼後縁に三角定規を当てる。<br>
+MAC：空力平均翼弦の長さは、A点とB点の間の距離となる。（等弦翼の場合）<br>
+C 及び D線の位置は、空力平均翼弦のおおよそ25%、33%を示している。</div>
+
+<h4 class="left">翼面積についてはどうでしょうか？</h4>
+<p class="photo"><img src="../photo/Gerry_41_40.jpg" alt="翼面積についてはどうでしょうか？" width="450" height="307"></p>
+<div class="caption">問題ありません。ほとんどのCADソフトには「マクロ」と呼ばれるサブプログラムがあり、オブジェクトをハイライトして適切なツールをクリックするだけで、主翼の平面形状の面積などに関する２D計算を行うことができます。</div>
+<p>完成したモデルの重量を測ましたか？　いいですね！　CADソフトを使えば、翼面積をすぐに求めることができるので、翼面荷重を把握することができます。</p>
+
+<h4 class="left">CADソフトについての結論</h4>
+<p class="photo"><img src="../photo/Gerry_42_41.jpg" alt="" width="450" height="325"></p>
+<div class="caption">CADはデザイナーにとって多くの利点がありますが、その中でも最も優れているのはスピードです！結局のところ、モデルの設計が早ければ早いほど、すぐに飛ばすことができるのです！</div>
+<p>
+- モデルの設計と開発にCADを使用することは、非常に柔軟性があります。<br>
+- 機体の３面図を描き、詳細で精度の高い設計図に発展させることができます。<br>
+- 図面のサイズ変更も可能です。<br>
+- CADの図面から、レーザーカットマシンで部品を切り出すことができる。<br>
+- 精密なセルフアライメント構造を設計することがが可能です。<br>
+- 基本的な計算を簡単かつ迅速に行うことができます。</p>
+<div class="date"><a href="https://www.modelairplanenews.com/">Model Airplane News</a>, Updated: January 26, 2021</div>
+</span></blockquote>
+
+<div class="date">2023/09/24</div>
+
+<section>
+<hr>
+<h4>　<a href="wingtips_contents.html">Wingtips　　　目次へ</a></h4>
+<h4>　<a href="../index.html">ホームへ</a></h4>
+</section>
+</div>
+<!--/main-->
+
+<div id="sub">
+
+<div id="head">
+
+<p id="logo"><a href="../index.html"><img src="../images/logo.png" width="140" height="90" alt="Fish and Tips"></a></p>
+
+<nav id="menubar">
+<ul>
+<li><a href="../index.html">HOME</a></li>
+<li><a href="../intro.html">About Fish&amp;Tips</a></li>
+<li><a href="../02_diary_toei/diary_toei_contents.html">釣行日誌　故郷編</a></li>
+<li><a href="../03_diary_nz/diary_nz_contents.html">釣行日誌　ＮＺ編</a></li>
+<li><a href="../17_southerncountry/sc_contents.html">君よ知るや南の国</a></li>
+<li><a href="../01_tips/tips_contents.html">ティップス</a></li>
+<li><a href="../04_column/column_contents.html">コラム</a></li>
+<li><a href="../05_essay/essay_contents.html">エッセイ</a></li>
+<li><a href="../11_album/album_contents.html">写真集</a></li>
+<li><a href="../06_favorite/favorite_contents.html">私のお気に入り</a></li>
+<li><a href="../07_hajime/hajime_contents.html">父の釣り口伝</a></li>
+<li><a href="../08_movies/movies_contents.html">輝ける闇の中で</a></li>
+<li><a href="../09_books/books_contents.html">本棚から</a></li>
+<li><a href="../15_diary_nzstudy/diary_nzstudy_contents.html">留学日誌</a></li>
+<li id="current"><a href="../18_wingtips/wingtips_contents.html">飛行日誌</a></li>
+<li><a href="../13_links/links_contents.html">リンク集</a></li>
+<li><a href="../postmail/postmail.html">お問い合わせ</a></li>
+<li><a href="../english/index_e.html">English Version</a></li>
+</ul>
+</nav>
+
+</div>
+<!--/head-->
+
+</div>
+<!--/sub-->
+
+
+</div>
+<!--/contents-->
+
+</div>
+<!--/container-->
+
+</main>
+
+<footer>
+<p class="small-center">Copyright &copy; 1998-2024 Takeshi Ito　All rights reserved.<br>
+<a href="https://template-party.com/">Web Design:Template-Party</a></p>
+</footer>
+
+<!--スマホ用メニューバー-->
+<img src="../images/icon_bar.png" width="20" height="16" alt="" id="menubar_hdr" class="close">
+<script>
+if (OCwindowWidth() < 480) {
+	open_close("menubar_hdr", "menubar");
+}
+</script>
+<div class="backtotop"><a href="#header">↑ TOP</a></div><!--伊藤が加筆-->
+</body>
+</html>

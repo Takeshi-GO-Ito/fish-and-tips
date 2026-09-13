@@ -1,0 +1,1067 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-44942781-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-44942781-1');
+</script>
+<!-- Google Analytics Tag until this line -->
+
+
+
+<title>LibreCAD を用いたラジコン飛行機のデザイン、製作用図面の作図　　飛行日誌　ラジコン飛行機の話題</title>
+<link rel="canonical" href="https://fishtips.sakura.ne.jp/18_wingtips/RC plane design with LibreCAD.html" />
+
+<meta name="dcterms.dateCopyrighted" content="2023">
+<meta name="dcterms.rightsHolder" content="Takeshi Ito">
+<meta name="author" content="GO" >
+<meta name="description" content="コロナ禍の2022年初春、持病のリハビリを兼ねて、ラジコン飛行機の製作・飛行を再開しました。幸い、以前のフライングクラブの会長さんと連絡が取れて、再び仲間に入れてもらい、楽しんでいます。釣りと同じく、ド素人の愚行を記し、これから始められる人への参考になればと願っています。なにぶん Flying/Build レシオ ＝ 飛行時間 ／ （製作＋捜索＋回収＋修理時間）が著しく小さな人物が書いていることですので、経験不足が至るところで露呈しますが、どうぞご笑覧ください。また、ラジコン関係のホームページは写真が多いのですが、私の場合、駄文が主となります。ご容赦ください。">
+
+<link rel="stylesheet" type="text/css" media="screen" href="../css/style.css">
+<link rel="stylesheet" type="text/css" media="print" href="../css/print.css">
+
+<script src="../js/openclose.js"></script>
+
+</head>
+
+<body>
+<main>
+<div id="container">
+
+<div id="contents">
+
+<div id="main">
+
+<section>
+<h2 class="mb15" id="header">飛行日誌</h2>
+<h3>LibreCAD を用いたラジコン飛行機のデザイン、製作用図面の作図</h3>
+</section>
+<section>
+<p class="top">　この記事では、オープンソース・フリーソフトである <a href="https://librecad.org/" target="_blank">LibreCAD</a> を使って、ラジコン飛行機のデザインと製作用図面の作図について、作者が行っている方法を述べます。CAD（キャド）とは、Computer-Aided Designの頭文字で、コンピュータ支援設計とも訳され、コンピュータを用いて設計をすること、あるいはコンピュータによる設計支援ツールのこと（CADシステム）です。引用　<a href="https://w.wiki/3Q6w" target="_blank">ウィキペディア日本語版：CAD</a></p>
+<p>　CADによる模型のデザインについては、アメリカのラジコン飛行機雑誌 <a href="https://www.modelairplanenews.com/" target="_blank">Model Airpane News</a> のウェブサイトに、　Gerry Yarrish という方が書いた、<a href="https://www.modelairplanenews.com/computer-aided-design-and-developing-rc-airplane-plans/" target="_blank">CAD Design for Modelers 「モデラーのためのCADデザイン」</a>という、素晴らしい記事があり、それを伊藤が翻訳・転載させていただいた<a href="RC plane design with CAD.html" target="_blank">「ラジコン飛行機の自作におけるCADの活用」</a>というページがありますので、CADは初めて！　CADって何？　という方は、そちらを先に読まれてから、以下に進むと分かりやすいでしょう。</p>
+<h4>目　次</h4>
+<ol class="cts">
+	<li><a href="#reason">LibreCAD を選んだ理由</a></li>
+	<li><a href="#init">LibreCAD （バージョン: 2.2.0）の初期設定、参考テンプレート</a></li>
+	<li><a href="#layer">レイヤーの設定</a></li>
+	<li><a href="#plans">参考図面、三面図など、画像の取り込み</a></li>
+	<li><a href="#pre-process">参考図面の取り込み前処理</a></li>
+	<li><a href="#plan-take-in-process">参考図面の取り込みプロセス</a></li>
+	<li><a href="#ref-plan-process">機体サイズの決定と参考図面の拡大・縮小</a></li>
+	<li><a href="#wing-outline">主翼・水平尾翼のアウトラインの作図</a></li>
+	<li><a href="#text-dim">コメント、寸法線の記入</a></li>
+	<li><a href="#fuse-side">胴体側面・垂直尾翼のアウトラインの作図</a></li>
+	<li><a href="#airfoil">翼型データの取り込み</a></li>
+	<li><a href="#airfoil-copy">取り込んだ翼型データの回転、移動、コピー</a></li>
+	<li><a href="#wing-cross-sectional">主翼の断面構造の検討と作図</a></li>
+	<li><a href="#wing-planar">主翼の平面構造の検討と作図</a></li>
+	<li>動力系統の配置検討</li>
+	<li>サーボ・リンケージ・ホーンなどの配置検討</li>
+	<li>印刷プレビュー</li>
+	<li>印刷と出力用紙の貼り合わせ</li>
+	<li>製作開始</li>
+</ol>
+
+<!--<p><span class="red"><b>お詫びと訂正</b>：本文と解説画像の中で、Airfoil（翼型）と書いておりますが、正しくは Aerofoil です。ちょっと直す気力と時間が無いので、当分このままで行きます。ご了承いただきますようお願いいたします。</span></p>-->
+
+<p id="reason">1．LibreCAD を選んだ理由</a></p>
+<p>　今を去ること20年前、RC飛行機の設計には Macintosh で走る MiniCAD というソフトを使っていた。懐かしいMiniCAD も、今では最も安価なバージョンでさえ、中古車が買えるような価格になっている。（笑）<br>
+　20年の時を経て、CADソフトを選ぶ最大の条件は「フリーソフト」であることだった。</p>
+<p>　さらに、いろいろ調べて、以下の条件も満たしているために、LibreCAD を使うようになった。</p>
+<ol class="cts">
+	<li>フリーソフトであること</li>
+	<li>日本語に対応していること</li>
+	<li>将来的に、Windows から避難して Linux への移行も視野に入れ、クロスプラットフォームでの動作が可能なこと</li>
+	<li>2D図面が書ければ良いので、必要なPCのスペックが低くても軽快に動作すること</li>
+	<li>レイヤー機能が使えること</li>
+	<li>画像データを取り込めること</li>
+	<li>翼型の座標データを取り込んで描画できること</li>
+	<li>所持しているA4モノクロ・レーザープリンターで図面を出力できること。後で継ぎ接ぎするのは承知の上。</li>
+</ol>
+
+<p>　LibreCAD の使い方を系統立てて説明するには紙幅も余命も足りませんので、とりあえずラジコン飛行機の設計図が描けるだけの必要最小限の内容に留めておきます。</p>
+
+<p>　LibreCAD のウィンドウにある、各種ツールのアイコンは、ポインターを当てて少し待つと、解説がポップアップしますので、おおよその機能の見当は付きます。</p>
+<p>　より詳しい情報は、Google や YouTube を検索して、捜してみて下さい。</p>
+
+<p id="init" class="top">2．LibreCAD の初期設定、参考テンプレート</p>
+<p>　LibreCAD ソフトウェアのダウンロードは、<a href="https://librecad.org/#download">公式サイト　https://librecad.org/#download</a>からどうぞ。以下は Windows 版　LibreCAD バージョン: 2.2.0 での解説になります。</p>
+<p>　メニューの日本語化は、「Options」>>「Application Preference」>>「Appearance タブ」>>右下の「Language」>>「GUI Language:」より、右側のプルダウンメニューから「Japanese　日本語」を選ぶことで可能です。プルダウンメニューのだいぶ下にあります。</p>
+<p class="photo"><img src="../photo/LibreCAD_01-A.jpg" alt="メニューの日本語化" width="449" height="337"></p><div class="caption">「Options」>>「Application Preference」</div>
+<p class="photo"><img src="../photo/LibreCAD_01-B.jpg" alt="メニューの日本語化" width="500" height="425"></p><div class="caption">「Appearance タブ」>>右下の「Language」</div>
+<p class="photo"><img src="../photo/LibreCAD_01-C.jpg" alt="" width="500" height="461"></p><div class="caption">「GUI Language:」より、右側のプルダウンメニューから<br>「English」を「Japanese　日本語」に変更</div>
+<p>「Command Language」は、初期値の English のままの方が良いでしょう。</p>
+<p><strong><span class="red">この段階で、いったん LibreCAD を終了し、再度起動すると、メニューが日本語化されます。</span></strong></p>
+<p class="top">それではこれから、図面の設定を行います。</p>
+<p>「アプリケーションの設定」>>「規定値」>>新規図面の規定値>>単位(U)は、RC飛行機の設計にあたっては「ミリメートル(mm)」を選ぶと良いでしょう。</p>
+
+<p class="photo"><img src="../photo/LibreCAD_02.jpg" alt="" width="500" height="416"></p><div class="caption">図面の単位は「ミリメートル(mm)」を選ぶ。</div>
+<p>　また、「オプション設定」>>「アプリケーションの設定」>>「規定値」タブの右下にある CAD Preferences の、「レイヤーをアクティブにするときに、選択された要素のレイヤーを修正する」にもチェックを入れておくと良いでしょう。レイヤーをとっかえひっかえ作業中するときの挙動がまともになる気がします。（笑）</p>
+<p>　現在、作者が使っている<a href="Template for RC airplanes.zip">RC飛行機の作図用図面のテンプレートファイル（DXF形式をZIP圧縮）</a>を載せておきますので、参考にして下さい。</p>
+<p>　さらに、「オプション設定」>>「図面の設定」>>「用紙(P)」タブでは、用紙サイズ、縦・横置き、マージン、ページ分割数（水兵・垂直）などを指定できます。</p>
+<p>「寸法記入(D)」タブでは、縮尺を指定できますが、実寸で作図するので縮尺は 1 としました。また、長さと角度に関する寸法精度を指定できます。図面の単位がミリ(mm)なので、長さの寸法精度を 0 = 一桁、角度の精度も 0 = 一桁としています。</p>
+<p class="photo"><img src="../photo/LibreCAD_09-S.jpg" alt="「寸法記入(D)」タブの設定" width="500" height="433"></p><div class="caption">「寸法記入(D)」タブの設定</div>
+
+<p id="layer" class="top">3．レイヤーの設定</p>
+<p>　LibreCADには、非常に便利な「レイヤー　Layer：層」という機能があります。例えば、基になる三面図（画像データファイル）、機体の輪郭線、翼型の外郭線、リブ、スパー、寸法線、モーター・電源関連部品、リンケージ関連部品.....etc などを、それぞれの階層に分けて描画し、必要に応じて線の種類、太さ、色などを変え、判りやすくすることができます。また、ある階層を編集不可にしたり、印刷しないようにもできます。</p>
+<p>　「レイヤーの一覧」という小さなウィンドウを表示させるには、メニュー右側の「Widgets」>>「ドックウィジェット(g)」>>「レイヤーの一覧」にチェックを入れます。（その場所でマウスボタンを放す）</p>
+<p class="top">　前述の作者のテンプレートファイルでは、RC飛行機の設計用テンプレートを、このように設定しています。</p>
+<p class="photo"><img src="../photo/LibreCAD_03-0.jpg" alt="作者のテンプレートファイルのレイヤー設定" width="303" height="563"></p><div class="caption">作者のテンプレートファイルのレイヤー設定</div>
+<ul class="disc">
+<li>「0」：レイヤー "0 "には特別な意味があります。新しい図面のデフォルトレイヤーです。ブロックの文脈でより重要なのは、「レイヤーなし」と同等であることで、「ブロック別」の色が「指定色なし」と同等であることや、「ブロック別」の線種が「指定線種なし」と同等であることと同様である。一般にレイヤー「0」は、ブロックを作成するときにのみ使用し、ブロックの図面では唯一のレイヤーとする必要があります。出典：<a href="https://librecad.readthedocs.io/en/latest/guides/blocks.html">LibreCAD v2.2.0 - User Manual　Docs » User Guides » Blocks</a></li>
+<li>「01 IMG」：ダウンロードした実機の三面図や、既存のRC飛行機の設計図などを取り込むためのレイヤー。取り込んだ参考図面の拡大・縮小・回転・反転も可能です。</li>
+<li>「02 Ref-line」：作図の基準線を描くためのレイヤー。</li>
+<li>「03 Outline」：胴体、主翼、尾翼、ランディングギヤなどのアウトラインの作図用レイヤー。</li>
+<li>「04 Text-Dim」：注釈、コメント、寸法線、寸法などを描くレイヤー。</li>
+<li>「05 Airfoil」：各種の翼型データベースから取得した座標データを描くためのレイヤー。例：<a href="https://m-selig.ae.illinois.edu/ads/coord_database.html" target="_blank">UIUC（イリノイ大学）Airfoil Coordinates Database</a></li>
+<li>「06 Spar」：主翼、尾翼のスパーのレイヤー。</li>
+<li>「07 Rib」：主翼、尾翼のリブのレイヤー。</li>
+<li>「08 Former」：胴枠を描くレイヤー。</li>
+<li>「09 Linkage」：プッシュロッド、ホーンなどのパーツを描くレイヤー。</li>
+<li>「10 Mecha」：エンジン、モーター・電源関連部品、サーボ、引込脚などメカ類を描くレイヤー。</li>
+<li>「11 Others」：その他の情報を描くレイヤー。</li></ul>
+
+<p>　新しいレイヤーを作るには、「レイヤーの一覧」ボックスの上段にある緑色のプラス文字アイコンをクリックすると、作成ダイアログが表示されますので、名称、ペンの色、線幅、線種を指定して、OKをクリックします。</p>
+<p>　レイヤーを削除するには、「レイヤーの一覧」ボックスの上段にある緑色のマイナス文字アイコンをクリックすると、確認してきますので、OKをクリックします。</p>
+<p id="layer-2">　それぞれのレイヤーについて、「レイヤーの一覧」ボックスの上段右側にある「レイヤー設定」アイコン（<span class="red">赤丸印</span>）を押すと、選択中のレイヤーが持つ特性（レイヤー名、規定ペンの色、線の幅、線種）などを変えることができます。下図では、「02 Ref-line」が太字で表示されているので、このレイヤーが選択されていることが分かります。
+<p class="photo"><img src="../photo/LibreCAD_40-8.jpg" alt="" width="298" height="604"></p>
+
+</p>
+<p>各レイヤー名の左側にある４種のボタンは、<br>
+「眼」：表示／非表示の切り替え<br>
+「鍵」：選択可／不可の切り替え<br>
+「プリンター」：印刷可／不可の切り替え<br>
+「#」：コンストラクション・レイヤーに関するボタン。「コンストラクションレイヤーは、ジオメトリの作業線を保持するためのものです。コンストラクションレイヤーはプリントアウトに表示されません。コンストラクションレイヤーのすべての線は、無限の長さを持ちます。<br>
+出典：<a href="https://librecad.readthedocs.io/en/latest/ref/fundamentals.html" target="_blank">LibreCAD v2.2.0 - User Manual　　Construction Layers</a>
+</p>
+
+<p id="plans" class="top">4．参考図面、三面図など、画像の取り込み</p>
+<p>　まず、モデル化したい実機が決まっている場合には、参考となる図面をインターネット上で捜します。現在作者は、以下の二つのウェブサイトと、Google画像検索を用いています。</p>
+<ul class="disc">
+	<li><a href="https://outerzone.co.uk/" target="_blank">OuterZone</a><br>
+　このサイトは主にビンテージやオールドタイマーのFF,Uコン（control line),RCモデルの図面のデータベースです。ちょっと素っ気ないデザインのトップ画面ですが、何かキーワードが分かっていれば、Search plans の検索窓に、"mitsubishi zero"などと入れてSearch ボタンを押せば、収録されている図面が表示されます。<br>
+　それから、トップバナー左側のメニューアイコンをクリックすると、Latest（最新）、Browse（カテゴリー、デザイナー、出版社、スケールタイプ、最新の図面、最新の機体写真、コレクション）、ギャラリー、アドバンスドサーチ、FAQというサブメニューが出ますので、これらの機能を利用して、参考図面を捜してみて下さい。<br>
+　2023/05現在、約14,400を越える図面が収集されています。中には日本のパイロットとか、丸鷹などから発売されていた懐かしいキットの図面も見ることができます。<br>
+<p class="photo"><img src="../photo/LibreCAD_04.jpg" alt="cessna の検索結果　109種の図面がヒットした。" width="500" height="453"></p>
+<div class="caption">cessna の検索結果　109種の図面がヒットした。</div></li>
+	<li><a href="https://aerofred.com/" target="_blank">AeroFred</a><br>　次によく利用しているのは、よく似た感じですが、比較的新しいモデルも収録されている、AeroFred というウェブサイトです。こちらには 2023/05 現在、24,664モデルの図面が収録されているそうです。<br>
+<p class="photo"><img src="../photo/LibreCAD_05.jpg" alt="R/C, スケールモデル, グライダー　の検索結果" width="500" height="468"></p><div class="caption">R/C, スケールモデル, グライダー　の検索結果</div>
+<p>　トップページ右側の、Keywords というボタンをクリックすると、</p>
+<p><b>Class</b>（UAV、Uコン、FF、R/C、ポール周回機）</P>
+<p><b>Type</b>（飛行機、グライダー、ヘリ、オートジャイロ、Blimp、UFO、Exotic-Flying-Staff、ボート、モーターボート、ヨット、レガッタ用ヨット）</P>
+<p><b>Use</b>（爆撃機、貨物機、農業用途、民間機、旅客機、戦闘機、火災消火活動機、観測機、パターン機、パイロンレーサー、スロープ機、スポーツ機、レーサー、サーマルソアリング機、練習機、多目的機、実験機）</P>
+<p><b>Scale</b>（ノンスケール、セミスケール、スケール機）</P>
+<p><b>Location</b>（室内、屋外、パークフライヤー、ディスプレイ機）</P>
+<p><b>Channels</b>（2ch-6ch もしくはそれ以上）</P>
+<p><b>Wing Position</b>（高翼機、肩翼機、中翼機、低翼機、多翼機）</P>
+<p><b>Wing Geometry</b>（単翼機、楕円翼機、複葉機、三葉機、四葉機以上、カナード翼機、デルタ翼機、全翼機、セミ・デルタ機、後退翼機）</P>
+<p><b>Wingspan</b>（50cm以下から260cm以上まで、各クラス）</P>
+<p><b>Wing Dihedral</b>（上反角、下反角、多上反角、ガルウィング、逆ガルウィング）</P>
+<p><b>Motor Type</b>（CO2、ディーゼル、電動、ガソリン、グローエンジン、ジェットエンジン、ジェテックス、ロケット、ゴム動力）</P>
+<p><b>Numbers of Motors</b>（単発、二発プッシュ・プル、2－4、5－8、8発以上）</P>
+<p><b>Motor</b>（50W以下から4200Watt以上まで、各クラス）</P>
+<p><b>Engine size</b>（0.049 - 1.20CI まで各クラス）</P>
+<p><b>Material</b>（複合材料、フォーム -EPP、Depron、他、プラスチックABS、コロプラスト－スパッド、各種木材）</P>
+<p><b>Weight</b>（50g以下から4,000g以上まで、各クラス）</P>
+<p><b>Landing Gear</b>（飛行艇、フロートタイプ、単輪、四輪、スキッド、尾輪式、双輪式、三輪式）</P>
+<p><b>Skills</b>（操縦者の技量　初心者からエキスパートまで、各クラス）</P>
+　など、細かなジャンル分けがなされており、適当に選ぶと、検索窓に自動的に条件が入力され、検索ボタンを押せば結果が一覧になって表示されます。</p>
+
+　Material の欄では、現在流行しているスチレンボード・デコパネなど Foam 系の素材も選べ、数はまだ少ないのですが、面白い機体が掲載されています。</li>
+	<li>実機の三面図を捜す場合<br>
+　この場合には、Google画像検索で、"Cessna 3-view plan" などというキーワード検索を行い、めぼしい三面図をダウンロードします。<br>
+　<p class="photo"><img src="../photo/LibreCAD_06.jpg" alt="Google画像検索で、"Cessna 3-view plan" などというキーワード検索" width="500" height="412"></p><div class="caption">Google画像検索での実機三面図の検索結果</div></li>
+	<li>実機の写真を捜す場合<br>
+　実機の写真は、カラーリングやフィルム貼りの際にとても参考になります。この場合、Google画像検索で、"Cessna 170" などのキーワード検索を行い、結果に現れた画像をダウンロードします。<p class="photo"><img src="../photo/LibreCAD_07.jpg" alt="Google画像検索で、"Cessna 170" などというキーワード検索" width="500" height="464"></p><div class="caption">Google画像検索での実機写真　検索結果</div></li>
+</ul>
+
+<p id="pre-process" class="top">5．参考図面の取り込み前処理</p>
+<p>　LibreCAD Ver 2.2.0 が取り込める画像ファイルフォーマットには、<br>
+ベクター画像 : SVG, SVGZ<br>
+ビットマップ（ラスター）画像 : BMP, CUR, GIF, ICNS, ICO, JPEG, JPG, PBM, PGM, PNG, PPM, TGA, TIF, TIFF, WBMP, WEBP, XBM, XPM<br>
+　などがあります。</p>
+<p>　ところが、上で述べた二つの模型飛行機設計図データベースサイトのほとんどの図面は PDFファイルであり、そのままではLibreCADに取り込めません。<br>
+　そこで、オンラインのファイルフォーマット変換サービスなどを使って、 JPGファイルに変換しておきます。</p>
+<p>　作者がよく使っており、便利だと思うオンラインサービスには、<a href="https://cloudconvert.com/" target="_blank">CloudConvert</a>や、<a href="https://www.foxit.com/pdf-to-jpg/" target="_blank">Foxit Online Converter</a>があります。</p>
+<p>　また、<a href="https://www.zamzar.com/" target="_blank">ZAMZAR Online file conversion</a> というサービスもありますが、こちらはダウンロードファイルが zip 形式になり、一手間余分に掛かります。また、元のPDF ファイルによって各サービスの変換精度も、微妙に異なるようです。</p>
+<p>　ちなみに、<a href="" target="_blank"></a>NAVION号の PDF ファイルのサイズは、537KB、12,078×9,000 ピクセル ですが、これを<a href="https://cloudconvert.com/" target="_blank">CloudConvert</a> で、各ファイル形式に変換したファイルサイズを記しておきます。</p>
+<ul class="std">
+	<li>PDF : 537KB</li>
+	<li>JPG : 7.3MB</li>
+	<li>GIF : 1.1MB</li>
+	<li>PNG : 4.8MB</li>
+</ul>
+<p class="bottom">　変換前後の画像の大きさは、すべて 12,078×9,000 ピクセルですが、このままですと、LibreCADに取り込んだ時に非常に重たくなりますので、ファイルの大きさを横幅 3,000 ピクセル程度に縮小して老いた方が良いでしょう。1,500 ピクセルほどに小さくすると、今度は現図面の細部が不明瞭になってしまいます。</p>
+
+<p id="plan-take-in-process">6．参考図面の取り込みプロセス</p>
+<p>　これ以降は、作者の使っているRC飛行機の設計用テンプレートファイル「Template for RC airplanes.dxf」を使ってご説明致します。</p>
+<ol class="std">
+	<li><a href="Template for RC airplanes.zip" target="_blank">Template for RC airplanes.zip（zip 形式圧縮ファイル）</a>を適当なフォルダにダウンロードして、解凍します。</li>
+	<li>Template for RC airplanes.dxf　ファイルをダブルクリックして、LibreCADで開きます。</li>
+	<li>01 IMG レイヤーをクリックして選択します。<br>
+	<p class="photo"><img src="../photo/LibreCAD_03-B.jpg" alt="" width="299" height="538"></p></li>
+	<li>ファイル(F)>>インポート>>画像を挿入(I)　メニューから、参考図面の画像ファイルを開きます。<br>
+	<p class="photo"><img src="../photo/LibreCAD_42.jpg" alt="" width="450" height="443"></p></li>
+	<li>参考図面の輪郭が現れるので、図面を置きたい位置、原点を示す赤十字線のやや上方に持って来て、左ボタンをクリックします。<br>
+	<p class="photo"><img src="../photo/LibreCAD_43.jpg" alt="" width="450" height="542"></p></li>
+	<li>01 IMG レイヤーに、参考図面の画像が挿入されます。<br><p class="photo"><img src="../photo/LibreCAD_44.jpg" alt="" width="450" height="281"></p>
+	　ところが、画面が真っ黒になって、何の変化も起きず、画像取り込みが失敗したかのように思われる場合があります。これは、参考図面の画像が大きすぎますので、前述のように横幅3,000 ピクセル程度に縮小してから、再度、挿入を試みて下さい。</li>
+	<li>マウスのホイールを上方向に回し、ズームアップしてゆくと、取り込んだ参考図面の画像が現れます。このあたりのサイズ感覚の違和感は、慣れるしかないですね。<br>
+<p class="photo"><a href="../photo/LibreCAD_45.jpg" target="_blank"><img src="../photo/LibreCAD_45-S.jpg" alt="" width="450" height="275"></a></p>PDF からGIF ファイルに変換した参考図面を、01 IMG レイヤーに取り込んだところ。画像をクリックすると、別ウィンドウで大きな画像が見られます。</li>
+</ol>
+
+<p id="ref-plan-process" class="top">7．機体サイズの決定と参考図面の拡大・縮小</p>
+<p>　これまでの作業で、参考図面や三面図をLibreCADに取り込むことが出来ました。次は、これらの図面の拡大・縮小です。</p>
+<p>　おそらく、OuterZone や AeroFred からダウンロードしたモデルの設計図（PDFファイル）を変換・縮小して挿入した参考図面は、寸法を測定してみると、現実的なRC飛行機よりもかなり大きくなっているでしょう。<br>
+　作例の NAVION 号では、横幅3,000 ピクセルのGIF ファイルを挿入したとき、片方の主翼の長さが、2,233mm = 2.2 メートル！　となりました。（笑）<br>
+　また、実機の三面図の場合には、小さめの場合が多いと思います。</p>
+<p>　そこで、まず、あなたが製作したいRC飛行機の大きさを決めて下さい。モーターやエンジン、使いたいプロペラやダクテッドファンのサイズ、主翼の幅、胴体の長さ、想定重量から決まる翼面荷重.....いろいろな要因があると思いますが、仮に、前述の NAVION 号を、主翼幅 1,400mm で作ることに決めたとしましょう。ちなみに、オリジナルは 60 インチ（1,524mm）です。</p>
+<p>　それでは、以下の手順で LibreCAD に挿入した参考図面・三面図の拡大・縮小を行います。</p>
+<ol class="std">
+	<li>LibreCAD のメニューアイコンから、水平寸法(H) を左クリック。（<span class="red">赤丸印</span>）<br>
+<p class="photo"><img src="../photo/LibreCAD_10.jpg" alt="LibreCAD のメニューアイコンから、水平寸法(H) を左クリック。" width="381" height="214"></p><br>
+<p>　水平寸法ボタンが水色に変わり、この機能が選択されていることを示します。</p>
+<p class="photo"><img src="../photo/LibreCAD_11.jpg" alt="" width="387" height="213"></p>
+<p>　LibreCAD の作図エリアにマウスポインターを移動すると、ポインターが十字型に変化し、縦横の細い線が追従して移動します。</p>
+<p class="photo"><img src="../photo/LibreCAD_12.jpg" alt="" width="376" height="358"></p>
+</li>
+	<li>昔の模型の図面では、片方の主翼しか描かれていないことが多いので、主翼中心から翼端までの寸法を測定します。</li>
+	<li>主翼中心で、左クリック。これで水平寸法測定の始点が決まります。</li>
+	<li>次に、翼端で２回目の左クリック。これで終点が決まります。
+<p class="photo"><img src="../photo/LibreCAD_13-S.jpg" alt="" width="500" height="251"></p></li>
+	<li id="measure">　マウスポインターを参考図面の上側、何も描かれていないエリアに移動して、左クリック。これで引出線と寸法線、寸法が描かれます。ただ、元の参考図面サイズが大きいと、寸法の数字はかなり小さく描かれますので、マウスホイールを上側に回してズームインしないと読めないでしょう。<br>　水平寸法は、2,233mmと測定されました。これが参考図面での片翼幅です。</li>
+	<li>あなたが決定した、製作モデルの主翼幅 1,400mm を２で割ると、片翼幅 700mm が決まります。この値を図面上の片翼幅 2,233mm で割ると、<br>　　　<span class="blue">700 / 2,233 = 0.313</span><br>
+取り込んだ参考図面を　<span class="blue">0.313</span>　の割合で縮小すれば良いと分かります。</li>
+
+	<li>LibreCAD のポインターを選択します。（<span class="red">赤丸印</span>）<br>
+<p class="photo"><img src="../photo/LibreCAD_14.jpg" alt="" width="500" height="212"></p></li>
+	<li>01 IMG レイヤーを左クリックして選択します。<br><p class="photo"><img src="../photo/LibreCAD_03-B.jpg" alt="" width="299" height="538"></p><div class="caption"></div></li>
+	<li>取り込んだ参考図面を左クリックして選択します。一見、何の変化もありませんが、かなりズームインしてゆくと、参考図面が色で縁取られており、選択されていることが分かります。<br>
+<p class="photo"><img src="../photo/LibreCAD_15.jpg" alt="" width="398" height="562"></p>
+	作者の LibreCAD 設定では、選択された図形・画像はピンク色の縁取りになります。</li>
+	<li>拡大/縮小(S)ツールボタンを左クリックします。（<span class="red">赤丸印</span>）<br>
+<p class="photo"><img src="../photo/LibreCAD_16.jpg" alt="" width="325" height="214"></p><br>
+　LibreCAD ウィンドウ下側の「ステータスバー」の中央付近に「参照点を指示」というメッセージが表示されます。<br>
+<p class="photo"><img src="../photo/LibreCAD_17.jpg" alt="" width="500" height="144"></p><br>
+　<span class="red">※ステータスバーを表示するには、「表示(V)」メニューから「ステータスバー(S)」にチェックを入れておきます。<br>　ショートカットキーは、CTRL + I で、表示/非表示が切り替えられます。</span></li>
+	<li>ツールバーの中から、「終点」ボタンをシングルクリックして選択します。<br>
+<p class="photo"><img src="../photo/LibreCAD_18.jpg" alt="" width="438" height="215"></p><br>
+　拡大/縮小ツールボタンが水色になっており、まだこの機能の実行途中であることが分かります。
+</li>
+	<li>この状態で、十字ポインターを参考図面の周囲に持って行くと、「終点」ボタンによって、近くの図形の終点へと十字ポインターが自動的に「スナップ=吸着」されます。参考図面であれば、四隅に十字ポインターが吸い付くような感じです。<br>
+　ここで、例えば参考図面の左下隅で、左クリックしますと、「スケールオプション」ウィンドウが開きます。<br>
+<p class="photo"><img src="../photo/LibreCAD_19.jpg" alt="「スケールオプション」ウィンドウが開きます。" width="421" height="321"></p>
+　このウィンドウでは、<br>
+　複写回数<br>
+　　　　原本削除(D)：拡大/縮小した後で、対象物を削除<br>
+　　　　原本保持(K)：拡大/縮小した後でも対象物を保持<br>
+　　　　複数複写(M)：指定した回数だけ、拡大/縮小を繰り返す<br>
+　等角投影図の縮尺：チェックを入れると、X（横方向）とY（縦方向）が同じ倍率になる。<br>
+　　　　　　　　　　チェックを外すと、X（横方向）とY（縦方向）を異なる倍率で拡大/縮小できる。<br>
+　現在属性使用(a)：現在、対称の図形が持っている属性（色・線幅・線種など）をそのままに、拡大/縮小する。<br>
+　　　　　　　　　　現在のレイヤーを使用：現在のレイヤー上で拡大/縮小を行う。</li>
+	<li>等角投影図の縮尺にチェックを入れ、X の倍率に、0.313 を入力し、OK をクリックします。縮小した後の元図面は必要ないので、複写回数の欄は、原本削除に●を付けておきます。<br>
+<p class="photo"><img src="../photo/LibreCAD_46.jpg" alt="" width="450" height="442"></p>　これで、取り込んだ参考図面が、0.313 の割合で縮小され、元図面は削除されました。</li>
+<li>５のステップで描いた水平寸法線が、01 IMG レイヤーに残っていると思いますので、LibreCAD のポインターを選択→水平寸法線を選択→Delete キーで削除して下さい。</li>
+</ol>
+
+<p>　胴体の長さ、使いたいプロペラやダクテッドファンのサイズ、といった要因で作成したいモデルのサイズを決めたい場合も、上記　１～14　のステップで参考図面や実機の三面図を拡大/縮小して下さい。</p>
+<p>　プロペラやダクテッドファンのサイズから決める場合には、これらのアイテムの実寸を定規やノギスで測定するか、メーカーのウェブサイトで調べると良いでしょう。</p>
+
+<p id="wing-outline" class="top"><strong>8．主翼・水平尾翼のアウトラインの作図</strong></p>
+<p><span class="red"><strong>　アウトラインの作図に入る前に、忘れずに、「03 Outline」のレイヤーを左クリックして、選択しておきます。</strong></span></p>
+<p><span class="blue"><strong>　主翼、尾翼、胴体に共通して言えることですが、基準線を基にして左右どちらか一方だけを作図し、完成した後に「反転(M)ツールを用いて複写する方が正確・簡単・早くできます。</strong></span></p>
+
+<p>参考図面・三面図をトレースする場合<br>
+<p>　例題である NAVION号は、ほぼ矩形の主翼で、翼端が綺麗なカーブを描いています。こうした形状の作図は、矩形と自由曲線：スプライン曲線とを組み合わせて描きます。</p>
+
+<p><strong>主翼の基準線の作図</strong></p>
+<p>　「02 Ref-line」のレイヤーを左クリックして、選択します。<p class="photo"><img src="../photo/LibreCAD_19-D.jpg" alt="" width="295" height="530"></p></p>
+<p>　「ツール(T)」>>「直線(L)」>>「垂直線」を選択。
+<p class="photo"><img src="../photo/LibreCAD_19-B.jpg" alt="" width="450" height="242"></p>
+<p>　垂直線の長さを 300、点スナップ を「中点」に設定する。</p>
+<p class="photo"><img src="../photo/LibreCAD_19-C.jpg" alt="" width="450" height="338"></p>
+<p>　参考図面の右側主翼付け根、翼弦の中間あたりにカーソルを移動させると、細い黄色の十字線がそれに連れて移動します。<br>　赤丸印の位置で左クリックすると、基準線がその位置から上下に、150mm ずつ描かれます。</p>
+<p class="photo"><img src="../photo/LibreCAD_19-E.jpg" alt="" width="450" height="338"></p>
+<p>　参考図面が表示されているのでわかりにくいですが、レイヤーウィンドウにて、「01 IMG」レイヤーの「目玉アイコン」を左クリックすると、参考図面が非表示となり、基準線が見えるようになります。</p>
+<p class="photo"><img src="../photo/LibreCAD_19-F.jpg" alt="" width="299" height="271"></p><br>
+
+<p><strong>主翼の矩形部分</strong></p>
+<p>　単純な矩形（長方形）の主翼であれば、矩形描画ツールで描くことが出来ます。<br>
+<p class="photo"><img src="../photo/LibreCAD_20.jpg" alt="矩形描画ツール" width="346" height="217"></p>
+<p>　フリーハンドで矩形を描くなら、対角線上の２点を指定すれば描けます。しかし、これだとキッチリとしたサイズで描けません。参考図面・三面図があればまだ良いのですが、あとから寸法線を入れてみると、片翼幅が 498mm とかになってしまい、ちょっと気持ち悪いです。（笑）。<br>
+　そこで、指定したサイズの矩形を描く場合には、以下の手順で行います。</p>
+<ol class="std">
+	<li>メニュー右側の「Widgets」>>「ドックウィジェット(g)」>>「コマンドライン」にチェックを入れる（その場所でマウスボタンを放す）。<br>
+　画面上にコマンドラインウィンドウが開きます。
+　<p class="photo"><img src="../photo/LibreCAD_22.jpg" alt="画面上にコマンドラインウィンドウが開きます。" width="345" height="377"></p></li>
+<li>　レイヤーの一覧ウィンドウから、「03 Outline」を選択しておきます。<br>
+<p class="photo"><img src="../photo/LibreCAD_22-B.jpg" alt="" width="296" height="343"></p></li>
+	<li>ツールバーアイコンの「スナップ選択」グループから、「要素の上」ツールを選びます。こうすると、先に作図した基準線の上に、主翼の矩形の作図開始点を正確に位置づけられます。<br>
+<p class="photo"><img src="../photo/LibreCAD_20-B.jpg" alt="「点(P)」メニュー" width="415" height="233"></p></li>
+	<li>矩形描画ツールを左クリック	します。<br>
+<p class="photo"><img src="../photo/LibreCAD_20.jpg" alt="矩形描画ツール" width="346" height="217"></p></li>
+	<li>　矩形を描きたい基準点、例えば、参考図面の右主翼の左上端、かつ、基準線付近で左クリックします。おおよその位置まで近づければ、自動的に基準線の上にスナップします。<br>
+<p class="photo"><img src="../photo/LibreCAD_20-C.jpg" alt="矩形を描きたい基準点、例えば、参考図面の右主翼の左上端、かつ、基準線付近で左クリックします。" width="450" height="450"></p></li>
+	<li>キーボードの「Tab」キーを押します。すると、コマンドラインウィンドウの最下段の「2つ目のコーナー指示」の文字が青くなり、入力を促されます。
+<p class="photo"><img src="../photo/LibreCAD_22-C.jpg" alt="相対座標 @700,-200 （すべて半角）を入力し、「Enter」キーを押します" width="305" height="204"></p>
+　先ほど、右主翼の左上端を基準点としたので、右主翼幅 700mmと、翼弦長を 200mm とした場合、<span class="red">@700,-200</span> と入力し、「Enter」を押します。翼弦長 200 を、マイナスの値で入力することに注意して下さい。</li>
+	<li>一見分かりづらいですが、「レイヤーの一覧」ウィンドウにある「01 IMG」の左側、眼の形をしたアイコンをクリックして、01 IMG レイヤーを非表示とすれば、03 Outline レイヤー上に描かれた黄色の矩形が見えます。</li>
+	<li><a href="#measure">「機体サイズの決定と参考図面の拡大・縮小」　5. ステップ</a>で述べた寸法測定の要領で、描かれた右主翼アウトラインの寸法を測ってみれば、正確に 700 × 200mm の矩形になっています。<br>
+	<p class="photo"><a href="../photo/LibreCAD_22-D.jpg" target="_blank"><img src="../photo/LibreCAD_22-D-S.jpg" alt="" width="450" height="184"></a></p><div class="caption">画像をクリックすると、<br>別ウィンドウに大きな画像が表示されます。</div>
+	</li>
+	<li>矩形の水平尾翼であれば、同様にしてアウトラインを作図できます。</li>
+<p><strong>翼端の曲線部、あるいは楕円翼</strong></p>
+<ol class="std">
+	<li>自由曲線を描くには、「ツール(T)」>>「曲線(C)」>>[
+「スプライン（通過点指示）(S)」　ツールを用います。<br>
+<p class="photo"><img src="../photo/LibreCAD_25.jpg" alt="スプライン（通過点指示）(S)　ツール" width="500" height="295"><br>
+　ツールバーの中では、以下のボタンです。<br>
+<p class="photo"><img src="../photo/LibreCAD_26.jpg" alt="スプライン（通過点指示）(S)　ツール" width="358" height="215"></p><br>
+　スプライン（通過点指示）ツールでは、マウスでクリックする点を結んで次々と曲線が伸びていきます。曲線を終わらせたい位置に来たら、右クリックで描画が終わります。</li>
+	<li>スプライン（通過点指示）(S)　ツール　を選択します。</li>
+	<li>ツールバーの中から、「終点」ツールアイコンを左クリックして選択します。<br>
+<p class="photo"><img src="../photo/LibreCAD_18.jpg" alt="" width="438" height="215"></p><br></li>
+	<li>先ほど描いた右主翼半分の矩形部の右上にポインターを近づけると、矩形右上隅にスナップしますので、左クリックします。<span class="red">下図の赤丸の位置。</span><br>
+	<strong><span class="red">　ここで、「終点」ツールアイコンを再度クリックして、選択を解除しておきます。これを忘れると、スプライン曲線が思うように描けません。</span></strong><br>
+<p class="photo"><img src="../photo/LibreCAD_27.jpg" alt="翼端部の曲線上で次々と左クリックしてゆきます。" width="337" height="719"></p>
+参考図面翼端部の曲線上（<span class="blue">上図の青丸印</span>）で次々と左クリックしてゆきます。<br></li>
+<li>翼端部の曲線の終点、上図のピンク色の丸印　まで来たら右クリックします。これでスプライン曲線の描画が終わります。<br>
+　ちょっと曲線がいびつだな.....と思ったら、スプライン曲線を選択し、表示される黄色い点をマウスで動かすことで修正できます。<br>
+<p class="photo"><img src="../photo/LibreCAD_27-4.jpg" alt="スプライン曲線を選択し、表示される黄色い点" width="351" height="691"></p>
+水色矢印で示した点の位置が、何となく変です。曲線が美しくありません。
+<p class="photo"><img src="../photo/LibreCAD_27-5.jpg" alt="修正後" width="351" height="691"></p>
+修正後の曲線です。まァ、気持ちの問題ですね。（笑）</li>
+
+<li>次は、矩形部と翼端部の接合を行います。「ツール(T)」>>「直線(L)」メニューにある線分(2)ツール を選択します。<br>
+<p class="photo"><img src="../photo/LibreCAD_31.jpg" alt="線分(2)ツール" width="387" height="212"></p><br>次に、「終点」ツールアイコンを左クリックして選択します。
+<p class="photo"><img src="../photo/LibreCAD_18.jpg" alt="" width="438" height="215"></p><br>
+　十字ポインターを矩形部右下に近づけると、自動的にスナップしますので、左クリック。これで、二つの図形を結ぶ線の始点が定まりました。<br>
+　そうしたら、再度「終点」ツールアイコンを左クリックして、選択を解除します。</li>
+	<li>今度はツールバーの中から、<span class="blue">「要素の上」青丸印</span>と<span class="red">「移動方向（水平制限）」赤丸印</span>アイコンを、それぞれ左クリックします。<br>
+<p class="photo"><img src="../photo/LibreCAD_29.jpg" alt="「要素の上」と「移動方向（水平制限）」アイコン" width="358" height="214"></p><br>
+　こうすることで、線分を描く方向を水平制限し、少しはみ出した翼端部の曲線上に終点を定めることが出来ます。</li>
+	<li>　続いて翼端部の曲線の終点付近にポインターを近づけ、マウスホイールを動かし、ズームインして、曲線上で左クリックします。<br>
+<p class="photo"><img src="../photo/LibreCAD_30.jpg" alt="" width="476" height="337"></p><br>
+<p class="photo"><img src="../photo/LibreCAD_31-2.jpg" alt="" width="476" height="346"></p><br>
+　これで、不細工ながら矩形部と翼端部とが接合できました。</li>
+	<li>最後に、はみ出した不要部分の修正です。<span class="red">ところが、はみ出しているのがスプライン曲線のため、トリムツールは使えないようです。（泣）</span><br>
+　そこで、LibreCAD のポインターを使って、翼端部の曲線を選択します。
+<p class="photo"><img src="../photo/LibreCAD_31-5.jpg" alt="" width="500" height="570"></p>
+　すると、曲線が選択されていることを示すピンク色の点線に変わり、カーブの曲がり具合をコントロールする黄色い点が表示されます。<span class="red">図中の赤丸印</span></li>
+<li>　ツールバーの中から、<span class="red">「要素の上」赤丸印</span>アイコンを左クリックします。<br>
+　<p class="photo"><img src="../photo/LibreCAD_29-2.jpg" alt="「要素の上」と「移動方向（水平制限）」アイコン" width="363" height="214"></p><br>
+　そして、翼端部の曲線の端にポインターを当て、わずかに見えている終点をドラッグし、矩形部から伸びている直線部まで移動して、左クリックします。<br>
+　<p class="photo"><img src="../photo/LibreCAD_31-6.jpg" alt="終点をドラッグし、矩形部から伸びている直線部まで移動" width="334" height="431"></p>
+<p class="photo"><img src="../photo/LibreCAD_31-7.jpg" alt="矩形部と翼端部の曲線の接合の完成" width="334" height="424"></p></li>
+</ol>
+<p>　これまでの作業で、参考図面・三面図上の<span class="red">「片側のみ」</span>の主翼のアウトラインを作図できました。<br>　これから、参考線を引いて反転コピーをします。こうすることで、かなり省力化が出来ます！</p>
+<ol class="std">
+	<li>「02 Ref-line」のレイヤーを選択し、水平尾翼の左端に、反転コピーのための参考線を引きます。それから、水平尾翼の右半分のアウトラインを描きます。
+<p class="photo"><img src="../photo/LibreCAD_33.jpg" alt="" width="500" height="360"></p>
+</li>
+	<li>LibreCAD のポインターで、水平尾翼の右半分を囲むようにして全体的に選択します。
+<p class="photo"><img src="../photo/LibreCAD_33-1.jpg" alt="" width="500" height="336"></p></li>
+	<li>「反転(M)」ツールと「要素の上」ツールとを選択します。
+<p class="photo"><img src="../photo/LibreCAD_33-2.jpg" alt="" width="325" height="194"></p></li>
+	<li>ステータスバーに、「対称軸の一点目指示」と表示されますので、黄緑色の参考線の上で左クリックします。<br>
+
+<p class="photo"><img src="../photo/LibreCAD_33-3.jpg" alt="" width="398" height="113"></p>
+　ステータスバーが、「対称軸の二点目指示」に変わります。参考線上の違う位置で左クリックします。すると、鏡面オプションウィンドウが開きます。
+<p class="photo"><img src="../photo/LibreCAD_33-4.jpg" alt="" width="353" height="243"></p>
+　複写回数は、「原本保持」、「現在属性を使用」にチェックを入れます。<br>
+　翼のアウトライン以外に、例えばヒンジの位置などを「08 Linkage」 レイヤー上に描いた場合には、「現在のレイヤーを使用」にはチェックを入れません。<br><span class="red">　ここにチェックが入ったまま反転コピーすると、すべて一緒のレイヤーに入ってしまいます！</span></li>
+	<li>反転コピーによって、水平尾翼のアウトラインが一瞬で完成しました。
+<p class="photo"><img src="../photo/LibreCAD_33-5.jpg" alt="" width="500" height="150"></p>
+</ol>
+
+<p class="top" id="taper"><strong>テーパー・後退・前進翼など、単純な矩形翼では無い形状の場合</strong></p>
+<p>　矩形以外の翼の作図には、「ツール(T)」>>「直線(L)」メニューにある、線分(2)、角度指定線(A)、水平寸法(H)<span class="red">→これはおそらく日本語化プロセスのミスで、水平線が正しいと思われます。</span>、垂直線<br>
+<p class="photo"><img src="../photo/LibreCAD_24.jpg" alt="" width="500" height="564"></p>
+　などのツールが便利です。<br>
+　ツールバーの中では、次のようなアイコンです。<br>
+<p class="photo"><img src="../photo/LibreCAD_24-2.jpg" alt="線分(2)、角度指定線(A)、水平寸法(H)、垂直線" width="347" height="210"></p>
+</p>
+<p>　ここで、主翼幅1500mm、翼弦長が主翼付け根で 250mm、翼端で180mm、前縁の後退角が20°というテーパー・後退翼のアウトラインを描いてみましょう。</p>
+<ol class="std">
+	<li>レイヤーの一覧ウィンドウで、03 Outline レイヤーを選択します。<br>
+	<p class="photo"><img src="../photo/LibreCAD_32-0.jpg" alt="03 Outline レイヤーを選択します。" width="297" height="548"></p><br>
+	<li>垂直線ツールを選択します。<br>
+<p class="photo"><img src="../photo/LibreCAD_32-1.jpg" alt="垂直線ツールを選択します。" width="384" height="215"></p><br>
+長さを250mm に指定します。点スナップは「始点」を選択します。
+<p class="photo"><img src="../photo/LibreCAD_32-2.jpg" alt="長さを250 に指定します。点スナップは「始点」を選択" width="366" height="215"></p></li>
+	<li>垂直線を描き始めたい位置で左クリックすると、長さ 250mm の線分が描けます。これが右主翼の付け根を示すアウトラインです。<br>
+	<p class="photo"><img src="../photo/LibreCAD_32-2B.jpg" alt="垂直線を描き始めたい位置で左クリックすると、長さ 250mm の線分が描けます。これが右主翼の付け根を示すアウトラインです。" width="341" height="658"></p></li>
+	<li>作図の参照線を描くために、レイヤーの一覧ウィンドウで、02 Ref-line レイヤーを選択します。<br>
+	<p class="photo"><img src="../photo/LibreCAD_03.jpg" alt="レイヤーの一覧ウィンドウで、02 Ref-line レイヤーを選択します。" width="301" height="561"></p></li>
+	
+	<li>水平線ツールを選択します。（ポップアップガイドでは、水平寸法(H)となっていますが！）
+<p class="photo"><img src="../photo/LibreCAD_32-3B.jpg" alt="水平線ツールを選択します。" width="341" height="304"></p>
+長さを主翼幅 1,500 / 2 = 750mm に指定し、点スナップは「始点」を選択します。「終点」ツールも選択しておきます。
+<p class="photo"><img src="../photo/LibreCAD_32-4.jpg" alt="長さを主翼幅 1,500 / 2 = 750mm に指定し、点スナップは「始点」を選択します。「終点」ツールも選択しておきます。" width="479" height="213"></p></li>
+	<li>右主翼の付け根を示すアウトラインの下端付近で左クリックします。描画の始点が自動的に下端にスナップされ、そこから緑色の点線で、長さ 750mm の水平参考線が描かれます。
+<p class="photo"><img src="../photo/LibreCAD_32-5.jpg" alt="" width="500" height="240"></p></li>
+	<li>次に、翼端の垂直参考線を描きます。垂直線ツールを選択し、長さを 1,000 に指定、点スナップは「中点」を選択します。さらに「終点」ツールも選択しておきます。<br>
+	<p class="photo"><img src="../photo/LibreCAD_32-5B.jpg" alt="" width="500" height="121"></p></li>
+<li>さっき作図した 750mm の水平参考線の右端付近で左クリックします。長さ 500mm の垂直参考線が上下両方向に描かれます。
+<p class="photo"><img src="../photo/LibreCAD_32-6.jpg" alt="長さ 500mm の垂直線が上下両方向に描かれます。" width="500" height="579"></p></li>
+<li>今度は、主翼アウトラインを描くために、レイヤーの一覧ウィンドウで、03 Outline レイヤーを選択します。<br>
+	<p class="photo"><img src="../photo/LibreCAD_32-0.jpg" alt="03 Outline レイヤーを選択します。" width="297" height="548">
+	<p>角度指定線（A）ツールを選択し、角度を -20（= 右主翼の前縁後退角 20°、水平から時計回りはマイナスの数値で入力）、長さを 1,000 に指定します。（長めに引き、後でトリムします。）　点スナップは「始点」を選択します。「終点」ツールも選択しておきます。<br>
+	下図をクリックすると、大きな図が別ウィンドウにて開きます。<br>
+<p class="photo"><a href="../photo/LibreCAD_32-6B-L.jpg" target="_blank"><img src="../photo/LibreCAD_32-6B.jpg" alt="" width="500" height="129"></a></p></li>
+<li>最初に描いた 250mm の主翼付け根のアウトラインの上端付近で左クリックします。前縁のアウトラインが右斜め下 20°方向に描かれます。
+<p class="photo"><img src="../photo/LibreCAD_32-8.jpg" alt="長さ 500mm の垂直線が上下両方向に描かれます。" width="500" height="229"></p></li>
+<li>「ツール(T)」>>「変更・修正(M)」>>トリム(T) ツールを選択します。<br>
+<p class="photo"><img src="../photo/LibreCAD_31-3.jpg" alt="" width="500" height="423"></p><br>
+　ツールバーの中では、次のアイコンです。<br>
+<p class="photo"><img src="../photo/LibreCAD_31-4.jpg" alt="ツールバーの中では、次のアイコンです。" width="348" height="215"></p></li>
+
+<li>LibreCADウィンドウの最下段のステータスバー中央に、「範囲図形選択」という指示が出ます。
+<p class="photo"><img src="../photo/LibreCAD_32-9.jpg" alt="垂直の参考線を左クリックすると、参考線の色がグレーに変わります" width="500" height="162"></p>
+トリム（裁ち落とし）の基準となる、垂直の参考線（黄緑色点線）を左クリックすると、参考線の色がグレーに変わります。
+<p class="photo"><img src="../photo/LibreCAD_32-10.jpg" alt="トリム（裁ち落とし）の基準となる、垂直の参考線（黄緑色点線）を左クリックすると、参考線の色がグレーに変わります。" width="500" height="524"></p></li>
+<li>範囲図形＝グレーの線の内側のアウトラインを左クリックします。範囲図形から先のアウトラインがトリムされます。
+<p class="photo"><img src="../photo/LibreCAD_32-11.jpg" alt="範囲図形＝グレーの線の内側のアウトラインを左クリックします。範囲図形から先のアウトラインがトリムされます。" width="500" height="579"></p></li>
+<li>翼の翼弦長を 180mm にしたいので、「垂直線」ツールを選択し、長さ : -180（下向き）、点スナップを「始点」に指定、「終点」ツールも選択しておきます。</li>
+<li>先ほどトリムした、右主翼前縁のアウトラインの端部付近にポインターを移動させると、自動的にスナップされるので、左クリックすれば、翼端のアウトライン（黄色の線）が描けます。
+<p class="photo"><img src="../photo/LibreCAD_32-12.jpg" alt="翼端のアウトライン（黄色の線）が描けます。" width="300" height="518"></p></li>
+<li>最後に、後縁のアウトラインを描きます。「線分(2)」ツールを選択し、
+<p class="photo"><img src="../photo/LibreCAD_31.jpg" alt="" width="387" height="212"></p>
+「終点」ツールも選択しておきます。
+<p class="photo"><img src="../photo/LibreCAD_18.jpg" alt="" width="438" height="215"></p>
+</li>
+<li>主翼付け根のアウトライン下端付近で左クリック、翼端のアウトライン下端付近で左クリックすると、二つの点を結ぶアウトラインが描けます。
+<p class="photo"><img src="../photo/LibreCAD_32-13.jpg" alt="二つの点を結ぶアウトラインが描けます。" width="500" height="299"></p>
+　これで、テーパー・後退角を持つ翼の、右側アウトラインの作図ができました！</li>
+</ol>
+
+<p id="text-dim" class="top"><strong>コメント、寸法線の記入</strong></p>
+<p>　今度は、今描いたテーパー・後退翼のアウトラインに、コメントや寸法線を記入しましょう。</p>
+<ol class="std">
+<li>まず、04 Text-Dim レイヤーをクリックして選択します。レイヤー名が太字になり、選択されていることがわかります。こうやって、レイヤー区分することで作図作業が効率化できます。<br>
+　例えば、コメントや寸法線がたくさんあり過ぎて、次の部品が描きにくい時にはレイヤー名の左側、目玉アイコンをクリックすれば、一時的に非表示/再表示が出来ます。
+<p class="photo"><img src="../photo/LibreCAD_35.jpg" alt="04 Text-Dim レイヤーをクリックして選択" width="296" height="590"></p></li>
+<li>次に、平行寸法(A)ツールを選択します。平行寸法ツールは、その名の通り、対象の図形と平行に寸法線が描かれます。
+<p class="photo"><img src="../photo/LibreCAD_35-2.jpg" alt="平行寸法(A)ツール" width="219" height="213"></p></li>
+<li>「終点」ツールを選択します。
+<p class="photo"><img src="../photo/LibreCAD_18.jpg" alt="「終点」ツール" width="438" height="215"></li>
+<li>テーパー・後退翼の付け根上端で左クリック、下端でもう一度度クリックします。<br>　<span class="red">続いて、「終点」ツールをクリックして選択を解除し、「終点」へスナップする機能を無効にします。そうしないと、寸法線・寸法の数値がアウトライン直上から離れず、思った位置に寸法線が引けません。</span>（泣）
+<p class="photo"><img src="../photo/LibreCAD_35-3.jpg" alt="テーパー・後退翼の付け根上端で左クリック、下端で再度クリック" width="500" height="644"></p>
+</li>
+<li>寸法線上に、主翼の付け根の翼弦長が 250(mm) と正しく描けました。
+<p class="photo"><img src="../photo/LibreCAD_35-4.jpg" alt="「終点」ツールをクリックして「終点」へスナップする機能を無効化" width="400" height="221"></p></li>
+</li>
+<li>同じやり方を、前縁部、翼端部、後縁部に繰り返すと、すべての寸法線が記入できます。
+<p class="photo"><img src="../photo/LibreCAD_35-5.jpg" alt="" width="500" height="323"></p></li>
+<li>最後に、右主翼の翼幅 750mm の寸法を書いておきましょう。これには水平寸法(H)ツールを用います。
+<p class="photo"><img src="../photo/LibreCAD_11.jpg" alt="" width="387" height="213"></p>
+　ステップ 3. と同じく、「終点」ツールも選択します。
+　<p class="photo"><img src="../photo/LibreCAD_18.jpg" alt="「終点」ツール" width="438" height="215"></li>
+<li>後縁部の左右の端を、順次左クリックし、「終点」ツールをクリックして選択を解除してから、お好みの位置にポインターを移動させて寸法線を描きます。
+<p class="photo"><img src="../photo/LibreCAD_35-6.jpg" alt="" width="500" height="370"></p></li>
+<li>正しく1/2 の主翼幅 750mm が描けています。クドい.....（笑）
+<p class="photo"><img src="../photo/LibreCAD_35-7.jpg" alt="" width="400" height="306"></p></li>
+</ol>
+
+<p id="fuse-side" class="top"><strong>胴体側面・垂直尾翼のアウトラインの作図</strong></p>
+<p>　胴体側面・垂直尾翼のアウトラインも、これまでに述べた、矩形、スプライン曲線、スプライン曲線の端部調整、線分、角度指定線、トリムなどの方法で作図できます。<br>
+
+<p class="photo"><img src="../photo/LibreCAD_36.jpg" alt="参考図面の胴体・垂直尾翼の作図結果" width="500" height="143"></p><br>
+<p>01 IMG レイヤーの目玉アイコンをクリックして、参考図面レイヤーを非表示にします。<br>
+<p class="photo"><img src="../photo/LibreCAD_36-A.jpg" alt="目玉アイコンがグレーに変わり、参考図面の画像が見えなくなる。" width="296" height="272"></p>
+</p>
+<p>目玉アイコンがグレーに変わって、参考図面が非表示となり、胴体側面・垂直尾翼のアウトラインのみが表示されました。
+<p class="photo"><img src="../photo/LibreCAD_36-2.jpg" alt="参考図面を非表示にして、 03 Outline ：アウトラインレイヤーのみを表示した結果" width="500" height="151"></p>
+
+
+<p id="airfoil" class="top"><strong>翼型データの取り込み</strong></p>
+<p>　飛行機の翼の断面形：翼型　というのは、はるか昔から大勢の方々が、膨大な数を考案してきました。その中で有名な翼型に、<br><a href="https://w.wiki/B7bt" target="_blank">Clark-Y 翼型（ウィキペディア日本語版）</a><br>
+<a href="https://w.wiki/B7bq" target="_blank">Clark Y airfoil（ウィキペディア英語版）</a><br>
+というものがあります。
+<p class="photo" id="clarky"><img src="../photo/clarky.gif" alt="" width="500" height="375"><div class="caption">出典：<a href="https://m-selig.ae.illinois.edu/ads/coord_database.html" target="_blank">UIUC Airfoil Coordinates Database</a></div></p>
+<p>　実機では、あのリンドバーグ氏の偉業を成し遂げたスピリット・オブ・セントルイス号やイギリスの戦闘機ホーカー・ハリケーンに採用されました。模型飛行機が飛ぶ場合のような、中程度の<a href="https://ja.wikipedia.org/?curid=50293" target="_blank">レイノルズ数</a>（流体力学において慣性力と粘性力との比で定義される無次元量）で良好な性能を発揮することから、模型飛行機の発達期に好んで使われたようです。</p>
+<p>　Clark Y は、翼下面がフラットなので、工作台に定置しやすく初心者でも製作しやすいこと、良好な失速特性を持ち、全般的な飛行性能が良い、といった利点があるそうです。<br>
+</p>
+<p>　現在でも、「ムサシノ模型飛行機研究所のキットには、Clark Y を基に、製作しやすいようアレンジした翼型が使われています。<br>
+　一方、フラットな翼下面は、より高い空力的性能を追求した場合、必ずしも最適では無いようです。
+（参考：<a href="http://www.thoracentesis.science/2021/02/Clark-Y-airfoil%20.html" target="_blank">Clark Y airfoil Pros and Cons、Clark Y 翼型の長所と短所）</a></p>
+
+<p class="top">　さて。あなたが製作したいRC模型飛行機の翼型ですが、CADソフトと表計算ソフトを用いると、作業が効率化され、高精度になり、いろいろな機種に対応できるようになります。<br>
+　例えば、スロープソアリンググライダー、３Dエアロバティック競技機、室内用超軽量機に適した翼型は、それぞれかなり異なるでしょう。<br>
+　現在では、インターネット上にこうした情報が多数ありますので、どんな翼型を使いたいかが決まれば、あとは少し手間をかけるだけです。</p>
+<p>　とは言うものの、翼型を決めるのはなかなか難しいものです。そこで、現在（2025-08時点）流行りの、人工知能：AIを用いて、あなたの作りたいRC飛行機に適した翼型を決めることができます。<br>
+　私が使っているのは、<a href="https://grok.com/" target="_blank">Grok</a>　というサイトで、例えばこんなふうに「相談」することができます。</p>
+<p><span class="blue">質問：３Dやアクロバット飛行ができるラジコン飛行機を作りたいのですが、適した翼型を教えて下さい。</span></p>
+<p>Grok からの回答：3D、アクロバット飛行（例: ホバリング、トルクロール、ハリアーなど）ができるラジコン飛行機を作る場合、翼型は主に対称型（symmetrical airfoil）が適しています。これらは翼の上下が対称で、正立飛行と倒立飛行で同じようなリフトとドラッグ特性を発揮し、高迎え角（AoA）での失速耐性が優れているため、3Dマニューバの低速制御や急激な姿勢変化に耐えられます。非対称型（cambered airfoil）のように自然なリフトが発生しにくい分、速度を必要としますが、アクロバット性能を優先する設計に最適です。</p>
+<p>　以下に、適した翼型の例を挙げます。主にNACA 00xxシリーズ（対称型）が推奨され、厚さは12%〜18%程度が一般的です。厚いほど低速での安定性が高く、薄いほど高速性能が向上します。選ぶ際は、機体のサイズ、重量、モーター出力、素材（例: フォームやバルサ）を考慮してください。</p>
+<p>
+<table border="1">
+  <tr>
+    <td>翼型</td>
+    <td>厚さ（%）</td>
+    <td>特徴</td>
+    <td>適した理由</td>
+  </tr>
+  <tr>
+    <td><a href="https://m-selig.ae.illinois.edu/ads/afplots/naca0015.gif" target="_blank">NACA 0015</a></td>
+    <td>15</td>
+    <td>バランスの良い厚さで、構造強度が高く、低速でのリフト生成が安定。</td>
+    <td>精密アクロバットや3Dに最適。倒立飛行が容易で、急激なマニューバに耐える。</td>
+  </tr>
+  <tr>
+    <td>NACA 0012</td>
+    <td>12</td>
+    <td>薄めでドラッグが少なく、高速飛行向き。</td>
+    <td>3Dに加え、速度を出すアクロバットに。軽量機体でシャープな制御が可能。</td>
+  </tr>
+  <tr>
+    <td><a href="https://m-selig.ae.illinois.edu/ads/afplots/naca0018.gif" target="_blank">NACA 0018</a></td>
+    <td>18</td>
+    <td>厚めで高迎え角耐性が強く、低速安定性が高い。</td>
+    <td>極端な低速3Dマニューバ（ホバリングなど）に特化。失速しにくく、初心者向け。</td>
+  </tr>
+  <tr>
+    <td><a href="https://www.hisour.com/data/kline-fogleman_airfoil/" target="_blank">Kline-Fogleman (KF)</a></td>
+    <td>変動（ステップ型）</td>
+    <td>簡単構築でボルテックス生成によるリフト向上。</td>
+    <td>フォーム機体（foamies）の3D機に人気。低速耐性が高く、DIY向き。</td>
+  </tr>
+</table>
+</p>
+
+<p>選定のポイント<br>
+○なぜ対称型か？：3D飛行では機体が上下逆さまになることが多く、非対称型（例: Clark YやNACA 2412）は背面飛行の時に性能が落ちるため不向き。<br>
+　対称型はAoA（Attack of Angle：飛行時の迎角）に依存したリフト生成で、ポジティブ/ネガティブ両方の挙動が均等。</p>
+<p>
+○厚さの選択：3D特化なら15%前後が標準。厚すぎると空気抵抗（ドラッグ）が増え、薄すぎると低速で失速しやすい。翼弦長（chord）とスパン（主翼幅）も調整を。</p>
+
+<p>
+○追加Tips：<a href="https://ja.wikipedia.org/wiki/XFOIL" target="_blank">XFOIL</a>などのツール<a href="https://web.mit.edu/drela/Public/web/xfoil/" target="_blank">（XFOILのサイトはこちら）</a>でシミュレーションをすると良い。機体設計時は、翼面積を大きめにし、推力重量比を1.5以上（機体重量が1,000gなら、推力は1,500g以上）確保すると3D飛行がしやすくなります。
+
+これを基に設計を進めてみてください。実際の飛行テストで微調整を！</p>
+<p class="top">　それではこれから、Clark Y 翼型座標データを LibreCAD に取り込む場合の手順を説明します。（もっと良い方法があれば、ご教授ください。）</p>
+<ol>
+	<li>まず、<a href="https://m-selig.ae.illinois.edu/ads/coord_database.html" target="_blank">UIUC Airfoil Coordinates Database</a>：イリノイ大学の翼型座標データベースにアクセスします。
+	<p class="photo"><img src="../photo/LibreCAD_37.jpg" alt="イリノイ大学の翼型座標データベース" width="500" height="296"></p>
+　それぞれの翼型は、頭文字のアルファベット順に整理されていますので、Clark Y であれば、Cのリンクをクリックします。NACA系統の翼型であれば、Nをクリックします。</li>
+	<li>C で始まる翼型のリストが表示され、CLARK Y airfoil という行に、clarky.dat　と clarky.gif というリンクがあります。clarky.gif は、<a href="#clarky">先ほどのGIF形式の画像データ</a>で、一目見ればすぐ印象がつかめます。<br>
+<p class="photo" id="clarky"><img src="../photo/clarky.gif" alt="" width="500" height="375"><div class="caption">出典：<a href="https://m-selig.ae.illinois.edu/ads/coord_database.html" target="_blank">UIUC Airfoil Coordinates Database</a></div></p>
+
+　じゃぁ、このGIF画像を LibreCAD にインポートして、スプライン（通過点指示）ツールでなぞれば簡単に作図できるじゃないか！　と思われるでしょう。<br>
+<p class="photo"><img src="../photo/LibreCAD_37-B.jpg" alt="スプライン（通過点指示）ツール" width="450" height="171"><div class="caption">スプライン（通過点指示）ツール</div></p>
+　
+　しかし、スプライン曲線は、カーブの描画は簡単ですが、切った貼った.....などの修正作業になると、なかなか思うようになりません。<br>
+　それでは地道に線分(2) ツールや円弧ツールを使い、ズームインして多数の短い線分で書き上げる方法も、確かにあります。私はまだ、その方法を試していませんので、どうぞお試し下さい。案外そっちの方が早いかもしれません。（笑）
+</li>
+	<li>CLARK Y airfoil という行にある、<a href="https://m-selig.ae.illinois.edu/ads/coord/clarky.dat" target="_blank">clarky.dat</a> というリンクは、このデータベースの標準座標系に従って記述された、X-Y 座標が並んだ数字の羅列ページです。（笑）<br>
+<p class="photo"><img src="../photo/LibreCAD_37-3.jpg" alt="標準座標系" width="500" height="218"></p>
+<blockquote>
+<span class="darkblue">
+<p>アーカイブス　＝　データベースに収録されている翼型データに関する解説<br>
+<p>- 標準的な*.dat形式の座標です：</p>
+<p>- 座標の順序は、上面後縁から始まり、前縁を回って下面後縁に至る（下図のように反時計回りに）。</p>
+<p>- このフォーマットのファイルのディレクトリです： 約1,600枚の翼形が収録されているフォルダを参照。</p>
+<p>- Zip アーカイブ: coord_seligFmt.zip. [ 最終更新日：2021年12月10日 ]。</p>
+<p>- これらのファイルはDOSのEOF形式（PC）で、TABSを含んでいないことに注意してください。</p>
+<p>最初の行には、翼形名と任意の説明が書かれています。</p>
+<p>- このフォーマットは、Rhinoプラグインを使用して、Rhinoで直接読み込み/プロットすることができます。</p>
+</span>
+</blockquote>
+
+<p>
+<p class="photo"><img src="../photo/LibreCAD_37-4.jpg" alt="X-Y 座標が並んだ数字の羅列" width="282" height="532"></p>
+　実際は、さらに座標データが続きます。<br>
+　このページをブラウザーで開いたら、「すべて選択：Ctrl+A」した後で「コピー：Ctrl+C」します。</li>
+	<li>「メモ帳」などのテキストエディタを起動し、「貼り付け：Ctrl+V」を行います。
+	<p class="photo"><img src="../photo/LibreCAD_37-5.jpg" alt="" width="500" height="431"></p>
+　*無題　のファイルに「Clark-Y.txt」と名前を付けて、機体の設計図面を収めているのとは別の「翼型データ」などと名付けたフォルダーに保存します。そうすると、後で使いたいとき、別の翼型データを保存するときなどに便利です。</li>
+	<li>表計算ソフト「Excel」や「LibreOffice」の「Calc」などを起動します。クラウドアプリの Google スプレッドシートでも良いでしょう。<br>
+　オープンソース・フリーソフトのLibreOffice - Calc（Ver 7.5.2.2）では、「ファイル」>>「開く」で、さっき保存した「Clark-Y.txt」を開くと、自動的にテキストファイル形式であることを認識し「テキストのインポート」ウィンドウが開きます。<br>
+　<p class="photo"><img src="../photo/LibreCAD_37-6.jpg" alt="「テキストのインポート」ウィンドウが開きます。" width="500" height="497"></p>
+　ここで、「区切りのオプション」>>「次の記号で区切られたフィールド(S)」の指定では「タブ」「コンマ」「セミコロン」「その他」のチェックは外し、「スペース(P)」にチェックを入れ、OK をクリックします。<br>
+　作者の使っている Excel 2013 では、「データ」>>「外部データの取り込み」>>「テキストファイル」にて、同様の機能がありますが、いささか古いので、最新版 Excel での「スペース区切り形式」のテキストファイルのインポートを調べてみて下さい。</li>
+	<li>LibreOffice - Calc に Clark-Y の翼型座標が読み込めたら、今度は LibreCAD へインポートさせるためのデータ加工です。
+<p class="photo"><img src="../photo/LibreCAD_37-7.jpg" alt="LibreCAD へインポートさせるためのデータ加工" width="500" height="300"></p>
+　オリジナルデータの翼型名称、61の数字、空白行は必要ないので 1から3 行まで選択した後に右クリックし、「行の削除」を行います。
+</li>
+	<li>Clark-Y の翼型座標データには、62行目に空白行があるので、この行も削除します。
+	<p class="photo"><img src="../photo/LibreCAD_37-8.jpg" alt="62行に空白行があるので、この行も削除" width="424" height="532"></p></li>
+	<li>LibreCAD では、座標のインポートを行う場合、座標の連番が必要になるので、A 列に、順次番号を振ります。
+<p class="photo"><img src="../photo/LibreCAD_37-9.jpg" alt="A 列に、順次番号を振ります" width="416" height="719"></p>
+　この場合、A 列の1行目、2行目にそれぞれ、1, 2 と数字を入力し、２つのセルを選択し、選択セル範囲の右下にポインターを移動させると「十字型」にポインターが変化し、そのまま下方向へデータの最後までドラッグすれば、連番が振れます。
+<p class="photo"><img src="../photo/LibreCAD_37-10.jpg" alt="" width="413" height="679"></p>
+　Clark Y の翼型座標データには、122組の X, Y 座標がありました。これが「基礎データ」となります。というのは、この座標系は、翼型の最大幅を 1 としていますので、そのまま LibreCAD に取り込むと、<span class="red">翼弦長が 1mm ！</span>　になってしまいます。（笑）<br>
+　ですので、<a href="#taper">テーパー・後退・前進翼など幾何学的形状翼の場合</a>を例として、翼弦長 250mm の座標データを作成してみます。　</li>
+
+	<li>LibreOffce Calc において、A列の列名称の位置で左クリックし、A列全体を選択してから、コピー（Ctrl+C）します。
+<p class="photo"><img src="../photo/LibreCAD_37-11.jpg" alt="A列全体を選択してから、コピー（Ctrl+C）" width="429" height="570"></p>
+　次に、E列全体を選択してから、貼り付け（Ctrl+V）ます。<br>
+<p class="photo"><img src="../photo/LibreCAD_37-12.jpg" alt="" width="500" height="445"></p>
+　これで座標データの連番が E列にコピーできました。（上図では見えていませんが、122行までコピーされています）</li>
+	<li>　今度は、各座標を、翼弦長 250mmに対応させるための数式を、FおよびG 列に記入します。<br>
+　F1セルに半角で　　=B1*250　　と入力して下さい。<br>
+　G1セルに半角で　　=C1*250　　と入力して下さい。<br>
+　これは、B1およびC1セルの座標データを250倍するという意味の数式です。<br>
+<p class="photo"><img src="../photo/LibreCAD_37-13.jpg" alt="" width="500" height="218"></p>
+　B1, C1 セルの数値が250倍されますが、元の値が「0」なので、F1, G1 セルの計算結果は 0 になります。
+</li>
+	<li>F1, G1セルを選択し、G1セルの右下にポインターを移動させると、ポインターが「十字型」に変化するので、そのまま下方向へ最終行： 122行までドラッグすれば、数式がコピーされ、B, C 列の座標データが250倍された数値となります。
+<p class="photo"><img src="../photo/LibreCAD_37-14.jpg" alt="" width="494" height="481"></p></li>
+	<li>Calc の「ファイル」>>「名前を付けて保存」メニューから、加工した座標データを、「ODF 表計算ドキュメント」、拡張子は (.ods) で保存します。<br>
+<p class="photo"><img src="../photo/LibreCAD_37-15.jpg" alt="加工した座標データを、「ODF 表計算ドキュメント」、拡張子は (.ods) で保存" width="500" height="233"></p></li>
+	<li>Calc のウィンドウ左下に、これまで加工してきた座標データが入っている「シート」の名称「Clark-Y」タブが見えます。その右の「＋」アイコンをクリックします。<br>
+<p class="photo"><img src="../photo/LibreCAD_37-16.jpg" alt="" width="427" height="343"></p>
+
+すると、白紙の「Sheet2」が作成されます。
+<p class="photo"><img src="../photo/LibreCAD_37-17.jpg" alt="白紙の「Sheet 2」が作成されます" width="500" height="528">
+　"Sheet2" というタブを左ダブルクリックして、シートの名称を「翼弦長250mm」と、変更して下さい。</p>
+<p class="photo"><img src="../photo/LibreCAD_37-18.jpg" alt="" width="500" height="211"></p></li>
+	<li>「Clark-Y」 シートタブをクリックして、選択します。続いて、E1からG122 までの範囲をドラッグして選択し、コピー（Ctrl+C）します。</li>
+	<li>「翼弦長250mm」 シートタブをクリックして、選択します。<span class="blue"><b>A1 セルを右クリックし、ポップアップメニューから「形式を選択して貼り付け(S)」を選択し、数値(N)を選びます。</b></span><br>
+　これで、「翼弦長250mm」 シートのA1～C122セルに、翼弦長250mm のClark-Y 翼型座標データが貼り付けられました。<br>
+<p class="photo"><img src="../photo/LibreCAD_37-18-3.jpg" alt="" width="500" height="531"></p><br>
+<span class="red"><b>（注意！　ここで、単純な「貼り付け」を行うと、数式参照エラー：#REF! が発生します！）</b></span>
+<p class="photo"><img src="../photo/LibreCAD_37-18-2.jpg" alt="" width="500" height="379"></p>
+
+	<li>Calc の「ファイル」>>「名前を付けて保存...」>>「ファイルの種類」にて、「テキスト CSV」を選び、ファイル名は「Clark-Y 250mm.csv」として、「保存」をクリックして下さい。（拡張子 .csv ）は自動的に付加されます。<br>
+　すると、「ファイル形式の確認」ウィンドウが開きますので、「テキスト CSV 形式を使用」をクリックします。
+<p class="photo"><img src="../photo/LibreCAD_37-18-4.jpg" alt="" width="500" height="190"></p></li>
+	<li>　さらに、「テキストファイルのエクスポート」ウィンドウが開きますので、<br>「文字エンコーディング」>>「Unicode (UTF-8)」を、プルダウンメニューの最上段付近から選び、<br>
+「フィールドの区切り記号」>>「,」カンマ<br>
+を選んで「OK」をクリックします。
+<p class="photo"><img src="../photo/LibreCAD_37-18-5.jpg" alt="「文字エンコーディング」>>「Unicode (UTD-8)」を、プルダウンメニューの最上段付近から選び、「OK」をクリック" width="500" height="282"></p></li>
+	<li>「警告」ウィンドウが開きますが、これは「翼弦長 250mm」のシートにあるデータのみが保存された.....ということなのでご安心下さい。
+<p class="photo"><img src="../photo/LibreCAD_37-18-6.jpg" alt="「警告」ウィンドウが開きます" width="500" height="202"></p>
+</li>
+	<li>さて、今度は LibreCAD アプリに戻って「05 Airfoil 」レイヤーを選択して下さい。<br>
+<p class="photo"><img src="../photo/LibreCAD_38.jpg" alt="「05 Airfoil 」レイヤーを選択" width="298" height="604"></p>　</li>
+	<li>「プラグイン(u)」>>「ascii ポイントを読む」を選択します。
+<p class="photo"><img src="../photo/LibreCAD_38-1.jpg" alt="「プラグイン(u)」>>「ascii ポイントを読む」を選択" width="500" height="540"></p></li>
+	<li>「ascii ポイントを読む」ウィンドウが開きますので、<br>
+<p class="photo"><img src="../photo/LibreCAD_38-2.jpg" alt="「ascii ポイントを読む」ウィンドウが開きます" width="500" height="446"></p>
+「ファイル」ボタンをクリックして、先ほど保存した「Clark-Y 250mm.csv」を指定、<br>
+　「書式」は「カンマで分割」を指定し、<br>
+　他の指定欄のチェックはすべて外して「書く」ボタンをクリックします。</li>
+	<li>「Info」ウィンドウが開き、「dibpunto procesFile」というメッセージが出ますが、気にせずに「OK」をクリックします。（笑）
+<p class="photo"><img src="../photo/LibreCAD_38-3.jpg" alt="「dibpunto procesFile」というメッセージが出ますが、気にせずに「OK」をクリックします。" width="330" height="176"></p></li>
+	<li>一見、何の変化も無いように見えますが、LibreCAD の「表示(V)」>>「画面に合わせて拡大/縮小(A)」メニューを選択し、
+<p class="photo"><img src="../photo/LibreCAD_38-4.jpg" alt="「表示(V)」>>「画面に合わせて拡大/縮小(A)」メニューを選択" width="457" height="542"></p>	
+　ズームインしてゆくと、作図原点を示す赤い十字線の付近に、 Clark - Y 翼型の外形線と翼弦線が描かれています。
+<p class="photo"><img src="../photo/LibreCAD_38-5.jpg" alt="" width="500" height="120"></p>
+　翼弦長も正しく 250mm となっています。
+<p class="photo"><img src="../photo/LibreCAD_38-6.jpg" alt="" width="215" height="166"></p></li>
+</ol>
+
+<p class="top" id="airfoil-copy"><strong>取り込んだ翼型データの回転、移動、コピー</strong></p>
+<p>　続いて、LibreCAD に取り込んだ翼型の外形線・翼弦線を回転し、例題として作図したテーパー・後退翼の主翼付け根の下端へ移動、コピーします。</p>
+
+<ol class="std">
+	<li>まず、移動の目安とする参考線を描くために「02 Ref-line」レイヤーを選択します。
+	<p class="photo"><img src="../photo/LibreCAD_03.jpg" alt="「02 Ref-line」レイヤーを選択" width="301" height="561"></p></li>
+	<li>次に、「角度指定線」ツールを選択し、<br>角度 0°、<br>長さ-150、<br>点スナップ : 始点<br>　と設定します。<br>
+　「終点」ツールも選択しておきます。
+<p class="photo"><img src="../photo/LibreCAD_39.jpg" alt="「角度指定線」ツールを選択し、角度 0°、長さ-100、点スナップ : 始点　と設定" width="500" height="106"></p></li>
+	<li>　ポインターを移動すると、X方向・Y方向にガイドラインが表示され、「終点」ツールのスナップ機能が働くので、主翼の付け根下端<span class="red">（赤丸印）</span>付近で左クリックします。
+<p class="photo"><img src="../photo/LibreCAD_39-1.jpg" alt="主翼の付け根下端付近にポインターを移動すると、縦・横にガイドラインが表示されるので、左クリック" width="409" height="284"></p></li>
+	<li>長さ150mm の参考線（黄緑色の点線）が描けました。
+<p class="photo"><img src="../photo/LibreCAD_39-2.jpg" alt="" width="500" height="352"></p></li>
+</li>
+	<li  id="rotate_and_copy">前のステップで取り込んだ Clark-Y 翼型は、翼の下面がやや下向き（データベースでは、翼弦線が水平になるように座標が決められている）に描画されているので、翼の下面が水平になるように回転させます。<br>
+　「05 Airfoil」レイヤーを選択し、マウスホイールを動かしてズームアウト、ズームイン、さらにポインターを選択し、Ctrl を押しながらドラッグ.....などを行い、作図画面中央に翼型が来るように調整します。
+<p class="photo"><img src="../photo/LibreCAD_39-3.jpg" alt="作図画面中央に翼型が来るように調整　　　　　　　　　　　　　　　　　" width="500" height="204"></p></li>
+	<li>まず、下面の傾きを測るために「ツール」>>「図形情報」>>「２線の間の角度(g)」を選択します。<br>
+<p class="photo"><img src="../photo/LibreCAD_39-5.jpg" alt="" width="500" height="560"></p>
+　ツールバーでは、このアイコンです。
+<p class="photo"><img src="../photo/LibreCAD_39-6.jpg" alt="" width="277" height="258"></p>
+
+　最初に翼弦線、次に翼下面のフラットな線を、それぞれ左クリックします。
+<p class="photo"><img src="../photo/LibreCAD_39-7.jpg" alt="翼弦線と翼下面のフラットな線を左クリック" width="500" height="164"></p>
+　翼弦線と翼下面の線の間の角度が、コマンドラインウィンドウに、角度 2.05°と表示されます。
+<p class="photo"><img src="../photo/LibreCAD_39-8.jpg" alt="コマンドラインウィンドウに、角度 2.05°と表示されます。" width="361" height="205"></p></li>
+<li id="pointer-select">「ポインター」ツールを選択します。
+<p class="photo"><img src="../photo/LibreCAD_39-11.jpg" alt="「ポインター」ツールを選択します。" width="500" height="168"></p>
+Clark-Y 翼型外形線を囲むように、左上でクリックし、右下までドラッグして、翼型全体を選択します。
+<p class="photo"><img src="../photo/LibreCAD_39-12.jpg" alt="Clark-Y 翼型を囲むように、左上でクリックし、右下までドラッグして、翼型全体を選択します。" width="500" height="205"></p>
+翼型外形線と翼弦線が選択されました。
+<p class="photo"><img src="../photo/LibreCAD_39-13.jpg" alt="翼型全体と翼弦線が選択されました" width="500" height="184"></p>
+</li>
+	<li>「ツール」>>「変更・修正(M)」>>「回転(R)」ツールを選択します。
+<p class="photo"><img src="../photo/LibreCAD_39-9.jpg" alt="「ツール」>>「変更・修正(M)」>>「回転(R)」ツールを選択" width="500" height="445"></p>
+　「終点」ツールも選択しておきます。ツールバーの中では、これらのアイコンです。
+<p class="photo"><img src="../photo/LibreCAD_39-10.jpg" alt="「回転(R)」ツール、「終点」ツールも選択" width="434" height="172"></p>
+</li>
+	<li>LibreCAD ウィンドウの最下段中央のステータスバーに「回転の中心を指定」と、表示されますので、
+<p class="photo"><img src="../photo/LibreCAD_39-15.jpg" alt="" width="364" height="139"></p>
+　翼型の後縁付近で左クリックします。
+<p class="photo"><img src="../photo/LibreCAD_39-16.jpg" alt="" width="412" height="263"></p>
+ステータスバーに「参照点を指示」と、表示されますので、
+<p class="photo"><img src="../photo/LibreCAD_39-17.jpg" alt="" width="319" height="136"></p>
+
+翼型下面のフラットな部分で、左クリックして、回転の参照点を決めます。
+<p class="photo"><img src="../photo/LibreCAD_39-18.jpg" alt="" width="500" height="235"></p>
+</li>
+	<li>ステータスバーに「回転の目標点を指定」と、表示されます。
+<p class="photo"><img src="../photo/LibreCAD_39-20.jpg" alt="" width="393" height="119"></p>
+
+ポインターを上下に動かすと、翼型の輪郭線が、先ほど回転の中心に指定した、後縁端を中心に回転します。<span class="red">※この時点ではまだ回転は決定されていません。</span>
+<p class="photo"><img src="../photo/LibreCAD_39-19.jpg" alt="" width="500" height="158"></p>
+　<span class="red">また、この状態では「終点」ツールの制限機能がまだ効いているために、回転が制限されます。「任意の目標点」まで回転したい場合には、「終点」ツールを再度クリックして、制限を解除して下さい。</span>
+</li>
+	<li id="rotation">適当な位置で、左クリックすると、「回転オプション」ウィンドウが開きます。<p class="photo"><img src="../photo/LibreCAD_39-21.jpg" alt="" width="405" height="300"></p>
+　翼型下面の線を水平にしたいので、<br>
+　　「複写回数」>>「原本削除(D)」<br>
+　　「角度A(a)」>>「<span class="blue"><b>-2.05</b></span>」<br>
+　　　　　　<span class="blue">※時計回りはマイナス、反時計回りはプラスで指定</span><br>
+　　「現在属性使用」<br>
+　　「現在のレイヤーを使用」<br>
+　と指定して、OK をクリックします。
+
+　翼型の外形線が 2.05° 時計回りに回転し、翼下面が水平になりました。<p class="photo"><img src="../photo/LibreCAD_39-22.jpg" alt="左クリックすると、「回転オプション」ウィンドウが開きます。" width="500" height="161"></p>
+</li>
+	<li>今度は、この翼型外形線・翼弦線を、右主翼付け根に描いた参考線まで移動、コピーします。<br>
+<a href="#pointer-select">『ステップ７：「ポインター」ツールを選択します。』</a>　以降で説明した手順通り、翼型外形線・翼弦線を選択します。</li>
+	<li>「ツール」>>「変更・修正(M)」>>「移動・複写(M)」ツールを選択します。
+<p class="photo"><img src="../photo/LibreCAD_23-3.jpg" alt="" width="498" height="426"></p>
+ツールバーの中ではこのアイコンです。「終点」ツールも選択しておきます。
+<p class="photo"><img src="../photo/LibreCAD_23-4.jpg" alt="" width="385" height="178"></p>
+ </li>
+	<li>「ステータスバー」に「参照点を指示」と出ますので、翼型後縁の端で左クリックします。<br>
+「ステータスバー」に「目的点を指示」と出ますので、ズームアウト（マウスホイールを手前に回転）して、右主翼付け根に描いた参考線までポインターを移動し、参考線の左端で左クリックします。
+<p class="photo"><img src="../photo/LibreCAD_23-5.jpg" alt="" width="500" height="192"></p>
+</li>
+<li>「移動・コピー  オプション」ウィンドウが開きます。
+<p class="photo"><img src="../photo/LibreCAD_23-6.jpg" alt="" width="458" height="261"></p>
+　翼型は後で使う可能性があるので、原本は保持します。<br>
+　　「複写回数」>>「原本保持(K)」<br>
+　　「現在属性使用」<br>
+　　「現在のレイヤーを使用」<br>
+　と指定して、OK をクリックします。
+
+</li>
+<li>翼型の外形線・翼弦線がコピーされ、「すべて選択を解除(a)」Ctrl + K をクリックすると、きちんと思った位置にコピーされたのが分かります。
+<p class="photo"><img src="../photo/LibreCAD_23-7.jpg" alt="" width="500" height="190"></p>
+</li>
+<li>今度は翼型を垂直に回転させます。<a href="#pointer-select">ステップ７：「ポインター」ツールを選択します。</a>　から
+<a href="#rotation">ステップ11</a>までで説明した手順と同様に、<br>
+　　　「回転の中心」は翼型の後縁端<br>
+　　　「参照点」は翼型下面の線（フラットな部分）を選択し、<br>
+　　　「原本削除」<br>
+　　　　回転角度は -90°（時計回りはマイナス指定）<br>
+　と指定して回転させます。<br>
+<p class="photo"><img src="../photo/LibreCAD_23-8.jpg" alt="" width="500" height="534"></p>
+</li>
+<li>最後に、翼弦線は今後の作図には必要ないので削除しておきます。<br>
+　「ポインターを選択」ツールをクリックし、
+<p class="photo"><img src="../photo/LibreCAD_14.jpg" alt="" width="500" height="212"></p>ポインターで翼弦線を選択します。選択された翼弦線が点線に変わります。
+<p class="photo"><img src="../photo/LibreCAD_23-9.jpg" alt="「ポインターを選択」ツールをクリックし、翼弦線を選択" width="277" height="407"></p>
+次に「Delete」キーを押せば削除できます。<br>
+　ツールバーの中のアイコンでは、こちらになります。
+<p class="photo"><img src="../photo/LibreCAD_23-10.jpg" alt="" width="429" height="197"></p>
+　これで翼弦線が削除されました。
+<p class="photo"><img src="../photo/LibreCAD_23-11.jpg" alt="翼弦線が削除されました。" width="342" height="426"></p>
+<span class="red">※この図では、分かりやすくするために、各レイヤーの線の太さを 2.00mm としてあります。</span>　<span class="blue">以降の作図では「05 Airfoil レイヤー」の線の太さは 0.35mm に戻しておいて下さい。</span>
+</li>
+</ol>
+
+<p class="top" id="wing-cross-sectional"><strong>13．主翼の断面構造の検討と作図</strong></p>
+<p>　いよいよ、主翼の断面構造を検討、作図してゆきます。</p>
+<p>　RC模型飛行機の主翼断面の基本的な構造は、ムサシノ模型飛行機研究所の各キットを参考にしますと、前縁材・後縁材（上下）・プランク材（上下）・前縁部下面材・スパー（上下、複数列）・リブ・リブキャップなどから成り立っています。軽量なパークプレーン・グライダーなどはもっと単純で、スケール機では、もっと複雑になると思われます。</p>
+<p>　ここでは、初心者（<span class="red">作者のこと！</span>）向きのシンプルな構造で設計、作図していきます。</p>
+
+<ol>
+<li>Clark-Y 翼型の修正<br>
+　製作しやすいと言われている Clark - Y ですが、よく見ると、前縁から 20% ぐらいまでの区間で、翼下面がわずかに曲線となっています。（赤丸印）<br>
+<p class="photo"><img src="../photo/clarky-2.gif" alt="" width="500" height="375"></p><br>
+　NAVION号のオリジナル図面では、これを忠実に再現しているのですが、前縁部下面にプランクを行う場合、手間の掛かる割に、あまり実質的な空力特性の違いは無いかな.....などと勝手に判断し、より簡単な構造とするために、オリジナル翼型の前縁部下面を、フラットにしてしまいます。</li>
+<li>翼下面の参考線の作図<br>
+　「02 Ref-line」レイヤーを選択してから、「角度指定線」ツールと「終点」ツールとを選択します。
+<p class="photo"><img src="../photo/LibreCAD_40-5.jpg" alt="「角度指定線」ツールを選択し、角度 0°、長さ-100、点スナップ : 始点　と設定" width="500" height="106"></p>
+　　角度 90°、<br>　　長さ300、<br>　　点スナップ : 始点<br>　と設定します。</li>
+<li>翼型の後縁端に十字ポインターを移動させて、左クリックすると、垂直の参考線 長さ 300mm が描かれます。
+<p class="photo"><img src="../photo/LibreCAD_40-7.jpg" alt="" width="216" height="587"></p>
+※見やすくするために「02 Ref-line」レイヤーの線を極太にしてありますので、0.35mm に戻しておいて下さい。<a href="#layer-2">方法はこちら。</a></li>
+<li>前縁部曲線の修正
+　参考線が描かれた、前縁端付近をズームインすると、下図のようになります。
+<p class="photo"><img src="../photo/LibreCAD_40-9.jpg" alt="前縁端付近をズームイン" width="500" height="623"></p>
+<li>「05 Airfoil」レイヤーの、グレー色の南京錠アイコンをクリックして、ロックします。これで翼型を示すピンク色の線は編集できなくなります。<br>　次に「11 Others」レイヤーを選択します。
+<p class="photo"><img src="../photo/LibreCAD_40-12.jpg" alt="「05 Airfoil」レイヤーは、グレー色の南京錠アイコンをクリックして、ロック" width="298" height="604"></p></li>
+<li>「ツール(T)」>>「曲線(C)」>>「スプライン（通過点指示）(S)」を選択します。<br>
+<p class="photo"><img src="../photo/LibreCAD_40-13.jpg" alt="" width="500" height="293"></p>
+
+ツールバーの中では、下図のアイコンになります。</li>
+<li>「ポインター」で前縁端からカーブしている付近まで囲むようにドラッグ、座標データから描かれた翼型の一部が選択されます。
+<p class="photo"><img src="../photo/LibreCAD_40-10.jpg" alt="" width="500" height="582"></p>
+　「Delete」キーを押して、選択部分を消去します。<br>
+<p class="photo"><img src="../photo/LibreCAD_40-11.jpg" alt="" width="464" height="657"></p>
+　不要な部分が消去できました。
+</li>
+<li>前縁材、プランク材、スパーなどの構造部材の寸法と配置の決定<br>
+　小型機や、軽量さを追求するグライダーなどでは、プランク材を使っていない機体も多くあります。しかし、前縁材＋前縁部下面材＋上部のプランク材＋上下のスパーから構成される「Dボックス構造」では、比較的軽量でありながら、強度の大きな主翼を作ることができます。<br>
+<p class="photo"><img src="../photo/LibreCAD_40.jpg" alt="「Dボックス構造」" width="500" height="339"></p><br>
+
+　それでは、前縁下面材と、前縁材の寸法を決め、配置を考えていきます。<br>
+　不要な部分を削除した翼型の最前縁から、垂直・下方向に、参照線を描きます。<br>
+<p class="photo"><img src="../photo/LibreCAD_40-16.jpg" alt="翼型の最前縁から、垂直下方向に、参照線を描きます" width="456" height="618"></p><br>
+　仮に、前縁下面材の厚さを 1.5mm （後に使うプランク材と合わせる）、前縁材の厚さを 5mm としましょう。<br>
+<p>　前縁下面材と、前縁材は、「06 Spar」のレイヤーに描画するので、Spar レイヤーを左クリックし、選択しておきます。</p>
+<p class="photo"><img src="../photo/LibreCAD_40-19.jpg" alt="「06 Spar」のレイヤーを選択しておきます。" width="348" height="522"></p><br>
+
+　ツールバーのアイコンの中から、「交点」ツールと、<br>
+<p class="photo"><img src="../photo/LibreCAD_40-14.jpg" alt="ツールアイコンから、「交点」を選択します。" width="418" height="115"></p>
+　「矩形」ツールを選択します。</p>
+<p class="photo"><img src="../photo/LibreCAD_40-15.jpg" alt="ツールアイコンから、「矩形」を選択します。" width="336" height="133"></p>
+
+
+<p class="top">　水平と垂直の参照線との交点付近に十字ポインターを持って行くと、自動的に交点にスナップされるので、左クリックします。<br>
+<p class="photo"><img src="../photo/LibreCAD_40-17.jpg" alt="水平と垂直の参照線との交点付近に十字ポインターを持って行くと、自動的に交点にスナップされます。" width="456" height="618"></p>
+　LibreCAD ウィンドウの最下段に、「２つ目のコーナー指示」という表示が出ますので、ここで「Tab」キーを押します。すると、コマンドラインウィンドウの最下段に、やはり「２つ目のコーナー指示」という数値指定欄が表れます。<br>
+<p class="photo"><img src="../photo/LibreCAD_40-18.jpg" alt="前縁材の高さが X 方向、厚さが Y 方向として指定します。" width="335" height="248"></p>
+　ここで、前縁下面材の厚さ＝1.5mm、幅＝40mm と仮定し、数値指定欄に<span class="red">「@1.5,-40」</span>と入力し、Enter キーを押します。<br>
+　翼型を立てて作図しているので、前縁材の厚さを X 方向、高さを Y 方向（<span class="red">前縁から下方向に作図するので　マイナス数値　-40</span>）として指定します。<br></p>
+<p>　厚さ 1.5mm、幅 40mm の前縁下面材が描けました。<br>
+<p class="photo"><img src="../photo/LibreCAD_40-20.jpg" alt="前縁下面材が描けました。" width="450" height="578"></p>
+<p>幅が 40mm では、ちょっと広すぎるなと思った場合には、ポインターツールで今描いた前縁下面材を選択し、「Delete」キーで消去し、描き直します。図形の拡大・縮小ツールでも修正が可能です。</p>
+<p class="top">　前縁下面材にハッチングを描くために、ツールアイコンから、ハッチング（H）を選びます。ハッチングのパターンはたくさんあるのですが、私がよく使うのは、「kerpele：単純な斜線」と「sand：点々の砂模様」くらいです。倍率＝模様の大きさと角度は、ハッチングを施す部品の大きさなどに応じて、何度か試して決めて下さい。</p>
+<p class="photo"><img src="../photo/LibreCAD_40-21.jpg" alt="ツールアイコンから、ハッチング（H）を選びます。" width="215" height="52"></p>
+
+<p class="photo"><img src="../photo/LibreCAD_40-22.jpg" alt="ハッチングのパターンはたくさんあるのですが、私がよく使うのは、「kerpele：単純な斜線」と「sand」くらいです。倍率と角度は、部品の大きさなどを考慮してお好みで選んで下さい。" width="450" height="578"></p>
+
+<p class="top">　前縁下面材のハッチングが描けました。</p>
+<p class="photo"><img src="../photo/LibreCAD_40-23.jpg" alt="前縁下面材のハッチングが描けました。" width="450" height="531"></p>
+
+<p class="top">　同様の方法で、厚さ 5mm、高さ 10mm の前縁材を作図し<span class="red">（@10,-5）と入力</span>、ハッチングを施します。ハッチングのパターンは、前縁下面材とは変えて角度「90」を指定すると、違いが分かりやすくなります。</p>
+<p class="photo"><img src="../photo/LibreCAD_40-24.jpg" alt="前縁材が描けました。" width="450" height="466"></p>
+
+<p class="top">　続いて、後縁部の上・下面材を描きます。後縁上・下面材の厚さを、プランク材と合わせ、1.5mm 、幅を20mm とし、翼型の最後縁に配置します。描画方法は、前縁下面材・前縁材とほぼ同じです。</p>
+<p>「06 Spar」レイヤーを選択</p>
+<p class="photo"><img src="../photo/LibreCAD_40-19.jpg" alt="「06 Spar」レイヤーを選択" width="348" height="522"></p>
+
+<p>「終点」ツールを選択<br>
+<p class="photo"><img src="../photo/LibreCAD_31-0.jpg" alt="「終点」ツールを選択" width="326" height="143"></p>
+<p>「矩形」ツールを選択<br>
+<p class="photo"><img src="../photo/LibreCAD_40-15.jpg" alt="「矩形」ツールを選択" width="336" height="133"></p>
+
+<p class="top">　十字ポインターを、翼型の最後縁部に近づけると、自動的にスナップされるので、左クリック。これで矩形の１つ目のコーナーを指定できます。<br>
+<p class="photo"><img src="../photo/LibreCAD_40-25.jpg" alt="「矩形」ツールを選択" width="336" height="133"></p>
+<p>　ここで「Tab」キーを押すと、コマンドラインウィンドウ下に数値指定欄が表れます。矩形の２つ目のコーナーを指定するために、数値指定欄に<span class="red">「@1.5,20」＝厚さ：X方向、幅：Y方向（+指定）</span>と入力し、Enter キーを押します。<br>
+　これで、後縁部下面材が描画できました。
+<p class="photo"><img src="../photo/LibreCAD_40-26.jpg" alt="「矩形」ツールを選択" width="450" height="475"></p>
+
+<p class="top">　続いて、後縁部下面材を、回転コピーして、後縁部上面材を描きます。最初に、翼型レイヤー 05 AirFoil 及び寸法線・寸法レイヤーの鍵形ボタンをクリックし、これらのレイヤーに対する操作をロックし、誤っていじってしまうのを防ぎます。<br>
+<p class="photo"><img src="../photo/LibreCAD_39-10-B.jpg" alt="" width="296" height="414"></p><br>
+　レイヤーは、06 Spar を選択したままでかまいません。他のレイヤーのロック、表示／非表示、印刷の可否などは、選択レイヤー以外でも指定できます。</p>
+
+
+<p class="top">　ポインターツールを選択します。<br>
+<p class="photo"><img src="../photo/LibreCAD_39-11.jpg" alt="ポインターツールを選択" width="450" height="151"></p><br>
+<p>　ポインターツールで青いエリアを囲みます。<br>
+<p class="photo"><img src="../photo/LibreCAD_39-11-A.jpg" alt="ポインターツールで、後縁部下面材をぐるりと囲む" width="423" height="492"></p><br>
+<p>　後縁部下面材がピンク色の点線に変わり、選択されました。<br>
+<p class="photo"><img src="../photo/LibreCAD_39-11-B.jpg" alt="ポインターツールで、今描いた後縁部下面材を選択" width="396" height="491"></p>
+</p>
+<p class="top">今度は、「回転」ツール、「終点」ツールを選択します。<br>
+<p class="photo"><img src="../photo/LibreCAD_39-10.jpg" alt="「回転」ツール、「終点」ツールを選択" width="434" height="172"></p>
+<p class="top">　後縁部下面材を翼型の後縁の傾斜に合わせて下面材を回転・コピーします。具体的には、<a href="#rotate_and_copy">ステップ 5　翼型の回転</a>以降で説明した手順と同様に行います。<br>
+<p class="photo"><img src="../photo/LibreCAD_40-28-0.jpg" alt="後縁部下面材を翼型の後縁の傾斜に合わせて回転" width="450" height="376"></p><br>
+　回転の際、「原本保持(K)」しておきます。<br>
+<p class="photo"><img src="../photo/LibreCAD_40-28-1.jpg" alt="回転の際、原本は「保持」しておきます。" width="447" height="309"></p><br>
+　これで、後縁部下面材の回転とコピーができました。</p>
+<p class="photo"><img src="../photo/LibreCAD_40-28.jpg" alt="後縁部下面材を翼型の後縁の傾斜に合わせて下面材を回転・コピーします。" width="450" height="501"></p>
+<p class="top">　続いて、コピーした後縁部上面材を回転させ、翼型とマッチさせます。回転の中心は上面材の右上隅、回転の参照点は右下隅を選択します。<br>
+<p class="photo"><img src="../photo/LibreCAD_40-29.jpg" alt="複製して描いた後縁部上面材を回転させ、翼型外形線とマッチするようにします。" width="450" height="455"></p></p>
+
+<p>　さらに、斜めになった上面材をポインターツールで選択し、下側の２ヶ所の端点をドラッグして、下面材の上にぴったり収まるようにサイズを調整します。<br>
+<!--<p class="photo"><img src="../photo/LibreCAD_40-30.jpg" alt="斜めになった上面材をポインターツールで選択し、下の２ヶ所の端点をドラッグして、下面材の上にぴったり収まるようにサイズを調整します。" width="450" height="382"></p>-->
+　ここでは、後縁部上面材の幅は 14mm ほどになりました。その後、異なったパターンでハッチングを施しておきます。</p>
+<p class="photo"><img src="../photo/LibreCAD_40-38.jpg" alt="斜めになった上面材をポインターツールで選択し、下の２ヶ所の端点をドラッグして、下面材の上にぴったり収まるようにサイズを調整します。" width="450" height="420"></p></p>
+
+
+<p>　続いて、上下のスパーを描きます。スパーの断面寸法は 5mm × 5mm とします。</p>
+<p>「終点」および「矩形」ツールを選択します。</p>
+<p class="photo"><img src="../photo/LibreCAD_18.jpg" alt="「終点」ツールを選択" width="438" height="215"></p>
+<p class="photo"><img src="../photo/LibreCAD_40-15.jpg" alt="「矩形」ツールを選択" width="450" height="409"></p></p>
+
+<p>矩形の第１コーナーを、前縁部下面材の後部上端に指定します。続いて、「Tab」キーを押して、コマンドラインの数値指定欄に<span class="red">「@5,5」</span>と入力し Enter キーを押します。<br>
+<p class="photo"><img src="../photo/LibreCAD_40-32.jpg" alt="矩形の第１コーナーを、前縁部下面材の後部上端に決めます。続いて、「Tab」キーを押して、コマンドラインの数値指定欄に「@5,5」と入力し Enter キーを押します。" width="450" height="594"></p>
+　下部スパーが描けたので、ハッチングを施します。</p>
+<p>ポインターツールで、下部スパーの矩形とハッチングの斜線群を両方とも選択します。選択された図形は、私の設定ではピンク色に反転表示されます。<br>
+<p class="photo"><img src="../photo/LibreCAD_40-34.jpg" alt="「矩形」ツールを選択" width="450" height="320"></p>
+　よく見ると、前縁部下面材と下部スパーを表す線が重なってしまっています。まぁ、誤差の範囲かも知れませんが、リブを作るときに支障が出てはいけないので、一応修正します。</p>
+<p>「（移動方向）水平制限」、「終点」、「移動・複写」ツールアイコンをクリックします。<br>
+<p class="photo"><img src="../photo/LibreCAD_40-33.jpg" alt="「矩形」ツールを選択" width="370" height="111"><br>「（移動方向）水平制限」ツールアイコン</p>
+<p>「参照点を指示」と表示されますので、下部スパーの左下を指示します。次に「目的点を指示」と言われるので、「終点」ツールを左クリックして解除し、かなりズームアップして、水平制限しながら右に動かし、前縁部下面材の上にちょうど乗る位置まで移動させます。ここで、原本は削除します。</p>
+<p class="photo"><img src="../photo/LibreCAD_40-35.jpg" alt="「矩形」ツールを選択" width="450" height="233"></p>
+
+<p>　今度は、下部スパーを移動・複写して、上部スパーを描きます。ほぼ、前述の方法通り、下部スパーの矩形・ハッチングを選択し、参照点は、下部スパーの右下を指示します。移動方向を水平に制限しながら右に動かして、下部スパーの右下（上端）が翼型を表すラインに接するまで移動させ、原本を保持してコピーします。</p>
+<p class="photo"><img src="../photo/LibreCAD_40-36.jpg" alt="「矩形」ツールを選択" width="450" height="244"></p>
+<p>これで、上下のスパーが描けました。</p>
+
+<li>リブ断面の描画<br>
+<p>まず、「07 Rib」レイヤーを選択します。<br>
+<p class="photo"><img src="../photo/LibreCAD_40-2.jpg" alt="「07 Rib」レイヤーを選択" width="298" height="604"></p></p>
+<p>次に「ツール(T)」>>「直線(L)」>>「平行線(P)」ツールを選びます。
+<p class="photo"><img src="../photo/LibreCAD_40-0.jpg" alt="「ツール(T)」>>「直線(L)」>>「平行線(P)」ツールを選びます" width="450" height="369"></p></p>
+<p>　上下後縁部材と上下のプランク材の厚さを 1.5mm と決めたので、「平行線」ツールの指定ボックスで<br>
+<p class="photo"><img src="../photo/LibreCAD_40-1.jpg" alt="" width="450" height="104"></p>
+<span class="red">　　「距離」= 1.5</span>、<br>　　　　対象となる線からの平行距離→ 1.5mm<br>
+　　<span class="red">「数値」= 1　→ １本</span>、<br>
+　　　　何本の平行線を描くか<br>
+　を指定します。</p>
+<p>　翼型外形線の内側に、十字ポインターを持って行くと、自動的にプランク材の厚み＝ 1.5mm の距離を開けて、オレンジ色のリブの線分が引けます。<br>
+<p>　水色の矢印の位置へ十字ポインターを次々と移動させると、次の線分が引けます。</p>
+<p class="photo"><img src="../photo/LibreCAD_40-37.jpg" alt="" width="450" height="495"></p>
+　以降、ちょっと（かなり.....？）退屈な作業ですが、翼型外形線の内側にぐるりと十字ポインターを移動させ、リブの外形線を描きます。（<span class="red">この作業を一発で出来る方法を知っている方が見えましたら、ぜひご教授下さい！</span>）</p>
+
+<p>　前縁材、後縁材、上下のスパー周辺は、「平行線」ツールを使わず、「線分」ツールと「（移動方向）水平・垂直制限」、「終点」ツールなどを組み合わせて描くと正確に早く作図できます。</p>
+<p class="photo"><img src="../photo/LibreCAD_40-40.jpg" alt="" width="450" height="610"></p>
+<p class="photo"><img src="../photo/LibreCAD_40-39.jpg" alt="" width="324" height="487"></p>
+
+
+<p class="top">レイヤーの一覧ウィンドウにて、他のレイヤーの眼の形をしたボタンをクリックし、非表示（グレー）にして、リブのレイヤーだけを表示（緑色）にすると、リブ外形線だけを見ることができます。</p>
+<p class="photo"><img src="../photo/LibreCAD_40-42.jpg" alt="" width="344" height="519"></p>
+
+<p>Clark Y 類似の翼型全周にわたり、1.5mm 厚のプランク材、前縁部下面材、後縁部・上下面材の厚みを差し引いた、リブの外形が描けました。</p>
+<p class="photo"><img src="../photo/LibreCAD_40-41.jpg" alt="" width="333" height="680"></p>
+</li>
+</ol>
+
+<p class="top" id="wing-planar"><b>14．主翼の平面構造の検討と作図</b></p>
+<p>　ここまでで、主翼断面の構造が作図できました。続いて、平面的な構造の検討と作図を行います。主翼のアウトラインの描画方法はすでに述べましたので、<a href="#wing">主翼・水平尾翼のアウトラインの作図</a>を参照して下さい。</p>
+<p>　前述の例では、後退角とテーパーの付いた主翼のアウトラインを描きましたが、この平面構造を作図するのは私にとってハードルが高いので、単純な矩形翼の場合を説明します。(笑)</p>
+
+<ol>
+<li>主翼のアウトライン作図<br>
+仮に、主翼スパン 1,400mm、翼弦長 Chord 152mm、とします。<br><br>
+描く位置は、主翼の断面図の下端に合わせて作図します。<br>
+　そのために、水平参照線を、主翼断面下端から引いておきます。水平参照線は、水平寸法(H)=水平線ツールで、長さ1500mmとし（反対側の主翼も同じ水平位置に描くため、余裕を持って長く引いておく）、点スナップ＝始点 を選び、主翼断面下端にポインターをスナップさせると描けます。<p class="photo"><img src="../photo/LibreCAD_41-00.jpg" alt="" width="450" height="143"></p><br>
+　「03 Outline」 のレイヤーを選び、長さ 700mm、高さ 152mm の主翼右側のアウトラインを、「矩形」ツールで描きます。<br>
+<p class="photo"><img src="../photo/LibreCAD_41-00-B.jpg" alt="" width="450" height="143"></p><br>
+
+
+<p class="photo"><a href="../photo/LibreCAD_41-01.jpg" target="_blank"><img src="../photo/LibreCAD_41-01.jpg" alt="" width="450" height="130"></a>画像をクリックすると、<br>大きな画像が別ウィンドウで見られます。</p><br>
+
+
+「02 Ref-line」 のレイヤーを選び、主翼片側のアウトラインの脇に、反転コピーするための垂直な参照線を描きます。長さは 300mm 程度で良いでしょう。<br>
+<p class="photo"><img src="../photo/LibreCAD_41-02.jpg" alt="" width="342" height="648"></p>
+</li>
+<li>リブの描画<br>
+主翼片側のスパンが 700mm なので、70mm 間隔で、厚さ 2mm、長さ152mm のリブを10枚、等間隔に配置してみます。「07 Rib」 のレイヤーを選択します。<br>
+ポインターツールで主翼片側のアウトラインを選択します。次に「終点」および「矩形」ツールを選択し、アウトラインの左下の隅を指定します。<br>
+<p class="photo"><img src="../photo/LibreCAD_41-03.jpg" alt="" width="450" height="455"></p><br>
+
+「Tab」キーを押して、コマンドラインウィンドウの最下段、数値指定欄に「@2,152」と入力し、「Enter」キーを押します。
+<p class="photo"><img src="../photo/LibreCAD_41-04.jpg" alt="" width="353" height="590"></p>
+<p>１枚目のリブが描けました。</p>
+<p>　続いて、ポインターツールで１枚目のリブを選択し、「終点」および「移動／複写」ツールを選択します。移動の参照点は、リブの左下隅を選択します。目的点の指定は「Tab」キーを押し、コマンドラインウィンドウの数値指定欄に<span class="red">「@70,0」</span>と入力し、「Enter」キーを押します。これは、X：水平方向に 70mm、Y：垂直方向には 0mm の移動を行うという意味の指定です。<br>
+　すると、原本の削除、保持、複数複写の指定ウィンドウが表れますので、「複数複写」、10回と入力し 「OK」 をクリックします。</p>
+<p class="photo"><img src="../photo/LibreCAD_41-05.jpg" alt="" width="450" height="307"></p><br>
+
+<p>　これで、リブが10枚コピーできました。</p>
+<p class="photo"><img src="../photo/LibreCAD_41-06.jpg" alt="" width="450" height="159"></p><br>
+<p>　ただし、主翼センター側のリブは、アウトラインよりも 2mm はみ出しています。
+<p class="photo"><img src="../photo/LibreCAD_41-07.jpg" alt="" width="450" height="237"></p><br>
+
+<p>　アウトラインに重なるように移動させるとともに、センターリブなので、厚さを 2mm → 3mm などと厚くしておくと良いでしょう。<br>
+　あるいは、コピー回数を 9回とし、新規にセンター側のリブを描いた方が早いかも知れません。</p>
+<p class="photo"><img src="../photo/LibreCAD_41-08.jpg" alt="" width="450" height="244"></p><br>
+</li>
+<li>前縁下面材の作図<br>
+　今度は、上から見た前縁下面材を、06 Spar レイヤーに描きます。先ほど描いたリブは、レイヤー一覧ボックスから目玉アイコンをクリックして、隠しておくと作業しやすいです。まず、06 Spar レイヤーをクリックして選択し、次に「終点」および「矩形」ツールを選択します。そして前縁下面材のサイズは、幅 40mm、長さ 700mm なので、主翼アウトライン左上隅にポインターを移動させるとスナップしますので、一回左クリックしてからTAB キーを押し、コマンドウィンドウ最下段に、２つ目のコーナーの相対座標を、@700,-40 と入力して Enter キーを押します。<p class="photo"><img src="../photo/LibreCAD_41-09.jpg" alt="２つ目のコーナーの相対座標を、@700,-40 と入力して Enter キーを押します。" width="423" height="423"></p><br>
+　すると、指定した寸法で前縁下面材が描けます。<p class="photo"><img src="../photo/LibreCAD_41-10.jpg" alt="指定した寸法で前縁下面材が描けます。" width="450" height="450"></p></br>
+　ここで、ハッチングを施しておくと良いでしょう。部材の寸法が大きいので、ハッチングは荒いほうが見やすいです。kerpele ならば倍率 1 程度。<p class="photo"><img src="../photo/LibreCAD_41-12.jpg" alt="部材の寸法が大きいので、ハッチングは粗いほうが見やすいです。" width="450" height="317"></p>
+</li>
+<li>前縁材の作図<br>
+　今度は、前縁材を、さきほど描いた前縁下面材の左上隅にぴったり付けて、幅 5mm、高さ 10mm の寸法で描きます。描き方は、前縁下面材と同じです。<br>
+　ハッチングは kerpele ならば倍率 0.2 程度。<p class="photo"><img src="../photo/LibreCAD_41-13.png" alt="" width="450" height="450"></p>
+</li>
+<li>スパーの作図<br>
+　スパーを描くために、主翼の断面構造図から、水平補助線を引きます。02 Ref-line レイヤーをクリックして選択し、水平寸法(H)=水平線ツールで、長さ1500mmとし（反対側の主翼も同じ水平位置に描くため、余裕を持って長く引いておく）、点スナップ＝始点 を選び、5mm×5mm 寸法のスパー上端にポインターをスナップさせると描けます。<p class="photo"><img src="../photo/LibreCAD_41-15.png" alt="主翼の断面構造図から、水平補助線を引きます。" width="450" height="450"></p><br>
+　そしてスパーのサイズは、幅 5mm、高さ 5mm、長さ 700mm なので、水平補助線と主翼アウトラインが交差する点を基準として、前縁材と同じ方法で描きます。</br>
+　前縁下面材の左下隅を基準点としても描けます。<p class="photo"><img src="../photo/LibreCAD_41-16.png" alt="スパーのサイズは、幅 5mm、長さ 700mm なので、水平補助線と主翼アウトラインが交差する点を基準として、前縁材と同じ方法で描きます。" width="450" height="450"></p>
+</li>
+<li>後縁下面材、後縁上面材の作図<br>
+　後縁下面材、後縁上面材は、以前に描いたように、後縁で重なっています。しかし、実際に製作する時には、後縁下面材を工作台上にピン留してからリブを接着し、リブの後端に後縁上面材を接着するので、図面上では後縁下面材だけを描いておけば十分でしょう。
+<p class="photo"><img src="../photo/LibreCAD_41-17.png" alt="後縁下面材、後縁上面材は、以前に描いたように、後縁で重なっています。" width="450" height="223"></p>
+　後縁下面材の寸法は、幅 20mm、長さ 700mm なので、スパーの作図と同じやり方で描きます。<p class="photo"><img src="../photo/LibreCAD_41-18.png" alt="後縁下面材の寸法は、幅 20mm、長さ 700mm なので、スパーの作図と同じやり方で描きます。" width="450" height="277"></p>
+</li>
+<li>主翼の上反角、センターリブ・ゲージの作図、</li>
+<li></li>
+</ol>
+
+<div class="date">2023/05/27</div>
+</section>
+<section>
+<hr>
+<h4>　<a href="wingtips_contents.html">Wingtips　　　目次へ</a></h4>
+<h4>　<a href="../index.html">ホームへ</a></h4>
+</section>
+</div>
+<!--/main-->
+
+<div id="sub">
+
+<div id="head">
+
+<p id="logo"><a href="../index.html"><img src="../images/logo.png" width="140" height="90" alt="Fish and Tips"></a></p>
+
+<nav id="menubar">
+<ul>
+<li><a href="../index.html">HOME</a></li>
+<li><a href="../intro.html">About Fish&amp;Tips</a></li>
+<li><a href="../02_diary_toei/diary_toei_contents.html">釣行日誌　故郷編</a></li>
+<li><a href="../03_diary_nz/diary_nz_contents.html">釣行日誌　ＮＺ編</a></li>
+<li><a href="../17_southerncountry/sc_contents.html">君よ知るや南の国</a></li>
+<li><a href="../01_tips/tips_contents.html">ティップス</a></li>
+<li><a href="../04_column/column_contents.html">コラム</a></li>
+<li><a href="../05_essay/essay_contents.html">エッセイ</a></li>
+<li><a href="../11_album/album_contents.html">写真集</a></li>
+<li><a href="../06_favorite/favorite_contents.html">私のお気に入り</a></li>
+<li><a href="../07_hajime/hajime_contents.html">父の釣り口伝</a></li>
+<li><a href="../08_movies/movies_contents.html">輝ける闇の中で</a></li>
+<li><a href="../09_books/books_contents.html">本棚から</a></li>
+<li><a href="../15_diary_nzstudy/diary_nzstudy_contents.html">留学日誌</a></li>
+<li id="current"><a href="../18_wingtips/wingtips_contents.html">飛行日誌</a></li>
+<li><a href="../13_links/links_contents.html">リンク集</a></li>
+<li><a href="../postmail/postmail.html">お問い合わせ</a></li>
+<li><a href="../english/index_e.html">English Version</a></li>
+</ul>
+</nav>
+
+</div>
+<!--/head-->
+
+</div>
+<!--/sub-->
+
+
+</div>
+<!--/contents-->
+
+</div>
+<!--/container-->
+
+</main>
+
+<footer>
+<p class="small-center">Copyright &copy; 1998-2024 Takeshi Ito　All rights reserved.<br>
+<a href="https://template-party.com/">Web Design:Template-Party</a></p>
+</footer>
+
+<!--スマホ用メニューバー-->
+<img src="../images/icon_bar.png" width="20" height="16" alt="" id="menubar_hdr" class="close">
+<script>
+if (OCwindowWidth() < 480) {
+	open_close("menubar_hdr", "menubar");
+}
+</script>
+<div class="backtotop"><a href="#header">↑ TOP</a></div><!--伊藤が加筆-->
+</body>
+</html>
