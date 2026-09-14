@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="style.css" type="text/css">
+<!--
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+-->
+<title>お問い合わせ</title>
+<link rel="canonical" href="https://fishtips.sakura.ne.jp/sampleFolder/sampleFileName.html" />
+</head>
+
+<body>
+
+<div id="head">
+	<div id="head-in"><h1>Fish &amp; Tips についてのお問い合せ</h1></div>
+</div>
+
+<div id="body">
+
+<h2>作者：<a href="" target="_blank">伊藤　剛</a>　へのメール</h2>
+<p>Fish &amp; Tips に関する質問や感想などをお受けしています。<br>
+下記のアドレスにメールをお送り下さい。<br>
+takeshi_go_ito<span class="red">(at)</span>yahoo.co.jp<br>
+その際には、お手数ですが、半角赤字の<span class="red">(at)</span>を　半角の　@　マークに置き換えてください。</p>
+
+<h2>お問い合わせフォーム</h2>
+<p>以下のフォームに必要事項を入力のうえ送信してください。<br>
+<span class="red">※</span>の付いた項目は必須です。</p>
+
+<form action="./postmail.cgi" method="post">
+	<input type="hidden" name="need" value="name email 問合せ種別 メッセージ">
+	<input type="hidden" name="sort" value="name email 問合せ種別 メッセージ">
+	<input type="hidden" name="match" value="email email2">
+	<div id="form-tbl">
+	<table summary="問合せフォーム" id="form">
+		<tr>
+			<th>お名前　<span class="red">※</span></th>
+			<td><input type="text" name="name" size="35"></td>
+		</tr><tr>
+			<th>メールアドレス　<span class="red">※</span></th>
+			<td>
+				<input type="text" name="email" size="35"><br>
+				<input type="text" name="email2" size="35"> （確認のため再度入力）
+			</td>
+		</tr><tr>
+			<th>問合せ種別　<span class="red">※</span></th>
+			<td>
+				<input type="radio" name="問合せ種別" value="ご質問">ご質問<br>
+				<input type="radio" name="問合せ種別" value="ご相談">ご相談<br>
+				<input type="radio" name="問合せ種別" value="ご感想">ご感想<br>
+				<input type="radio" name="問合せ種別" value="ご依頼">ご依頼<br>
+				<input type="radio" name="問合せ種別" value="その他">その他
+			</td>
+		</tr><tr>
+			<th>問合せ内容　<span class="red">※</span></th>
+			<td><textarea name="メッセージ" rows="12" cols="55"></textarea></td>
+		</tr>
+	</table>
+	<p class="btn">
+		<input type="submit" value="送信する">
+		<input type="reset" value="リセット">
+	</p><br>
+	</div>
+</form>
+
+<h2>個人情報の取扱いについて</h2>
+<p>ご記入いただいた個人情報は、お問い合わせへの対応および確認のためのみに利用します。<br>
+また、この目的のためにお問い合わせの記録を残すことがあります。</p>
+
+<a href="../index.html"><h2>Fish &amp; Tips ホームへ戻る</h2></a>
+</div>
+</body>
+</html>

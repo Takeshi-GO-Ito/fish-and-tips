@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<title>お問い合わせフォーム</title>
+<link rel="canonical" href="https://fishtips.sakura.ne.jp/sampleFolder/sampleFileName.html" />
+</head>
+<body>
+<div id="head">
+	<div id="head-in"><h1>Fish &amp; Tips についてのお問い合せ</h1></div>
+</div>
+<div id="body">
+
+<h2>お問い合わせフォーム</h2>
+<ul>
+	<li>Fish &amp; Tips に関する質問や感想などをお受けしています。</li>
+	<li>以下のフォームより、必要事項を入力のうえ送信してください。</li>
+	<li><span class="red">※</span>の付いた項目は必須です。</li>
+</ul>
+
+<form action="./postmail.cgi" method="post">
+	<input type="hidden" name="need" value="name email 問合せ種別 メッセージ">
+	<input type="hidden" name="sort" value="name email 問合せ種別 メッセージ">
+	<input type="hidden" name="match" value="email email2">
+	<div id="form-tbl">
+	<table summary="問合せフォーム" id="form">
+		<tr>
+			<th>お名前　<span class="red">※</span></th>
+			<td><input type="text" name="name" size="35"></td>
+		</tr><tr>
+			<th>メールアドレス　<span class="red">※</span></th>
+			<td>
+				<input type="text" name="email" size="35"><br>
+				<input type="text" name="email2" size="35"> （確認のため再度入力）
+			</td>
+		</tr><tr>
+			<th>問合せ種別　<span class="red">※</span></th>
+			<td>
+				<input type="radio" name="問合せ種別" value="ご質問">ご質問<br>
+				<input type="radio" name="問合せ種別" value="ご相談">ご相談<br>
+				<input type="radio" name="問合せ種別" value="ご感想">ご感想<br>
+				<input type="radio" name="問合せ種別" value="ご依頼">ご依頼<br>
+				<input type="radio" name="問合せ種別" value="その他">その他
+			</td>
+		</tr><tr>
+			<th>問合せ内容　<span class="red">※</span></th>
+			<td><textarea name="メッセージ" rows="12" cols="55"></textarea></td>
+		</tr>
+	</table>
+	<p class="btn">
+		<input type="submit" value="送信する">
+		<input type="reset" value="リセット">
+	</p><br>
+	</div>
+</form>
+
+<h2>作者のメールアドレス</h2>
+<ul>
+	<li><p>下記のアドレスに直接メールして下さってもOKです。</p>
+	<p>　　takeshi_go_ito<span class="red">●</span>yahoo.co.jp</p>
+	<p>その際にはお手数ですが、赤丸印<span class="red">●</span>を　半角の　@　マークに置き換えてください。</p></li><br>
+</ul>
+
+
+<h2>個人情報の取扱いについて</h2>
+<ul>
+	<li>ご記入いただいた個人情報は、お問い合わせへの対応および確認のためのみに利用します。</li>
+	<li>また、この目的のためにお問い合わせの記録を残すことがあります。</li><br>
+</ul>
+
+<a href="../index.html"><h2>Fish &amp; Tips ホームへ戻る</h2></a>
+</div>
+</body>
+</html>
