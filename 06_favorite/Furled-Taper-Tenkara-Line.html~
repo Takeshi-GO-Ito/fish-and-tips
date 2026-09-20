@@ -1,0 +1,592 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-44942781-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-44942781-1');
+</script>
+<!-- Google Analytics Tag until this line -->
+
+
+
+<title>撚り合わせタイプ　テンカラ用テーパーライン　　私のお気に入り</title>
+<link rel="canonical" href="https://fishtips.sakura.ne.jp/06_favorite/Furled-Taper-Tenkara-Line.html" />
+
+<meta name="dcterms.dateCopyrighted" content="2020">
+<meta name="dcterms.rightsHolder" content="Takeshi Ito">
+<meta name="author" content="GO" >
+<meta name="description" content="インターネット上でも、いろいろな方がいろいろな方法でテーパーラインの自作を試みられています。この記事では、昔ながらの手撚り、そして２種類の撚り合わせ器具を使ってのテーパーラインの自作方法をご紹介致します。">
+
+<link rel="stylesheet" type="text/css" media="screen" href="../css/style.css">
+<link rel="stylesheet" type="text/css" media="print" href="../css/print.css">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<script src="../js/openclose.js"></script>
+
+</head>
+
+<body>
+
+<main>
+
+<div id="container">
+
+<div id="contents">
+
+<div id="main">
+
+<section>
+<h2 class="mb15" id="header">私のお気に入り</h2>
+<h3>自作の道具たち　　　撚り合わせタイプ　テンカラ用テーパーライン</h3>
+</section>
+<div class="date top">2021/10/15</div>
+<p>　最近のテンカラ釣りにおいては、テーパーラインは「非主流」となっているそうです。レベルラインと比べた場合、テーパーラインならではの利点もあり、これまで言われてきたような欠点も、それほど致命的ではありません。<br>
+　要は適材適所ですので、釣り場、釣り方に合った使い方をすれば、テーパーラインもかなりのパフォーマンスを発揮してくれます。インターネット上でも、いろいろな方がいろいろな方法でテーパーラインの自作を試みられています。<br>
+　この記事では、作者の現時点での製作方法をご紹介いたします。これは、私がテンカラ釣りを始めた時の参考書であった、桑原玄辰　著<br>「<a href="https://amazon.jp/dp/4331400301">毛バリ釣りの楽しみ方　ヤマメ・イワナのテンカラ釣り入門</a>」<br>の、p69-74 に書かれている、伝統的な馬の尻尾の毛を用いた手撚り馬素（ばす）の作り方、そして、ブレイデッドラインを使った作り方を組み合わせて、改良・発展させた方法になります。</p>
+<p><strong><span class="blue">　テーパーラインはテンカラを始めたばかりの方にとって、キャスティングが簡単で覚えやすいという大きな利点があります。ですから、広いスペースや大がかりな治具、高価な電動工具などを使わずに、初心者の方々がなるべく安価に、机の上で楽にできるように.....と考えました。</span></strong></p>
+<p>　と、最初は思っていたのですが、だんだんエスカレートしていろいろな道具を買い込んでしまいました。ご了承ください。(笑)</p>
+<p class="top"><strong>　　目　　次</strong></p>
+
+<p><a href="#1">１．必要な材料</a></p>
+<p>２．必要な工具、道具</p>
+<p>　<a href="#21">２－１．必須の工具</a></p>
+<p>　<a href="#22">２－２．あれば便利な工具、材料</a></p>
+<p><a href="#3">３．参考にしたライン</a></p>
+<p><a href="#4">４．テーパーのデザイン（設計）</a></p>
+<p><a href="#5">５．素材ライン、ナイロン・モノフィラメントのカット</a></p>
+<p>６．素材ラインの撚り合わせ</p>
+<p>　６－１．手で撚り合わせる場合</p>
+<p>　<a href="#62">６－２．ハンディヤーン・ツイスターで撚り合わせる場合</a></p>
+<p>　<a href="#63">６－３．ゴム動力模型飛行機用　ゴムワインダーで撚り合わせる場合</a></p>
+<p>　<a href="#64">６－４．撚り合わせのコンビネーション</a></p>
+<p><a href="#7">７．各セクションの接続</a></p>
+<p><a href="#8">８．完成重量の測定とデザインの記録</a></p>
+<p><a href="#9">９．試し振り</a></p>
+
+<p class="top" id="1"><strong>1．必要な材料</strong></p>
+<ol class="low-alpha">
+	<li><div>素材となるライン<br>
+　ナイロンラインの蛍光色が、しなやかで撚りやすく、視認性に優れています。色はお好みで。<br>
+　作例では、<a href="http://www.amazon.co.jp/dp/B005M4SNQM">DAIWA JUSTRON ２号　標準直径 0.235mm　イエロー</a>　を使用しました。<br>
+
+<div class="photo"><img src="../photo/daiwa-justlon.jpg" alt="DAIWA JUSTRON ２号" width="450" height="450"></div><div class="caption">素材ライン　DAIWA JUSTRON ２号</div>
+　これよりもやや安いクラスでも可。なるべく長く巻かれたスプールで買うとお得です。太さは２号ないし３号くらいが撚り合わせが楽に、美しくできるのでお勧めです。<br>
+　（500m 巻き　1,445円、2021/09時点、Amazon.co.jp にて）</div></li>
+	<li>瞬間接着剤<br>
+　百円ショップ（たしかダイソー）で売っているハケ付きタイプが、柔らかなラインに塗りやすくて便利。</li>
+	<li>クリアマニキュア：速乾性トップコート<br>
+　百円ショップ（ダイソー）に売っています。接続部の仕上げに塗ると、瞬間接着剤が乾いた後のシラケた色合いが、自然な感じに仕上がります。これは完全にお化粧・気分の問題ですので、でき上がったテーパーラインの性能、釣果には無関係です。（笑）<br>
+<div class="photo"><img src="../photo/nail-topcoat.jpg" alt="クリアマニキュア：速乾性トップコート" width="450" height="338"></div><div class="caption">クリアマニキュア：速乾性トップコート</div></li>
+	<li>フライタイイング用　シルクスレッド<br>
+　作例では、<a href="http://www.amazon.co.jp/dp/B005J8B98U">TIEMCO UNI-Thread、220D、3/0W</a>　という、やや太めで白色のスレッドを選びました。（約45m 巻き　336円、2021/09時点、Amazon.co.jp にて）<br>　撚り合わせた素材ラインの接続時にけっこう力を掛けるので、太いスレッドを使っています。色はお好みで。素材ラインに合わせると、仕上がりが綺麗でしょう。
+<div class="photo"><img src="../photo/uni-thread-white.jpg" alt="UNI-Thread、220D、3/0W" width="232" height="300"></div>
+<div class="caption">TIEMCO UNI-Thread、220D、3/0W<br>
+画像はアマゾンより引用</div>
+
+<p>　百円ショップで、#40 のストレッチミシン糸　ナイロン100% を買っても使えます。強度、仕上がりとも、シルクスレッドと変わりません。</p>
+<div class="photo"><img src="../photo/nylon-thread.jpg" alt="#40 のストレッチミシン糸　ナイロン100%" width="450" height="338"></div><div class="caption">#40 のストレッチミシン糸</div>
+<div class="caption-L">　ただ、作業途中でヨレて、ボビンホルダーの軸に絡んだりしますので、少し面倒です。でも、安価なのでお勧めです。<br>（税込み　110円　2021/09時点）</div></li>
+	<li>リリアン糸（テーパーラインとテンカラ竿の穂先との接続用）<br>
+　作例では、NSSIN 製の「高級リリアン　小細タイプ　1m」を使用。 釣具店で税込み 220円でした。（2021/09時点）<br>
+<div class="photo"><img src="../photo/sakiito.jpg" alt="NSSIN 製の「高級リリアン　小細タイプ　1m」" width="450" height="450"></div><div class="caption-L">　NISSIN 製の「高級リリアン　小細タイプ　1m」<br>
+　小細タイプを使ってみた感想としては、まだちょっと太いかな？　という感じがしたので、極細タイプの方がしっくりくると思います。</div></li>
+</ol>
+
+<p class="top"><strong>2．必要な工具、道具</strong></p>
+<p id="21">2－1．必須の工具</p>
+<ol class="low-alpha">
+	<li>フライタイイング用　ボビンホルダー（糸巻きの保持器）<br>
+　フライフィッシング専門店でなくても、釣具店のアシストフック自作コーナーなどに置いてあります。<br>
+　（参考商品　<a href="http://www.amazon.co.jp/dp/B07CZHM5XT">ボビンホルダー＋スレッド通し２点セット</a><br>　760円、2021/10時点、Amazon.co.jp にて）<br>
+<div class="photo"><img src="../photo/b-holder.jpg" alt="フライタイイング用　ボビンホルダー" width="450" height="450"></div><div class="caption">フライタイイング用　ボビンホルダー　と　スレッド</div>
+	</li>
+	<li>裁縫用メジャー<br>
+　百円ショップで売っている、巻き取りリールの付いていない単純なテープ型のメジャーを、机の端に両面テープなどで貼り付けておくと、素材ラインのカットが素早くできます。<br>
+<div class="photo"><img src="../photo/tape-measure.jpg" alt="裁縫用メジャーを机に貼り付けたところ" width="450" height="338"></div><div class="caption">裁縫用メジャーを机に貼り付けたところ</div>
+	</li>
+	<li>接続作業台：高さ 25-30cm ほどの丈夫な箱。<br>（厚い本を積み重ねても代用可）<br>
+<div class="photo"><img src="../photo/working-box_for_jointing.jpg" alt="接続作業台　撚り合わせて束になった素材ライン同士を接続する時に使います。" width="450" height="450"></div><div class="caption-L">　接続作業台　素材ラインを撚り合わせて束になった２つのセクションを接続する時に使います。</div>
+	</li>
+	<li>よく切れる小型ハサミ<br>
+　特にフライタイイング用でなくても可。百円ショップ、手芸用品店で買える裁縫用でOKです。
+	</li>
+	<li>デザイン用カッターナイフ、もしくは取っ手付きのカミソリ<br>
+　百円ショップで買える製品でOKです。巻き上げたスレッド、ミシン糸を切る時に使います。
+	</li>
+	<li>洗濯バサミ　３個</li>
+	<li>セロハンテープ</li>
+	<li>油性ペン</li>
+</ol>
+
+<p class="top" id="22">２－２．あると、とても便利な工具、材料（なくても作れます）</p>
+<ol class="low-alpha">
+	<li><div class="in-List"><a href="http://www.amazon.co.jp/dp/B011QDJP1O">ハンディヤーン ツイスター 58-783</a><br>
+　（糸撚り器：手芸用品の Clover 社製）<br>
+　手先の器用な人は、手で素材ラインを撚り合わせることができます。しかし、このハンディヤーン ツイスターがあれば、誰でも均一な撚り合わせ作業が素早くできます。<br>（税込み 1,305円、2021/09時点、Amazon.co.jp にて）<br>
+<div class="photo"><a href="http://www.amazon.co.jp/dp/B011QDJP1O"><img src="../photo/yarn-twister_1.jpg" alt="ハンディヤーン・ツイスター 58-783　（糸撚り器：手芸用品の Clover 社製）" width="450" height="450"></a></div>
+<div class="caption">Clover 社　ハンディヤーン・ツイスター 58-783</div>
+<br>
+<div class="photo"><img src="../photo/yarn-twister_2.jpg" alt="左右両方向への回転が可能な手回しダイヤルと糸かけフック" width="450" height="450"></div><div class="caption">左右両方向への回転が可能な手回しダイヤルと糸かけフック</div><br>
+　<span class="blue"><strong>ヤーン・ツイスターを使うと、手撚りでは難しい、両方向への撚り合わせができます。作者の場合、親指を出し、人差し指を引いて縒る動作しかできないのですが、ツイスターなら簡単に、手では苦手な、逆方向への撚り合わせができます。</strong></span><br>
+　手撚りテーパーライン特有の欠点として、キャストした時に伸びて行くラインがひねってしまい、ループが傾き、それがハリスへと伝わり、最終的に毛バリの着水点がブレてしまう.....という現象があります。私も実際、公園で的を狙ってキャスト練習をして始めて気づきました。<br>
+　この欠点は、榊原正巳氏の著書「<a href="https://amazon.jp/dp/4806206709">たったひとつの毛鉤で勝負</a>」 p97, 124 でも指摘されています。</div>
+<div>　私は、太い方から先端まで、単一方向に撚り合わされた手撚りテーパーラインでは、キャスト時にできるループに撚りの力が蓄積され、ループが伸びて行く時にその力が解放されてハリスに伝わって回転し、毛バリが左右へ逸れるのでは？　と考えています。</div>
+<div>　<span class="blue"><strong>今回の作例では、ヤーン・ツイスターを使い、連続する各セクションを、互い違いに時計回り・反時計回りで撚り合わせ、それらを接続することで、この欠点の解消を試みました。</strong></span></div>
+<div>　ヤーン・ツイスターは、下記 b. c. のブックエンド、もしくは工作用小型ベンチバイスで机に固定して使用します。これらがなくても、ツイスターの両面にガムテープを貼って机に固定しても、なんとか使えます。</div>
+	</li>
+	<li><div class="in-List">百円ショップで売っているブックエンド（ヤーン・ツイスター、ゴム・ワインダーの固定用）<br>
+	
+	<div class="photo"><img src="../photo/bookend.jpg" alt="ブックエンド（ヤーン・ツイスター固定用）" width="450" height="450"></div><div class="caption">ブックエンド<br>（ヤーン・ツイスター、ゴム・ワインダーの固定用）</div>
+	<div class="photo"><img src="../photo/bookend-yarntwister.jpg" alt="ブックエンドに固定したヤーン・ツイスター" width="450" height="450"></div><div class="caption-L">　ブックエンドで固定したヤーン・ツイスター。いささか強引で見てくれの悪い方法ですが、実用上は問題なく作業できます。親指と人差し指とで、白いダイヤルを回転させて素材ラインを撚り合わせます。</div>
+</div>
+	</li>
+	<li><div>工作用小型バイス<br>
+　作例では、<a href="http://www.amazon.co.jp/dp/B005XT78KI">GREENCROSS アルミ ベンチ バイス 60mm</a>　という製品を使っています。<br>（1,660円、2021/09時点、Amazon.co.jp にて）<br>
+<div class="photo"><img src="../photo/minnow-repair_7.jpg" alt="" width="450" height="338"></div><div class="caption"><a href="http://www.amazon.co.jp/dp/B005XT78KI">GREENCROSS アルミ ベンチ バイス 60mm</a></div>
+<div class="photo"><img src="../photo/Yarn-Twister-Vice-Setting_1.jpg" alt="ヤーン・ツイスターは、下記の工作用小型ベンチバイスで机に固定して使用" width="450" height="450"></div><div class="caption-L">小型ベンチバイスでヤーン・ツイスターを保持したところ。</div>
+　小型ベンチバイスが１台あると、テーパーラインの作成だけでなく、<a href="../01_tips/minnow-repairing.html">いろいろな作業</a>に使えます。</div></li>
+	<li>フライタイイング用バイス<br>
+　撚り合わせて束になった素材ライン同士を接続する時に、あると便利です。上記の小型ベンチバイスを使っても接続できますが、少し作業がやりにくいです。フライタイイング用バイスなら、挟み口（ジョー）の下に作業スペースが空くので、ボビンホルダーを回す時に作業しやすいです。すでにテンカラ釣りをやっておられる方ならば、持っている人は多いかもしれません。<br>
+<p class="photo"><img src="../photo/use-of-fly-tying-vice.jpg" alt="フライタイイング用バイスでテーパーラインの接続作業をしているところ。バイスで直接ラインを挟むと傷が付くので、紙を数枚重ねてクッションにしている" width="450" height="394"></p><div class="caption-L">　フライタイイング用バイスでテーパーラインの接続作業をしているところ。直接ラインを挟むと傷が付くので、紙を数枚重ねてクッションにしています。</div>
+</li>
+
+	<li><div class="in-List">ゴム動力模型飛行機用　ゴム・ワインダー<br>
+<div class="photo"><img src="../photo/rubber-winder.jpg" alt="" width="450" height="450"></div><div class="caption">ゴム動力模型飛行機用　ゴム・ワインダー</div>
+　a. のヤーン・ツイスターを購入する前、かなり昔に買って持っていた製品です。昔懐かしい竹ひごと薄紙などで作るライトプレーン用のゴム巻き器です。<br>　現在でも、スタジオミドという模型会社から、ライトプレーン　ワインダー（高速ゴム巻き器・ギア比１対４）が発売されており、<br>
+　<a href="www.rubberpowerplane.com/pg12.html" target="_blank">スタジオミドのオンラインショップ</a>から購入できます。
+<div>　作者は幸運にも、市内の老舗模型屋さんで、在庫２個を買うことができました。</div>
+<div>　このゴムワインダーは、１方向への回転・撚り合わせしかできないのが、非常に残念なところです。</div>
+	</li>
+	<li><div class="in-List"><a href="https://amazon.jp/dp/B002KLS2KW">オリムパス製絲　ストリング-II</a><br>
+　（高速式回転ひも撚り器：<a href="https://www.olympus-thread.com/">オリムパス製絲</a>社製）<br>　作者はまだ使ったことはありませんが、ヤーン・ツイスターと同じ手芸用品のジャンルで、こんな製品もあります。<br>（税込み 4,263円、2021/10時点、<a href="https://amazon.jp/dp/B002KLS2KW">amazon.co.jp にて</a>）<br>
+<div class="photo"><img src="../photo/OlimpusTwister.jpg" alt="" width="382" height="382"></div><div class="caption"><a href="https://www.olympus-thread.com/lineup/tool/3152/">オリムパス製絲社製　ストリング-II</a><br>画像はメーカーウェブサイトより引用</div><br>
+　このストリング-II の特徴は、ヤーン・ツイスターと同じく左右両方向への回転・撚り合わせができるます。さらに、ストッパーを切り替えることで、<br>
+　　１．３本の素材ラインそれぞれに撚りをかける（下撚り）<br>
+　　２．３本の素材ライン全体を撚り合わせる（上撚り）<br>
+　作業ができることです。（<a href="https://www.olympus-thread.com/lesson/16/">使い方解説動画はこちら）</a></div>
+<div>　テーパーライン自作用の素材となるナイロンモノフィラメントは、細くしなやかですので、２．の上撚り工程だけで充分撚りあわせることができると思います。ブックエンドがあれば、本体の固定も問題無く行えるでしょう。</div>
+<div>　惜しむらくは、なかなかのお値段がする.....というその１点だけです。手撚りタイプのテンカラ用テーパーラインの製造販売を始めることになったら真っ先に購入すると思いますが。(笑)<br>　とは言え、市販のテーパーラインの３～４本分ですので、財力に余裕のある方にとってはまったく抵抗なく購入できる価格でしょう。</div>
+	</li>
+</ol>
+
+<p class="top" id="3"><strong>3．参考にしたライン</strong></p>
+<p>　以下に述べる各種のテーパーラインを参考にしました。特に、重さがどの程度なのかを考慮しつつ実際の釣りに使って、その上で自作する時のデザインを行いました。</p>
+<ol class="low-alpha">
+	<li><div class="in-List"></div><a href="https://amazon.jp/dp/B00NSW368U">フジノ製ナイロンテーパーライン　ソフトテンカラ</a><br>不透明オレンジ色　全長 3.3m　重量 0.72g<br>
+　作者の感覚、経験からはテーパーラインとしては比較的軽量の部類になると思います。しなやかで、視認性も良い色で、良くできた製品です。<br>
+　<span class="red">　手で撚り合わせるテーパーラインの欠点として、障害物に毛バリを掛けてしまい、ラインを持ってハリスを切った時に、テーパーライン全体がヨレて、縮れてしまうという現象があります</span>が、この製品ではそれが発生しませんでした。ていねいに、大事に使えば数シーズンは持つと思いますので価格もお手頃だと感じます。
+<div class="photo"><a href="https://amazon.jp/dp/B00NSW368U"><img src="../photo/fujino-softtaper.jpg" alt="フジノ製ナイロンテーパーライン　ソフトテンカラ" width="450" height="583"></a></div>
+<div class="caption">（1,013円、2021/10時点、Amazon.co.jp にて）<br>
+画像はアマゾンより引用</div>
+	</li>
+<li><div class="in-List"><a href="https://www.maxcatchfishing.com/tenkara_braided_line_fly_fishing_line_furld_leader.html">MaxCatch 製　ナイロンテーパーライン</a><br>
+Tenkara Braided Nylon Fly Fishing Line & Furled Leader
+<br>　全長 3.3m（11ft）　重量 7.77g</div>
+<div>　とある釣り堀（池で釣るところ）でニジマス釣りに使いましたが、重量が 7.77g もあり、とても重いです。MaxCatch 製の硬めのテンカラ竿でも振ってみましたが、確かに毛バリはビュンビュンと飛びますが、着水した毛バリが釣り人の方へ引かれて戻る「おつり」現象が激しいです。<br>
+　また、止水では自重でどんどん沈みました。価格は安いのですが、ちょっと使えるシチュエーションが限られるかな、という印象です。とても風の強い日だとか、鈎のサイズや形状から空気抵抗が大きくなった毛バリを遠投するには向いているでしょう。</div>
+<div class="photo"><a href="https://www.maxcatchfishing.com/tenkara_braided_line_fly_fishing_line_furld_leader.html"><img src="../photo/maxcatch-tankara-line.jpg" alt="（$7.99：約891円、2021/10時点、MaxCatch ウェブサイト にて）" width="450" height="450"></a></div><div class="caption">（$7.99：約891円、2021/10時点、<br>MaxCatch ウェブサイト にて）<br>画像はMaxCatch ウェブサイトより引用</div>
+</li>
+<li>33年くらい昔に買った（笑）、おそらく市販のテーパーライン<br>
+　全長 3.35m　重量 0.94g</li>
+<li>昔、渓流でのエサ釣り用ナイロンで自作したテーパーライン<br>
+　全長 3.5m　重量 1.31g</li>
+<li>昔、渓流でのエサ釣り用ナイロンで自作したテーパーライン<br>中太りバージョン<br>
+　全長 3.2m　重量 0.80g<br>
+　素材ナイロンの号数　2，2，3，3，2，3<br>
+　　　撚り合わせ本数　2，3，4，5，4，3<br>
+　何を参考にしたのかさっぱり記憶にありませんが、ラインの中ほどが１番太くなっている（3号を5本撚り）、フライラインで言うとダブルテーパーのようなデザインです。<br>
+　重量は 0.8g と軽いのですが、毛バリはよく飛びます。<br>
+　F = 2.95（当時、何らかの数値を算出して、テーパーラインの重さを表すファクター F としたようですが、どうやって算出したのか、今では解読できませんでした。
+	</li>
+</ol>
+
+<p class="top" id="4"><strong>4．テーパーのデザイン（設計）</strong><br>
+　この記事では、テンカラ竿と同じくらいの長さの、標準的なテーパーラインを作るとします。作例では 3.6mです。<br>
+　<span class="red"><strong>以下、知ったかぶりの、それらしく見える計算がダラダラと続きますが、作者のとんでもない計算ミスがあるかもしれませんので、ご注意ください！</strong></span></p>
+<ol class="std">
+	<li>まず、全長 3.6m （3,600mm） を、６あるいは、８セクションに分割すると考えた場合、１つのセクションの長さ L は、<br>
+　６分割：L = 600mm<br>
+　８分割：L = 450mm<br>
+です。</li>
+	<li>次に、素材として選んだナイロンラインの標準直径 D と半径 R（mm）、断面積 A（平方mm）、長さ L より、１セクションの１本あたりの体積 V（立方mm）を求めます。<br>
+　２号ライン　標準直径 D = 0.235mm<br>
+　　　　　　　半　　径 R = 0.1175mm<br>
+　　　　　　　断 面 積  A = R × R × 円周率 3.1416 =<br>
+　　　　　　　　　　　　　  0.0434（平方mm）<br>
+　　　　　　　長　さ　 L = 600 / 450mm<br>
+　６分割：V = 600 × 0.0434 = 26.04（立方mm）<br>
+　８分割：V = 450 × 0.0434 = 19.53（立方mm）<br></li>
+	<li>そして、ナイロンラインの比重（1.14）より、重量を求めます。<br>
+水 1cc （1立方cm = 1,000立方mm） の重さは 1.0g であり、<br>
+1 立方mm の重さは 1.0g ÷ 1,000立方mm = 0.001g です。<br>
+ナイロンライン　1 立方mm の重さは <br>
+0.001g × 1.14 = 0.00114g となるので、<br>
+１セクションの１本あたりの重量 W は、<br>
+６分割：W = 26.04（立方mm）× 0.00114g = 0.0297g<br>
+<span class="blue">８分割：W = 19.53（立方mm）× 0.00114g = 0.0223g</span><br>
+　です。</li>
+	<li><div>次に、６ないし８セクションを、何本の素材ナイロンラインを撚り合わせて、どんなテーパー形状を付けるかを考えます。作例では、<br>
+　８分割：　8, 8, 7, 6, 5, 4, 3, 3 本撚り　<br>
+　として、テーパーの元部分と先端部分をやや長めにしました。</div>
+<div>　あるいは、簡素化して、<br>
+　６分割：　8, 7, 6, 5, 4, 3 本撚り<br>　でも良いと思います。</div>
+<div>　一般的に、竿に近い部分（フライフィッシングのテーパーリーダーでいうところのバット部）を太く長くすると、パワーがあり、大きな毛バリ、重い毛バリを投げることができます。<br>
+　また、毛バリ側の先端部分（フライフィッシングのテーパーリーダーでいうところのティップ部）を細く長くすると、静かで繊細な毛バリの打ち込みが可能になるようです。（<span class="red">間違っていたらご指摘ください</span>）</div>
+	</li>
+	<li><div>そして、先に計算した、１セクションの１本あたり重量と、何本撚りにするか　の本数を掛けて、各セクションの重量を求めます。<br>
+　８分割　の場合、それぞれセクションの重量は、次のようになります。</div>
+<div>　<span class="blue">８本撚り： 0.0223g × 8 = 0.1784g</span><br>
+　８本撚り： 0.0223g × 8 = 0.1784g<br>
+　７本撚り： 0.0223g × 7 = 0.1561g<br>
+　６本撚り： 0.0223g × 6 = 0.1338g<br>
+　５本撚り： 0.0223g × 5 = 0.1115g<br>
+　４本撚り： 0.0223g × 4 = 0.0892g<br>
+　３本撚り： 0.0223g × 3 = 0.0669g<br>
+　３本撚り： 0.0223g × 3 = 0.0669g<br>
+　　　　 <span class="blue">設計上の合計重量 = 0.9812g</span></div>
+<div class="top">　ちなみに、<span class="blue">フロロカーボンのレベルラインですと、<br>長さ 3.6m、比重 1.78 として<br>
+　3.5号、直径 0.310mm、断面積 0.0755 平方mm、<br>
+　　　　　重量 = 0.484g<br>
+　4号　、直径 0.330mm、断面積 0.0855 平方mm、<br>
+　　　　　重量 = 0.548g<br>
+　ぐらいです。</span></div>
+<div>　<span class="red"><strong>ですから、作例のテーパーラインは、計算上は、フロロカーボンのレベルラインに比べ、約２倍の重量になります。</strong></span></div>
+
+<div><a href="../photo/taper-design-Excel_L.jpg">作例のテーパーデザイン　Excel 計算表　拡大画像</a></div>
+
+<div><a href="http://fishtips.sakura.ne.jp/06_favorite/FurledTaper-TenkaraLine-Design_for-Website.xlsx">Excel ファイルをこちらからダウンロードできます。</a><br><span class="red">（<a href="https://www.virustotal.com/ja/">www.virustotal.com</a>　というオンラインウィルスチェックサイトで検査済み、マクロは使っていません）</span></div>
+
+<div>　3.6m のテーパーラインで、重量が 1.0～1.5g 程度なら、着水した毛バリが手前に引かれて戻る現象、いわゆる「おつり」は、流れをまたいで対岸のたるみを釣っていても、ほとんど発生しません。</div></li>
+	<li>今回設計したテーパーラインですと、必要になる素材ライン全体の長さは 19.8m ほどです。撚り合わせ工程での縮み、接続時に必要な余分を考慮すると、約 25～28m ほどかと思われます。ダイワのジャストロンは 500m 巻きですので、18～20本のテーパーラインが作れることになります。<br>
+　まぁ、一生分はあるでしょうか？（笑）
+	</li>
+</ol>
+
+<p class="top" id="5"><strong>５．素材ライン、ナイロン・モノフィラメントのカット</strong></p>
+<ol class="std">
+	<li><div>デザインの段階で求めた１セクションの長さ（８分割であれば 450mm ）よりも余裕を見て、長めに切ります。ここで気を付けていただきたいのが、<span class="red">素材ラインは、撚り合わせることでカットした時点よりも短くなる！</span>　ということです。このため、８～５本を撚り合わせるセクションでは、かなり長めにカットしておかないと、撚り合わせ作業がすべて終わった時に寸法が足りなくなってします。<br>
+　<span class="blue">作例では、ちょっと余裕を取り過ぎのような気もしますが、後の接続工程でも余裕が必要ですので、８～５本撚りのセクションでは、450mm のところを 700mm （約５割増し）と見込んでカットしました。４～２本撚りでは、450mm のところを 600mm（約３割増し）ほどで良いです。</span></div>
+	</li>
+	<li>２本ずつ撚り合わせますので、８本撚りのセクションならば、700mm × 2 = 1,400mm を４本切り出します。<br>
+７本撚りのセクションだと、700mm × 2 = 1,400mm を３本、加えて 700mm を１本切り出します。<br>
+　これを、８本撚りのセクションで、700mm を８本バラバラに切り出すと、あとで再び２本を結んでから撚り合わせることになるので面倒です。上記のように各セクションの倍の長さでカットしてください。
+	</li>
+	<li>メジャーを、両面テープなどで机に貼り付けておくと、カット時の採寸が素早く行えます。<br>
+
+<div class="photo"><img src="../photo/tape-measure.jpg" alt="メジャーを両面テープで机に貼り付けておくと便利" width="450" height="338"></div><div class="caption">メジャーを両面テープで机に貼り付けておくと便利</div>
+</li>
+	<li>素材ラインのスプールは、利き手と反対側の引き出しや箱に入れておくと、バタバタ・カラカラせずにスムーズに引き出せます。<br>
+
+<div class="photo"><img src="../photo/spool-in-sidedesk.jpg" alt="素材ラインのスプールは、聞き手と反対側の引き出しや箱に入れておくと楽" width="450" height="279"></div>
+<div class="caption-L">　素材ラインのスプールは、聞き手と反対側の引き出しや箱に入れておくと楽です。</div>
+	</li>
+</ol>
+
+<p class="top"><strong>６．素材ラインの撚り合わせ</strong><br>
+<p id="61">６－１．手で撚り合わせる場合<br>
+<ol class="std">
+	<li>カットした素材ラインを中央部で折り曲げ、できたループを利き手の親指と人差し指とでつまみます。<br>
+<div class="photo"><img src="../photo/6-1-1.jpg" alt="" width="450" height="265"></div><div class="caption">利き手の親指と人差し指とで、素材ラインのループをつまむ</div>
+	</li>
+	<li>そして、スプールから引き出した時に残る巻き癖を、利き手ではない方の手で、軽く数回しごいて取り除きます。<br>
+	<div class="photo"><img src="../photo/6-1-2.jpg" alt="" width="450" height="228"></div><div class="caption-L">　反対側の手を赤矢印の方へ動かし、数回軽くしごいて、素材ラインの巻き癖を取り除く</div>
+	</li>
+	<li>ループの２センチくらい横を、反対の手の親指と人差し指とで、そっと押さえる感じでつまむ。ここで、素材ラインの一方を人差し指と中指で軽く挟み、もう一方は小指を曲げて軽く挟み、下に垂らしておきます。<br>
+<div class="photo"><img src="../photo/6-1-3.jpg" alt="" width="450" height="400"></div>
+<div class="caption-L">○人差し指と中指の間から、１本目の素材ラインを出して垂らします。（長い黄色の線）<br>
+○小指と手のひらの間から、２本目のラインを出して垂らします。（短い黄色の線）</div>
+	</li>
+	<li>利き手の親指を向こう側へ、人差し指を手前側に動かして、２本の素材ラインを撚り合わせます。<br>
+<div class="photo"><img src="../photo/6-1-3-1-1.jpg" alt="" width="450" height="287"></div><div class="caption"></div></li>
+	<li id="6-1-5">利き手で撚り合わせると同時に、その手をスムーズに体の外側へとスライドさせていきます。この時、２本の素材ラインをつまんでいる２本の指（利き手とは反対側の手の指）の圧力が適当であれば、２本のラインが寄り合わされてゆく過程を指の腹で感じ取ることができます。<br>
+　２本の指の圧力が少ないと、きれいに撚り合わせられません。反対に圧力が強すぎると、指の間でラインが「動けずに死んで」しまって、２本の素材ラインが撚り合わせられていく感覚が感知できません。ちょっと文章を読んだだけでは判りづらいと思いますが、少し試しているうちに、理解していただけると思います。
+<div class="photo"><img src="../photo/6-1-3-1-2.jpg" alt="" width="450" height="337"></div><div class="caption-L">　利き手のスライドをゆっくり行うとラインが密に撚り合わせられます。スライドを速くすると、ラインが粗く寄り合わされます。</div>
+	</li>
+	<li>撚り合わせを始めると、まだ縒られてない素材ライン２本が、手の下に垂れ下がっているうちに<span class="red"><strong>「くるくる回って暴れたり、絡み合ったり</strong></span>」を始めます。<br>
+<div class="photo"><img src="../photo/6-1-5-1.jpg" alt="" width="450" height="466"></div><div class="caption-L">　素材ライン２本が絡まないように気を付けながら、ゆっくり撚り合わせてゆきます。もし絡み合ったら、いったん撚り合わせを中断し、利き手でやさしくほどいてやります。</div>
+	</li>
+	<li>ひととおり、撚り合わせ作業が終わったら、左手をいったん放し、素材ライン２本を上から垂らして軽くしごき、撚り合わせ後のクセや不自然なヨレを取り除きます。ここで、素材ラインを蛍光灯などの明かりにかざして観察すると、撚り目の均一具合が明瞭にわかります。１回目の撚り合わせでは、多少雑な所があっても気にしなくて良いです。<br>
+	<div class="photo"><img src="../photo/twisted-badly.jpg" alt="きれいに撚り合わせられていない部分" width="450" height="450"></div><div class="caption">きれいに撚り合わせられていない部分</div>
+	</li>
+	<li>もう一度、3. からの工程を繰り返し、仕上げ撚りを行います。１回目と仕上げ撚りの２回行うことで美しく仕上がります。慣れないうちは、仕上げをもう一度行い、ダメ押しの３回撚り合わせを行うとベストな仕上がりとなります。<span class="blue">プロではなく、趣味なのですから、ゆっくりと、満足できるまで美しく作れば良いでしょう。</span><br>　２本撚りの最後では、端部を瞬間接着剤で留めなくても、撚りが戻ってしまうことはありません。</li>
+	<li>３本以上の本数を撚り合わせる時には、撚り始めの部分はきれいにできますが、末端ではどうしても少し乱れてうまくよれません。<br>
+		<div class="photo"><img src="../photo/finish-of-the-end-of-strand.jpg" alt="３本以上の本数を撚り合わせる時には、末端が少し乱れる" width="450" height="337"></div><div class="caption">３本以上を撚り合わせる時には、末端が少し乱れる</div>
+　<span class="red"><strong>ですから、手撚り・ヤーン・ツイスター・ゴムワインダーの、どの方法でも、末端の10cmほどは、手撚りで念入りに仕上げる必要があります。</strong></span><br>
+　３本以上の素材ラインを撚り合わせたら、少量の瞬間接着剤を、端部に幅 2mm ぐらい、ハケで塗って、バラけ止めをしておきます。<br>
+<div class="photo"><img src="../photo/finish-of-the-end-of-strand_with-bond.jpg" alt="撚り合わせが終わったら、端部に、少量の瞬間接着剤を塗っておく" width="450" height="337"></div><div class="caption-L">　撚り合わせが終わったら、端部に少量の瞬間接着剤を塗っておく</div>
+	
+<div class="photo"><img src="../photo/bond-on-desk.jpg" alt="ハケ付き瞬間接着剤のボトルはテープで机に固定しておくと安心" width="450" height="337"></div><div class="caption">ハケ付き瞬間接着剤のボトルは、作業のじゃまに<br>ならない位置にテープで固定しておくと安心</div>
+<div class="photo"><img src="../photo/twisted-lines.jpg" alt="６本撚りの仕上がり" width="450" height="450"></div><div class="caption">６本撚りの仕上がりはこんな状態、まずまずの仕上がり。</div></li>
+	<li>予定した本数を撚り合わせたセクションには、撚り始めた方の端にセロハンテープを 2cm ほどタブ状に貼り、油性ペンで何本撚りかを書いておきます。<span class="red"><strong>これをやっておかないと、接続作業の時に、何本撚りかがわからなくなって苦労します。</strong></span><br>
+	
+	<div class="photo"><img src="../photo/taper-line-section-end-finish.jpg" alt="１セクションを撚り終えたら、油性ペンで、何本撚りのセクションかを書いてお" width="450" height="338"></div><div class="caption-L">　１セクションを撚り終えたら、油性ペンで、何本撚りのセクションかを書いておく</div></li>
+	<li>手による撚り合わせが上手にできない方は、若干の出費が必要になりますが、次に解説するヤーン・ツイスター、あるいはゴムワインダー、および固定用ブックエンドの購入を検討してみてください。いずれも合わせて 1,500円ほどで購入できますので、漁協の入漁券２日分くらいです。どちらかの器具を使えば、驚くほど簡単に、早く、きれいな撚り合わせができます。どちらが良いかと聞かれたなら、効率、作業のしやすさでは少し劣りますが、左右両方向への撚り合わせが可能！　という大きな利点があるヤーン・ツイスターをお勧めします。<br>
+　指先の器用な方は、ぜひ、手撚り作業で、撚り合わせる方向を左右互い違いにすることに挑んでください。これにより、撚り合わせテーパーラインの大きな欠点が解消できます。<span class="blue"><a href="#62">後述 ６ー２. １. ここがポイント！ を参照</a></span><br>
+　しかし、あまり無理をして逆方向への撚り合わせを続けると、手が疲れすぎたり、指が炎症を起こしたりするかもしれませんので、ほどほどにしておいてくださいね。</li>
+</ol>
+
+<p class="top" id="62">６－２．ハンディヤーン・ツイスターで撚り合わせる場合<br>
+
+<ol class="std">
+	<li><div><strong><span class="red">ここがポイント！</span></strong><br>
+	　<span class="blue"><strong>ハンディヤーン・ツイスターを使う場合、左右両方向への撚り合わせが可能になります。例えば、最も太いセクションは時計回り、次に続くセクションは反時計回り、というように、隣り合うセクションの撚り方向を順次変えます。</strong></span><br>
+　ですから、作例のように全体を８分割した場合には、<br>
+　　　<span class="blue">セクション１　８本撚り：時計回り</span><br>
+　　　<span class="red">セクション２　８本撚り：反時計回り</span><br>
+　　　<span class="blue">セクション３　７本撚り：時計回り</span><br>
+　　　<span class="red">セクション４　６本撚り：反時計回り</span><br>
+　　　<span class="blue">セクション５　５本撚り：時計回り</span><br>
+　　　<span class="red">セクション６　４本撚り：反時計回り</span><br>
+　　　<span class="blue">セクション７　３本撚り：時計回り</span><br>
+　　　<span class="red">セクション８　３本撚り：反時計回り</span><br>
+　というように、撚り合わせ作業を始める前に、きちんと計画しておく必要があります。<br>　さらに、素材ラインの本数が同じセクションがありますので（セクション１と２、７と８）、撚り合わせ作業が終わったら、撚り始めた位置にテープで撚り合わせ本数と、回転方向を、<br>
+　　　８ー<span class="blue">と：時計回り</span>、<br>
+　　　８ー<span class="red">は：反時計回り</span><br>　などのように、自分でわかるように書き留めておきます。<br>
+　<span class="red"><strong>そうしないと、後の接続作業で、どのセクションをどの方向で撚り合わせたのかが、必ずわからなくなります。（経験者は語る.....）</strong></span><br>
+　書き留めるのを忘れても、ルーペで撚り具合をよく観察したり、少しだけ指で撚りをほどいたりすれば、確かめられます。しかし、転ばぬ先の杖ということわざもありますので、きちんと書き留めておくことをお勧めします。</div>
+<div>　<span class="blue"><strong>こうした工夫により、撚り合わせテーパーラインの宿命的欠点と言える、キャスト時のループの傾き → 毛バリの着水点のズレ　が解消され、ピンポイントへの正確なキャストが可能になります。<br>
+　無風時に、空き地や河川敷、公園の芝生などに小さな的を置き、それを狙ってキャストしてみないと感知できない、わずかなズレですが、全てのセクションを単一方向に撚り合わせ、接続したテーパーラインでは、確実にこのズレが発生します。</strong></span></div>
+	</li>
+	<li>小型ベンチバイスを机に据え付けます。この時、撚り合わせられてゆく途中の、余りの素材ラインを机と体の間に垂らして、自由に動けるスペースを確保するために、バイスをやや斜めにセットします。</li>
+	<li>ハンディヤーン・ツイスターを、しっかりと小型ベンチバイスで保持します。<br><div class="photo"><img src="../photo/Yarn-Twister-Vice-Setting.jpg" alt="" width="450" height="338"></div><div class="caption-L">　ハンディヤーン・ツイスターを小型ベンチバイスで保持したところ。赤線が机の端、青線がバイスとヤーン・ツイスターの向き</div></li>
+	<li id="6-2-4">カットした素材ラインを中央部で折り曲げ、できたループをつまみます。そして、スプールから取り出した時に残っている素材ラインの巻き癖を、手で軽く数回しごいて取り除きます。
+<div class="photo"><img src="../photo/yarn-twister_line-straining.jpg" alt="素材ナイロンラインの巻き癖を、手で数回軽くしごいて取り除く" width="450" height="338"></div><div class="caption-L">　素材ライン（黄色い線）の巻き癖を、手で数回軽くしごいて取り除く。（赤色矢印が手を動かしてしごく方向）<br>
+　これ以降の写真では、安価なブックエンドでヤーン・ツイスターを保持しています。</div>
+</li>
+	<li>素材ラインをヤーン・ツイスターのフックに掛け、フックから２センチくらい横を、ツイスターとは反対側の手の親指と人差し指とで、そっと押さえる感じでつまみます。ここで、素材ラインの一方を人差し指と中指で軽く挟み、もう一方は小指と手のひらで軽く挟んで、２本ともおなかと机の間のスペースに垂らしておきます。
+<div class="photo"><img src="../photo/yarn-twister_start-twisting.jpg" alt="黄色の線が素材ラインを示す。ヤーン・ツイスターで撚り合わせ始めると、余りのラインが手の下で暴れるので、自由に動ける空間を取り、２本とも垂らしておく。" width="450" height="337"></div><div class="caption-L">　黄色の線が素材ラインを示す。ヤーン・ツイスターで撚り合わせ始めると、余りのラインが手の下で暴れるので、自由に動ける空間を取り、２本とも垂らしておく。</div>
+	</li>
+	<li>ツイスターのダイヤルを利き手の親指と人差し指とで回転させて撚り合わせると同時に、ラインをつまんでいる反対側の手をスムーズに、ツイスターから遠ざかるようにスライドさせます。
+<div class="photo"><img src="../photo/yarn-twister_continue-twisting.jpg" alt="" width="450" height="338"></div><div class="caption-L">　赤色の線は、撚り合わせられた素材ライン、黄色の線は余って垂れている２本の素材ライン、赤色矢印は、ツイスターから遠ざかる手の動きを示す</div>
+	</li>
+	<li>これ以後のプロセスは、<a href="#6-1-5">手撚りの時と同じ</a>です。</li>
+</ol>
+
+<p class="top" id="63">６－3．ゴムワインダーで撚り合わせる場合</p>
+
+<ol class="std">
+	<li>工作用小型バイスを机に据え付けます。この時、撚り合わせる時に、残りのラインを机と体の間に垂らして、自由に動けるスペースを確保するために、やや傾けて斜めにセットします。
+<div class="photo"><img src="../photo/rubber-winder_2.jpg" alt="ゴムワインダーを小型ベンチバイスで保持したところ" width="450" height="450"></div><div class="caption-L">　小型ベンチバイスを机に固定し、ゴムワインダーを保持したところ</div>
+	</li>
+	<li>円形ボディーのゴムワインダーを小型ベンチバイスで保持します。この時、机とハンドルの間に、ハンドル回転用のスペース（黄色の矢印）を取るために、目いっぱい上側で固定してください。ボディ形状が円形なので、小型ベンチバイスでの固定が、ぎりぎりいっぱいになります。<br>
+<div class="photo"><img src="../photo/rubber-winder-setting.jpg" alt="ゴムワインダーを、ハンドルを回せるスペース（黄色の矢印）を確保して、小型ベンチバイスにセットする" width="450" height="450"></div><div class="caption-L">　ゴムワインダーを、ハンドルを回せるスペース（黄色の矢印）を確保して、小型ベンチバイスにセットする</div>
+	　ヤーン・ツイスターよりもギヤ比が高いので、高速で撚り合わせできますが、撚りをかけ過ぎてしまう傾向がありますので、ごくゆっくりとハンドルを回してください。<br>
+<div class="photo"><img src="../photo/rubber-winder_start-twisting.jpg" alt="" width="450" height="323"></div><div class="caption-L">　水色矢印がハンドルの回転方向、赤色線は撚り合わせられた素材ライン、黄色線は、余って垂れている２本の素材ラインを示す。</div>
+	</li>
+	<li>これより後の工程は、<a href="#6-2-4">前述 ６ー２. 4. </a>で述べたのと同じです。
+	</li>
+	<li>小型ベンチバイスを購入する代わりに、ブックエンドと数冊の重い本を利用し、ゴムワインダーをブックエンドの背面にテープで固定する方法もあります。いささか見た目は貧弱かつ、やっつけ仕事の感がありますが、撚り合わせ作業は問題なく行えます。<br>
+
+<div class="photo"><img src="../photo/rubber-winder-with-bookend.jpg" alt="ゴムワインダーをブックエンドの背面にテープで固定したところ。厚い本を数冊載せて、重しにしている。" width="450" height="600"></div><div class="caption-L">　ゴムワインダーをブックエンドの背面にテープで固定したところ。厚い本を数冊載せて、重しにしている。</div>
+<div class="photo"><img src="../photo/rubber-winder-with-bookend_2.jpg" alt="両面テープと粘着テープでゴムワインダーをブックエンドに固定しました。これもいささかやっつけ仕事の感がありますが、少しでも出費を抑えるためです。" width="450" height="338"></div><div class="caption-L">　両面テープと粘着テープでゴムワインダーをブックエンドに固定しました。これもいささかやっつけ仕事の感がありますが、少しでも出費を抑えるためです。<br>
+　ゴムワインダーの位置が高くなるので、小型ベンチバイスの時よりも作業が楽になります。（負け惜しみ.....）</div>
+	</li>
+</ol>
+
+<p class="top" id="64">６－４．撚り合わせのコンビネーション</p>
+<ol class="low-alpha">
+	<li>８本撚りの場合、２本＋２本＝４本、それに２本を加え６本、さらに２本を加えて８本にします。<br>
+　こうすると、作業量は増えますが、４本と４本を合わせるよりは、仕上がりが美しくなります。</li>
+	<li>７本撚りの場合、２本＋２本＝４本、２本＋１本＝３本、最後に４本＋３本＝７本にします。</li>
+	<li>以下、６～２本のセクションも同様に撚り合わせます。</li>
+</ol>
+
+<p class="top" id="7"><strong>７．各セクションの接続</strong></p>
+<ol class="std">
+	<li>太い方のセクションから接続してゆきます。その理由は、太い方が接続工程の作業がやりやすく、早く慣れるからです。<br>　完成したセクションの長さが、設計した値＋余裕分　に足りているかを、机に張ったテープメジャーで確認します。次にその位置に少量の瞬間接着剤をハケで塗ってバラけ止めを行います。<br>
+
+<div class="photo"><img src="../photo/section_glue.jpg" alt="設計通りの長さを確認し、少量の瞬間接着剤をハケで塗ってバラけ止めを行う" width="450" height="337"></div><div class="caption">設計通りの長さを確認し、少量の瞬間接着剤を<br>ハケで塗ってバラけ止めを行う</div>
+
+<span class="red"><strong>　※最も太いセクションには、リリアン糸を接続するためのループが必要ですので、 5cm ほど余裕を取って、長めの位置に瞬間接着剤を塗ります。</strong></span><br>
+
+<div class="photo"><img src="../photo/section_glue_2.jpg" alt="最も太いセクションにはループが必要なので、 5cm ほど余裕を取る" width="450" height="337"></div><div class="caption-L">　最も太いセクションにはループが必要なので、5cm ほど余裕を取ってからカット</div>
+	</li>
+	<li>かみ合わせ部分の長を確保するために、瞬間接着剤を塗った位置（設計した１セクションの長さ）より 1.5cm ほど長めの位置でカットします。<br>
+
+<div class="photo"><img src="../photo/section_cut.jpg" alt="かみ合わせ部分に必要な長さを見込んで 1.5cm ほど長めにカット" width="450" height="260"></div><div class="caption-L">かみ合わせ部分に必要な長さを見込んで、1.5cm ほど長めにカット</div>
+	</li>
+	<li>カットしたセクションを、かみ合わせ部分が作業台から外側に出るように、テープでしっかり固定します。<br>
+
+<div class="photo"><img src="../photo/section_hold.jpg" alt="セクションを接続作業台にテープでしっかり固定" width="450" height="338"></div><div class="caption">セクションを接続作業台にテープでしっかり固定</div>
+
+　セクションの保持に、フライタイイング用バイスを用いる場合には、素材ラインに傷が付かないよう、何枚か重ね紙で挟みます。<br>
+
+<div class="photo"><img src="../photo/use-of-fly-tying-vice.jpg" alt="フライタイイング用バイスでテーパーラインの接続作業をしているところ。バイスで直接ラインを挟むと傷が付くので、紙を数枚重ねてクッションにしている" width="450" height="394"></div><div class="caption-L">　フライタイイング用バイスでテーパーラインの接続作業をしているところ。バイスで直接ラインを挟むと傷が付くので、紙を数枚重ねてクッションにしている。蛍光イエロー色の素材ラインからぶら下がっているのが、ボビンホルダーの先端と白色のスレッド。</div>
+</li>
+	<li>２番目のセクションにも、上記の工程 1. 2. の作業を行います。</li>
+	<li>この時点で、両方のセクションの端部は、撚り合わせがほどけて、ささくれだってほつれた状態になっています。<br>
+
+<div class="photo"><img src="../photo/2-sections_end.jpg" alt="セクションの端部が、ささくれだってほつれた状態" width="450" height="337"></div><div class="caption">左右のセクションの端部が、ささくれだってほつれた状態</div>
+	</li>
+
+<li>その端部同士のほつれをかみ合わせます。
+<div class="photo"><img src="../photo/2-sections_jointing.jpg" alt="端部同士のほつれをかみ合わせる" width="450" height="338"></div><div class="caption">端部同士のほつれをかみ合わせる</div>
+	</li>
+	<li>かみ合わせた部分に少量の瞬間接着剤を塗布し、乾燥を待ちます。<br>
+	<div class="photo"><img src="../photo/2-sections_jointing_2.jpg" alt="瞬間接着剤で仮止め" width="450" height="338"></div><div class="caption">瞬間接着剤で仮止め、乾燥を待つ</div>
+	</li>
+	<li>フライタイイング用スレッド（もしくはナイロンミシン糸）で、輪っかを作り、かみ合わせた部分の中央を１回、しっかりと縛ります。<br>
+	<div class="photo"><img src="../photo/2-sections_jointing_3.jpg" alt="かみ合わせた端部の中央を１回縛る" width="450" height="338"></div><div class="caption">かみ合わせた端部の中央を１回縛る</div>
+
+	<div class="photo"><img src="../photo/2-sections_jointing_4.jpg" alt="スレッドを締め終えたところ" width="450" height="338"></div><div class="caption">スレッドを締め終えたところ</div>
+</li>
+<li>スレッドで巻き締めた中央部に、少量の瞬間接着剤を塗り、乾燥を待ちます。<br>
+<div class="photo"><img src="../photo/2-sections_jointing_5.jpg" alt="スレッドで巻き締めた中央部に、少量の瞬間接着剤をハケで塗る" width="450" height="338"></div><div class="caption-L">　スレッドで巻き締めた中央部に、少量の瞬間接着剤をハケで塗る</div>
+	</li>
+	<li>２番目のセクションの、接続部とは反対側の端を机にテープで仮止めします。あるいは、L型ヒートンを机にねじ込み、洗濯バサミで挟んで垂らし、テンションを掛けて真っすぐにします。こうすることで、接続部の下に空間ができて、ボビンホルダーを回しやすくなります。<br>
+
+<div class="photo"><img src="../photo/2-sections_jointing_6.jpg" alt="洗濯バサミで挟んで垂らし、テンションを掛けて２番目のセクションを真っすぐにする" width="450" height="388"></div><div class="caption-L">　洗濯バサミで挟んで垂らし、テンションを掛けて２番目のセクションを真っすぐにする</div>
+
+</li>
+	<li>ボビンホルダーを接続作業台の下に回し込んで、スレッド（ミシン糸）で接続部全体をしっかり巻き締めてゆきます。まず中央から左側へ巻いて、接続部と通常部の境界まで巻き締めたら、スレッドを重ねて巻いて太くして、段差ができるだけなめらかになるようにします。<br>
+
+<div class="photo"><img src="../photo/2-sections_jointing_7.jpg" alt="スレッド（ミシン糸）で接続部全体を巻き締める" width="450" height="469"></div><div class="caption">スレッド（ミシン糸）で接続部全体を巻き締める</div>
+
+<div class="photo"><img src="../photo/2-sections_jointing_8.jpg" alt="段差ができるだけなめらかになるようにスレッドを巻く" width="450" height="338"></div><div class="caption">段差ができるだけなめらかになるようにスレッドを巻く</div>
+	</li>
+	<li>左側の端を巻き終えたら、右側へと巻き締めてゆき、同様に段差がなくなるように重ね巻きします。最後に、スレッドで大きな輪っかを作り、その中にボビンホルダーを通して、中央部で結び締めてから、もう一度、接続部全体に瞬間接着剤をハケで塗ります。<br>
+
+<div class="photo"><img src="../photo/2-sections_jointing_9.jpg" alt="" width="450" height="338"></div><div class="caption"></div>
+
+	</li>
+	<li>仕上げにクリアマニキュア（速乾性トップコート）を塗ります。<br>
+
+<div class="photo"><img src="../photo/2-sections_jointing_10.jpg" alt="仕上げにクリアマニキュアを塗る" width="450" height="337"></div><div class="caption">仕上げにクリアマニキュアを塗る</div>
+
+　接合部の長さは、最大で2cm程度に収めると、見栄えが良くなります。瞬間接着剤を使うので接続部が硬くなりますが、完成したテーパーラインの動き、ターンオーバーには問題ありません。強度も充分です。<br>
+	</li>
+	<li>全セクションを接続したら、１番太いセクションの端部にループを作ります。工程は、1. ～ 10. と同様です。
+<div class="photo"><img src="../photo/section_joint_and_endloop_2.jpg" alt="セクションの接続部と元部分のループ" width="450" height="450"></div><div class="caption">上：２つのセクションの接続部<br>
+　　下：テーパーライン元部分のループ</div>
+　いささか雑な仕上がりで恥ずかしいです。特に接続部はもう少し美しく仕上げないと、夏場の釣りでクモの巣がラインに付着した際、取り除くのがとても面倒です。段差がないように仕上げ、スレッドの凸凹もなく、スムーズな接続部が作れれば、クモの巣も気になりません。
+	</li>
+	<li>テーパーラインの先端には、ハリスを接続するために、次のような処理を行います。<br>
+　○小さなループを作る　<br>
+　○<a href="owner-marucan.html">ヘラブナ釣り用丸カン</a>を結ぶ<br>
+　○８の字結びでコブを作る<br>
+
+<div class="photo"><img src="../photo/tip-end_1.jpg" alt="８の字結びでコブを作る" width="450" height="337"></div>
+
+<div class="photo"><img src="../photo/tip-end_2.jpg" alt="" width="450" height="338"></div><div class="caption">８の字結びでコブを作る</div><br>
+　などの方法で、ハリス（先糸）が結べるように仕上げます。いずれにしても、結束部は瞬間接着剤でほつれ止めを行います。</li>
+	<li>最も太いセクションの端に作ったループに、リリアン糸を付けて、テンカラ竿の穂先に結べるようにします。リリアン糸を長さ 18～20cm にカットし、両端を一重に結んで輪っかを作ります。<br>
+<div class="photo"><img src="../photo/Taper-Line-Finished-3.jpg" alt="リリアン糸を、最も太いセクションのループに付ける" width="450" height="193"></div>
+<div class="caption">最も太いセクションのループに、リリアン糸を付ける</div>
+　リリアン糸の輪っかとテーパーラインのループとで、Loop to Loop の方法で接続します。<br>
+<div class="photo"><img src="../photo/Taper-Line-Finished-4.jpg" alt="リリアン糸の輪っかとテーパーラインのループとを、Loop to Loop の方法で接続" width="450" height="262"></div><div class="caption-L">リリアン糸の輪っかとテーパーラインのループとを、Loop to Loop の方法で接続</div></li>
+</ol>
+
+<p class="top" id="8"><strong>８．完成重量の測定とデザインの記録</strong></p>
+<p>　テーパーラインが完成したら、精密なデジタル・スケール（はかり）で重量を量っておくと、別のパターンの作成時に役立ちます。接続部に瞬間接着剤を使ったりしますので、計算上よりも少しだけ重くなります。</p>
+
+<p class="photo"><img src="../photo/3-6m_8-8-7-6-5-4-3-3_1-23g.jpg" alt="完成した 3.6m、８分割、8-8-7-6-5-4-3-3 本撚りのテーパーライン　計算上の重量　0.98g　完成後の重量　1.23g" width="450" height="380"></p>
+<div class="caption">完成したテーパーライン。長さ 3.6m、<br>８分割、8-8-7-6-5-4-3-3 本撚り、重量 1.23g</div>
+
+<p>　<span class="blue">計算上の重量　0.98g</span>　<span class="red">完成後の重量　1.23g</span>　となり、セクションの接続にスレッドや瞬間接着剤を使うので、少し重くなりました。</p>
+
+<p>　完成したテーパーラインは、細い方の端から、手の指４本に、ゆっくりクセとヨレを取りながら輪っかの形に巻き取ってゆきます。巻き取りの最後には、リリアンの付いた太い端を３回ほど、輪っかの周りに斜めに通して巻き留めておきます。</p>
+<div class="photo"><img src="../photo/line-compleated-winding.jpg" alt="完成したラインは、手の指４本に輪っかの形に巻き取ってゆく" width="450" height="450"></div><div class="caption">完成したラインは、手の指４本に巻き取って輪っかにする</div>
+
+<p>　シール付きビニール袋（10×16cm程度）にラベルを貼り、完成したテーパーラインのデザイン：全長・重量・セクション分割数・各セクションの撚り本数・作成年月などをメモしておきます。</p>
+<p class="photo"><img src="../photo/Taper-Line-Finished-1.jpg" alt="シール付きビニール袋で保管・携行" width="450" height="338"></p><div class="caption">シール付きビニール袋で保管・携行</div>
+
+<div class="photo"><img src="../photo/Taper-Line-Finished-2.jpg" alt="ラベルに、全長・重量・セクション分割数・各セクションの撚り本数・作成年月などをメモしておく" width="450" height="337"></div><div class="caption">ラベルに、全長・重量・セクション分割数・<br>各セクションの撚り本数・作成年月などをメモしておく</div>
+<p>　こうして保管し、釣り場へ携行すれば、どんなデザインだったかを忘れたり、現場でどれを取り出すかを迷うことがありません。携行用ウォレットは、<a href="leader-wallet-cheaper.html">こちらの自作記事</a>を参考にしてください。</p>
+
+<p class="top" id="9"><strong>９．試し振り</strong></p>
+<p>　ぜひ、実際に釣りに使う前に、完成したテーパーラインの試し振りをしてみてください。ハリス（先糸）には、鈎先をカットした毛バリか、毛糸の切れ端を短く付けておきます。人のいない公園、河川敷などで、洗面器などを的にして、それを狙って毛バリを振り込んでみます。</p>
+<div class="photo"><img src="../photo/tenkara-casting-practice.jpg" alt="テーパーラインの試し振り" width="450" height="450"></div><div class="caption">　テーパーラインの試し振り</div>
+
+<p>　この日は 3.2m の竿、3.6m のライン、8セクション（7-7-6-5-4-3-2-2 本撚り、少々軽め）、1.5m のハリス、という仕掛けで、５メートル離れた直径18cm の皿を狙いました。赤丸内の黒いものが毛バリです。</p>
+<p>　的を置かずに漠然と毛バリを振り込むだけでは、ラインの特性がわかりにくいです。また、異なるデザイン、重さのラインを次に自作する時の参考にもなりません。必ず的を狙って、キャスト練習をしましょう。この時、テーパーラインのループのほどけてゆく状況、ライン・ハリスの伸び、フライが着水する時のスピード、全体のでき具合についての感想をメモしておけば万全です。</p>
+
+
+<p class="photo"><a href="../photo/2021-09-20_casting-test_8sec-7-7-6-5-4-3-2-2_line_L.jpg"><img src="../photo/2021-09-20_casting-test_8sec-7-7-6-5-4-3-2-2_line_S.jpg" alt="試し振りの結果　全体の成功率　7.2%" width="480" height="134"></a></p>
+<div class="caption">やや軽めのテーパーライン<br><a href="../photo/2021-09-20_casting-test_8sec-7-7-6-5-4-3-2-2_line_L.jpg">試し振りの結果　全体の成功率　7.2%</a></div>
+
+<p>　約7分のテストキャストを２回繰り返した結果、成功率は全体で 7.2% でした。100回に7回しか的に入らなかった.....（泣）<br>
+　後からじっくりビデオを見直すと、この日テストしたテーパーラインは、すべてのセクションを同一方向に縒り合わせ、それらを接続してあり、毛バリが的の左側 20～30cm の位置に逸れて落ちる傾向がはっきりとわかりました。</p>
+<p class="bottom">　次回は、８セクションで、少し重め、<br>撚り合わせ本数：8-8-7-6-5-4-3-3 本　というテーパーとして、各セクションを交互の回転方向で撚り合わせてみます。結果が出たらまた報告いたします。</p>
+
+<section>
+<hr>
+<h4><a href="favorite_contents.html">私のお気に入り　　　目次へ</a></h4>
+<h4><a href="../sitemap.html">サイトマップ</a></h4>
+<h4><a href="../index.html">ホームへ</a></h4>
+<h4><a href="../postmail/postmail.html">お問い合わせ</a></h4>
+</section>
+
+</div>
+<!--/main-->
+
+
+<div id="sub">
+
+<div id="head">
+
+<p id="logo">
+<a href="../index.html"><img src="../images/logo.png" width="140" height="90" alt="Fish and Tips"></a>
+</p>
+
+<nav id="menubar">
+<ul>
+<li><a href="../index.html">HOME</a></li>
+<li><a href="../intro.html">About Fish&amp;Tips</a></li>
+<li><a href="../02_diary_toei/diary_toei_contents.html">釣行日誌　故郷編</a></li>
+<li><a href="../03_diary_nz/diary_nz_contents.html">釣行日誌　ＮＺ編</a></li>
+<li><a href="../17_southerncountry/sc_contents.html">君よ知るや南の国</a></li>
+<li><a href="../01_tips/tips_contents.html">ティップス</a></li>
+<li><a href="../04_column/column_contents.html">コラム</a></li>
+<li><a href="../05_essay/essay_contents.html">エッセイ</a></li>
+<li><a href="../11_album/album_contents.html">写真集</a></li>
+<li id="current"><a href="../06_favorite/favorite_contents.html">私のお気に入り</a></li>
+<li><a href="../07_hajime/hajime_contents.html">父の釣り口伝</a></li>
+<li><a href="../08_movies/movies_contents.html">輝ける闇の中で</a></li>
+<li id="current"><a href="../09_books/books_contents.html">本棚から</a></li>
+<li><a href="../15_diary_nzstudy/diary_nzstudy_contents.html">留学日誌</a></li>
+<li><a href="../18_wingtips/wingtips_contents.html">飛行日誌</a></li>
+<li><a href="../13_links/links_contents.html">リンク集</a></li>
+<li><a href="../postmail/postmail.html">お問い合わせ</a></li>
+<li><a href="../english/index_e.html">English Version</a></li>
+</ul>
+</nav>
+
+</div>
+<!--/head-->
+
+</div>
+<!--/sub-->
+
+</div>
+<!--/contents-->
+
+</div>
+<!--/container-->
+
+</main>
+
+<footer>
+<p class="small-center">Copyright &copy; 1998-2024 Takeshi Ito　All rights reserved.<br>
+<a href="https://template-party.com/">Web Design:Template-Party</a></p>
+</footer>
+
+<!--スマホ用メニューバー-->
+<img src="../images/icon_bar.png" width="20" height="16" alt="" id="menubar_hdr" class="close">
+<script>
+if (OCwindowWidth() < 480) {
+	open_close("menubar_hdr", "menubar");
+}
+</script>
+
+<div class="backtotop"><a href="#header">↑ TOP</a></div><!--伊藤が加筆-->
+</body>
+</html>
